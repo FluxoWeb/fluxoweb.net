@@ -9,9 +9,6 @@ Este repositorio contiene el código fuente de la página web oficial de **Fluxo
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
 
 ## Descripción
 
