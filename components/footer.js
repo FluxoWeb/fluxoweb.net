@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="my-10 text-sm text-center text-gray-600 dark:text-gray-400">
-          Copyright © 2019 - 2023.{" "}
+          Copyright © 2019 - {new Date().getFullYear()}.{" "}
           <a
             href="https://fluxoweb.net/"
             target="_blank"
