@@ -4,6 +4,7 @@
 # Bun
 .bun
 .bun.lockb
+bun.lock
 
 # Node.js
 package-lock.json
