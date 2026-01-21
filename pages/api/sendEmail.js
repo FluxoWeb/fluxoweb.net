@@ -10,7 +10,7 @@ export default async (req, res) => {
       secure: false, // No usar SSL o TLS
       auth: {
         user: 'a081f8001@smtp-brevo.com', // Tu dirección de correo
-        pass: 'xsmtpsib-7e12b10a0e3dd51f088554c70849a02c827702d86e098de0ba982700c399743c-2EDGK2QkWsBQ91EL', // Tu contraseña
+        pass: process.env.BREVO_API_KEY, // Tu contraseña
       },
     });
 
