@@ -1,1 +1,9 @@
+# Dependencies
 /node_modules
+
+# Bun
+.bun
+.bun.lockb
+
+# Node.js
+package-lock.json
