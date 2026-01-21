@@ -4,28 +4,28 @@ import Container from "./container";
 const SectionTitle = (props) => {
   return (
     <Container
-      className={`flex w-full flex-col mt-4 ${
+      className={`flex w-full flex-col py-12 ${
         props.align === "left" ? "" : "items-center justify-center text-center"
       }`}>
       {props.pretitle && (
-        <div className="text-sm font-bold tracking-wider text-indigo-600 uppercase">
+        <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
           {props.pretitle}
-        </div>
+        </span>
       )}
 
       {props.title && (
-        <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
+        <h2 className="max-w-2xl text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
           {props.title}
         </h2>
       )}
 
       {props.children && (
-        <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300">
+        <p className="max-w-2xl mt-4 text-base text-gray-600 dark:text-gray-400 leading-relaxed">
           {props.children}
         </p>
       )}
     </Container>
   );
-}
+};
 
 export default SectionTitle;

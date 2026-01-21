@@ -1,16 +1,14 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Link from "next/link";
 
 class MyDocument extends Document {
   render() {
     return (
       <Html>
         <Head>
-          <Link
+          <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap"
             rel="stylesheet"
           />
-          <script src="https://kit.fontawesome.com/b8dad2c3ca.js" crossorigin="anonymous"></script>
         </Head>
         <body>
           <Main />

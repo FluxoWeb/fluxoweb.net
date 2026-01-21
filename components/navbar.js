@@ -1,107 +1,111 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
-import Image from "next/image"
-import { Disclosure } from "@headlessui/react";
+import Image from "next/image";
+import { Disclosure, Transition } from "@headlessui/react";
+import { MessageCircle, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const navigation = [
-    {
-      title: 'Servicios',
-      link: 'servicios',
-    },
-    {
-      title: 'Empresa',
-      link: 'empresa',
-    },
+    { title: "Servicios", link: "/servicios" },
+    { title: "Productos", link: "/productos" },
+    { title: "Hosting", link: "/hosting" },
+    { title: "Empresa", link: "/empresa" },
   ];
 
-
   return (
-    <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
-        {/* Logo  */}
-        <Disclosure>
-          {({ open }) => (
-            <>
-              <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
-                <Link href="/">
-                  <span className="flex items-center space-x-2 text-2xl font-medium  dark:text-gray-100">
-                    <span>
-                      <Image
-                        src="/img/Brain.png"
-                        alt="N"
-                        width="32"
-                        height="32"
-                        className="w-8"
-                      />
-                    </span>
-                    <span>Fluxo Web</span>
-                  </span>
-                </Link>
-
-                <Disclosure.Button
-                  aria-label="Toggle Menu"
-                  className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700">
-                  <svg
-                    className="w-6 h-6 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24">
-                    {open && (
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                      />
-                    )}
-                    {!open && (
-                      <path
-                        fillRule="evenodd"
-                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                      />
-                    )}
-                  </svg>
-                </Disclosure.Button>
-
-                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
-                  <>
-                    {navigation.map((item, index) => (
-                      <Link key={index} href={item.link} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
-                        {item.title}
-                      </Link>
-                    ))}
-                    <a href="http://wa.link/18ywdk" className="w-full px-6 py-2 mt-3 text-center text-white bg-green-600 rounded-md lg:ml-5">
-                      <i className="fa-brands fa-whatsapp"></i> Contactanos
-                    </a>
-                  </>
-                </Disclosure.Panel>
-              </div>
-            </>
-          )}
-        </Disclosure>
-
-        {/* menu  */}
-        <div className="hidden text-center lg:flex lg:items-center">
-          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
-            {navigation.map((item, index) => (
-              <li className="mr-3 nav__item" key={item}>
-                <Link href={item.link} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link href="https://wa.link/18ywdk" className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5">
-            <i className="fa-brands fa-whatsapp"></i> Contactenos
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200/60 dark:border-gray-800/60 bg-white/95 dark:bg-[#1D1D1D] backdrop-blur-md">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 font-semibold text-gray-900 dark:text-white">
+            <Image
+              src="/img/Brain.png"
+              alt="Fluxo Web"
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
+            <span className="text-lg">Fluxo Web</span>
           </Link>
 
-          <ThemeChanger />
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex lg:items-center lg:gap-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.title}
+                href={item.link}
+                className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop Actions */}
+          <div className="hidden lg:flex lg:items-center lg:gap-3">
+            <Link
+              href="https://wa.link/18ywdk"
+              className="inline-flex items-center gap-2 h-9 px-4 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Contáctenos
+            </Link>
+            <ThemeChanger />
+          </div>
+
+          {/* Mobile Menu */}
+          <Disclosure as="div" className="lg:hidden">
+            {({ open }) => (
+              <>
+                <Disclosure.Button className="inline-flex items-center justify-center h-9 w-9 rounded-md border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                  <span className="sr-only">Abrir menú</span>
+                  {open ? (
+                    <X className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                  ) : (
+                    <Menu className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                  )}
+                </Disclosure.Button>
+
+                <Transition
+                  enter="transition duration-150 ease-out"
+                  enterFrom="opacity-0 -translate-y-1"
+                  enterTo="opacity-100 translate-y-0"
+                  leave="transition duration-100 ease-in"
+                  leaveFrom="opacity-100 translate-y-0"
+                  leaveTo="opacity-0 -translate-y-1"
+                >
+                  <Disclosure.Panel className="absolute left-0 right-0 top-16 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 p-4 shadow-lg">
+                    <div className="flex flex-col gap-1">
+                      {navigation.map((item) => (
+                        <Link
+                          key={item.title}
+                          href={item.link}
+                          className="px-4 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                      <hr className="my-2 border-gray-200 dark:border-gray-800" />
+                      <div className="flex items-center justify-between px-4 py-2">
+                        <Link
+                          href="https://wa.link/18ywdk"
+                          className="inline-flex items-center gap-2 h-9 px-4 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
+                        >
+                          <MessageCircle className="h-4 w-4" />
+                          Contáctenos
+                        </Link>
+                        <ThemeChanger />
+                      </div>
+                    </div>
+                  </Disclosure.Panel>
+                </Transition>
+              </>
+            )}
+          </Disclosure>
         </div>
       </nav>
-    </div>
+    </header>
   );
-}
+};
 
 export default Navbar;

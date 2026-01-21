@@ -8,3 +8,6 @@ bun.lock
 
 # Node.js
 package-lock.json
+
+# Next.js
+.next
