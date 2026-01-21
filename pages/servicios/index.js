@@ -5,9 +5,16 @@ import Footer from "../../components/footer";
 import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
 import Image from "next/image";
-import { Code, Globe, Smartphone, Cloud, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
+import { Code, Globe, Smartphone, Cloud, MessageCircle, CheckCircle, ArrowRight, Brain, Bot, Sparkles, Search, FileCode, Rocket, Lightbulb } from "lucide-react";
 
 const servicios = [
+  {
+    titulo: "Desarrollo con Inteligencia Artificial",
+    descripcion: "Integramos soluciones de IA en tus sistemas para automatizar procesos, analizar datos y potenciar la toma de decisiones con machine learning y modelos de lenguaje.",
+    icono: Brain,
+    caracteristicas: ["Chatbots y asistentes virtuales", "Análisis predictivo", "Automatización inteligente", "Integración con LLMs"],
+    destacado: true,
+  },
   {
     titulo: "Desarrollo de Software Personalizado",
     descripcion: "Creamos soluciones de software a medida que se adaptan perfectamente a los procesos y objetivos específicos de tu organización.",
@@ -40,21 +47,25 @@ const procesoTrabajo = [
     paso: "01",
     titulo: "Descubrimiento",
     descripcion: "Analizamos tus necesidades y definimos los objetivos del proyecto.",
+    icono: Search,
   },
   {
     paso: "02",
     titulo: "Planificación",
     descripcion: "Diseñamos la arquitectura y creamos un roadmap detallado.",
+    icono: Lightbulb,
   },
   {
     paso: "03",
     titulo: "Desarrollo",
     descripcion: "Construimos tu solución con metodologías ágiles y entregas incrementales.",
+    icono: FileCode,
   },
   {
     paso: "04",
     titulo: "Lanzamiento",
     descripcion: "Desplegamos, capacitamos y brindamos soporte continuo.",
+    icono: Rocket,
   },
 ];
 
@@ -98,14 +109,28 @@ const Servicios = () => {
               return (
                 <div
                   key={index}
-                  className="group relative p-6 md:p-8 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-800 transition-colors"
+                  className={`group relative p-6 md:p-8 rounded-xl border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
+                    servicio.destacado
+                      ? "border-indigo-400 dark:border-indigo-600 bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-950/50 dark:to-gray-900/50 md:col-span-2"
+                      : "border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700"
+                  }`}
                 >
+                  {servicio.destacado && (
+                    <span className="absolute -top-3 left-6 inline-flex items-center gap-1 rounded-full bg-indigo-600 px-3 py-1 text-xs font-medium text-white">
+                      <Sparkles className="h-3 w-3" />
+                      Nuevo
+                    </span>
+                  )}
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-lg bg-indigo-50 dark:bg-indigo-950 border border-indigo-100 dark:border-indigo-900">
-                      <IconComponent className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                    <div className={`flex-shrink-0 flex items-center justify-center h-14 w-14 rounded-xl border-2 transition-all duration-300 group-hover:scale-110 group-hover:border-indigo-500 dark:group-hover:border-indigo-500 ${
+                      servicio.destacado
+                        ? "bg-indigo-100 dark:bg-indigo-900 border-indigo-300 dark:border-indigo-700"
+                        : "bg-indigo-50 dark:bg-indigo-950 border-indigo-200 dark:border-indigo-800"
+                    }`}>
+                      <IconComponent className="h-6 w-6 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
                         {servicio.titulo}
                       </h3>
                       <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -152,20 +177,42 @@ const Servicios = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {procesoTrabajo.map((item, index) => (
-              <div key={index} className="relative p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50">
-                <span className="text-4xl font-bold text-indigo-100 dark:text-indigo-900/50">
-                  {item.paso}
-                </span>
-                <h3 className="mt-2 text-base font-semibold text-gray-900 dark:text-white">
-                  {item.titulo}
-                </h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                  {item.descripcion}
-                </p>
-              </div>
-            ))}
+          <div className="relative">
+            {/* Línea conectora horizontal (solo desktop) */}
+            <div className="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-400 to-indigo-200 dark:from-indigo-900 dark:via-indigo-600 dark:to-indigo-900" />
+            
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {procesoTrabajo.map((item, index) => {
+                const IconComponent = item.icono;
+                return (
+                  <div 
+                    key={index} 
+                    className="group relative"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {/* Icono circular con animación */}
+                    <div className="relative z-10 mx-auto mb-6 flex items-center justify-center h-14 w-14 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-200 dark:border-indigo-800 group-hover:border-indigo-500 dark:group-hover:border-indigo-500 group-hover:scale-110 transition-all duration-300 shadow-sm">
+                      <IconComponent className="h-6 w-6 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    
+                    {/* Card con contenido */}
+                    <div className="relative p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 group-hover:border-indigo-300 dark:group-hover:border-indigo-700 group-hover:shadow-lg group-hover:-translate-y-1 transition-all duration-300">
+                      {/* Número del paso */}
+                      <span className="absolute -top-3 -right-2 flex items-center justify-center h-7 w-7 rounded-full bg-indigo-600 text-xs font-bold text-white shadow-md">
+                        {item.paso}
+                      </span>
+                      
+                      <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        {item.titulo}
+                      </h3>
+                      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {item.descripcion}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </Container>
       </section>

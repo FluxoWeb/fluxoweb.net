@@ -165,15 +165,15 @@ const Empresa = () => {
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             {/* Oscar */}
             <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center">
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">OG</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Oscar Gabriel Ramírez González</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white">Oscar Gabriel Ramirez Gonzalez</h3>
               <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">Fundador & CEO</p>
-              <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Autodidacta apasionado por la tecnología, comenzó reparando computadoras y hoy lidera el equipo de desarrollo.
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
@@ -187,9 +187,9 @@ const Empresa = () => {
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">AS</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Alberto David Servin Meira</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white">Alberto David Servin Meira</h3>
               <p className="text-sm text-green-600 dark:text-green-400 font-medium">Co-fundador & Ing. en Informática</p>
-              <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Ingeniero en Informática con amplia experiencia en desarrollo de software y arquitectura de sistemas.
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
@@ -203,10 +203,26 @@ const Empresa = () => {
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">WV</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Wildo Yamil Valenzuela Panderi</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white">Wildo Yamil Valenzuela Panderi</h3>
               <p className="text-sm text-amber-600 dark:text-amber-400 font-medium">Co-fundador & Gerente Administrativo</p>
-              <p className="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Encargado de la gestión administrativa y operativa, asegurando la eficiencia en todos los procesos de la empresa.
+              </p>
+              <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                <MapPin className="h-3 w-3" />
+                <span>Ciudad del Este, Paraguay</span>
+              </div>
+            </div>
+
+            {/* Armando */}
+            <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center">
+              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-white">AD</span>
+              </div>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white">Armando Manuel Diarte Velázquez</h3>
+              <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">Socio & Desarrollador Full Stack</p>
+              <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                Socio partícipe activo con experiencia en desarrollo Full Stack, contribuyendo al crecimiento técnico de la empresa.
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <MapPin className="h-3 w-3" />
