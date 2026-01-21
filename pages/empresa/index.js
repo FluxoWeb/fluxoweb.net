@@ -194,7 +194,7 @@ const Empresa = () => {
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <MapPin className="h-3 w-3" />
-                <span>Ciudad del Este, Paraguay</span>
+                <span>Minga Guazu, Paraguay</span>
               </div>
             </div>
 
@@ -210,7 +210,7 @@ const Empresa = () => {
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <MapPin className="h-3 w-3" />
-                <span>Ciudad del Este, Paraguay</span>
+                <span>Presidente Franco, Paraguay</span>
               </div>
             </div>
 
@@ -226,7 +226,7 @@ const Empresa = () => {
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <MapPin className="h-3 w-3" />
-                <span>Ciudad del Este, Paraguay</span>
+                <span>Minga Guazu, Paraguay</span>
               </div>
             </div>
           </div>
