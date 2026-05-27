@@ -4,7 +4,27 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
-import { Users, Check, MessageCircle, ArrowRight, Zap, Shield, Clock, BarChart3, Mail, Phone, Calendar, Target, TrendingUp, Database } from "lucide-react";
+import { Disclosure, Transition } from "@headlessui/react";
+import { Users, Check, MessageCircle, ArrowRight, Zap, Shield, Clock, BarChart3, Mail, Phone, Calendar, Target, TrendingUp, Database, ChevronDown } from "lucide-react";
+
+const faqCRM = [
+  {
+    pregunta: "¿Puedo importar mis contactos existentes?",
+    respuesta: "Sí, podés importar contactos desde Excel, CSV o migrar desde otro CRM. Nuestro equipo te asiste con todo el proceso de migración.",
+  },
+  {
+    pregunta: "¿Hay período de prueba?",
+    respuesta: "Ofrecemos una demo personalizada y 14 días de prueba gratuita para que evalúes si FluxoCRM es ideal para tu negocio sin ningún compromiso.",
+  },
+  {
+    pregunta: "¿Puedo cambiar de plan?",
+    respuesta: "Sí, podés actualizar o cambiar tu plan en cualquier momento. Los cambios se aplican de inmediato y el cobro se prorratea automáticamente.",
+  },
+  {
+    pregunta: "¿FluxoCRM funciona en el celular?",
+    respuesta: "Sí, FluxoCRM está optimizado para funcionar en dispositivos móviles desde el navegador. También estamos desarrollando una app nativa para mayor comodidad.",
+  },
+];
 
 const planes = [
   {
@@ -253,25 +273,37 @@ const FluxoCRM = () => {
       {/* FAQ Section */}
       <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#1D1D1D]">
         <Container>
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-10">
               <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
                 Preguntas frecuentes
               </h2>
             </div>
-            <div className="space-y-4">
-              <div className="p-5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">¿Puedo importar mis contactos existentes?</h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Sí, puedes importar contactos desde Excel, CSV o migrar desde otro CRM. Nuestro equipo te ayuda con el proceso.</p>
-              </div>
-              <div className="p-5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">¿Hay período de prueba?</h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Ofrecemos una demo personalizada y 14 días de prueba gratuita para que evalúes si FluxoCRM es ideal para tu negocio.</p>
-              </div>
-              <div className="p-5 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">¿Puedo cambiar de plan?</h3>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Sí, puedes actualizar o cambiar tu plan en cualquier momento. Los cambios se aplican de inmediato.</p>
-              </div>
+            <div className="divide-y divide-gray-200 dark:divide-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg">
+              {faqCRM.map((item) => (
+                <Disclosure key={item.pregunta}>
+                  {({ open }) => (
+                    <div>
+                      <Disclosure.Button className="flex items-center justify-between w-full px-5 py-4 text-left text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
+                        <span>{item.pregunta}</span>
+                        <ChevronDown className={`${open ? "rotate-180" : ""} h-4 w-4 text-gray-500 dark:text-gray-400 transition-transform duration-200 flex-shrink-0 ml-4`} />
+                      </Disclosure.Button>
+                      <Transition
+                        enter="transition duration-100 ease-out"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transition duration-75 ease-out"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                      >
+                        <Disclosure.Panel className="px-5 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                          {item.respuesta}
+                        </Disclosure.Panel>
+                      </Transition>
+                    </div>
+                  )}
+                </Disclosure>
+              ))}
             </div>
           </div>
         </Container>

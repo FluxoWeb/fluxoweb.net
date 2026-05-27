@@ -1,12 +1,10 @@
 import React from "react";
-import Container from "./container";
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronDown } from "lucide-react";
 
 const Faq = () => {
   return (
-    <Container className="pb-16">
-      <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-2xl mx-auto">
         <div className="divide-y divide-gray-200 dark:divide-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg">
           {faqdata.map((item, index) => (
             <Disclosure key={item.question}>
@@ -37,8 +35,7 @@ const Faq = () => {
             </Disclosure>
           ))}
         </div>
-      </div>
-    </Container>
+    </div>
   );
 };
 

@@ -7,6 +7,8 @@ import { Facebook, Linkedin } from "lucide-react";
 export default function Footer() {
   const navigation = [
     { title: "Servicios", link: "/servicios" },
+    { title: "Productos", link: "/productos" },
+    { title: "Hosting", link: "/hosting" },
     { title: "Empresa", link: "/empresa" },
   ];
   const legal = [
@@ -32,7 +34,7 @@ export default function Footer() {
               <span>Fluxo Web Group E.A.S.</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Utilizamos las tecnologías más innovadoras para construir sitios responsivos, rápidos y seguros.
+              Desarrollo de software personalizado para pequeñas y medianas empresas en Paraguay. Tecnología moderna, soporte real.
             </p>
           </div>
 
@@ -96,14 +98,16 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-center text-xs text-gray-500 dark:text-gray-500">
-            © 2019 - {new Date().getFullYear()} Fluxo Web Group E.A.S. Todos los derechos reservados.
+        {/* Bottom */}
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500 dark:text-gray-500">
+            © 2019 – {new Date().getFullYear()} Fluxo Web Group E.A.S. Todos los derechos reservados.
+          </p>
+          <p className="text-xs text-gray-400 dark:text-gray-600">
+            Ciudad del Este, Paraguay
           </p>
         </div>
       </Container>
     </footer>
   );
 }
-

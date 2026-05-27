@@ -38,19 +38,33 @@ const Empresa = () => {
 
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Hero */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-white dark:from-indigo-950/20 dark:via-gray-950 dark:to-gray-950 -z-10" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-100 dark:bg-indigo-950/30 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/3 -z-10" />
         <Container>
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-2xl">
             <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-6">
               Nuestra Empresa
             </span>
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
-              Soluciones de software para impulsar tu negocio
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl leading-tight">
+              De Ciudad del Este al mundo digital
             </h1>
-            <p className="mt-6 text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
-              Desde 2019, nos dedicamos a crear software y automatizaciones que mejoran el desempeño y agilidad de los procesos empresariales, con soluciones a medida y un análisis minucioso de cada requerimiento.
+            <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              Desde 2019, construimos software que transforma la manera en que las empresas paraguayas operan. Comenzamos reparando computadoras y hoy diseñamos sistemas que escalan negocios.
             </p>
+            <div className="mt-8 flex flex-wrap gap-6 text-sm">
+              {[
+                { valor: "2019", label: "Fundación" },
+                { valor: "50+", label: "Proyectos" },
+                { valor: "4", label: "Co-fundadores" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <span className="text-2xl font-bold text-gray-900 dark:text-white">{s.valor}</span>
+                  <span className="ml-1.5 text-gray-500 dark:text-gray-400">{s.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
@@ -167,11 +181,11 @@ const Empresa = () => {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
             {/* Oscar */}
-            <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center">
+            <Link href="/empresa/oscar-ramirez" className="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-sm transition-all">
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">OG</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">Oscar Gabriel Ramirez Gonzalez</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Oscar Gabriel Ramirez Gonzalez</h3>
               <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">Fundador & CEO</p>
               <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Autodidacta apasionado por la tecnología, comenzó reparando computadoras y hoy lidera el equipo de desarrollo.
@@ -180,14 +194,14 @@ const Empresa = () => {
                 <MapPin className="h-3 w-3" />
                 <span>Ciudad del Este, Paraguay</span>
               </div>
-            </div>
+            </Link>
 
             {/* Alberto */}
-            <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center">
+            <Link href="/empresa/alberto-servin" className="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center hover:border-green-300 dark:hover:border-green-700 hover:shadow-sm transition-all">
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">AS</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">Alberto David Servin Meira</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">Alberto David Servin Meira</h3>
               <p className="text-sm text-green-600 dark:text-green-400 font-medium">Co-fundador & Ing. en Informática</p>
               <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Ingeniero en Informática con amplia experiencia en desarrollo de software y arquitectura de sistemas.
@@ -196,14 +210,14 @@ const Empresa = () => {
                 <MapPin className="h-3 w-3" />
                 <span>Minga Guazu, Paraguay</span>
               </div>
-            </div>
+            </Link>
 
             {/* Wildo */}
-            <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center">
+            <Link href="/empresa/wildo-valenzuela" className="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-sm transition-all">
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">WV</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">Wildo Yamil Valenzuela Panderi</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Wildo Yamil Valenzuela Panderi</h3>
               <p className="text-sm text-amber-600 dark:text-amber-400 font-medium">Co-fundador & Gerente Administrativo</p>
               <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Encargado de la gestión administrativa y operativa, asegurando la eficiencia en todos los procesos de la empresa.
@@ -212,14 +226,14 @@ const Empresa = () => {
                 <MapPin className="h-3 w-3" />
                 <span>Presidente Franco, Paraguay</span>
               </div>
-            </div>
+            </Link>
 
             {/* Armando */}
-            <div className="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center">
+            <Link href="/empresa/armando-diarte" className="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center hover:border-cyan-300 dark:hover:border-cyan-700 hover:shadow-sm transition-all">
               <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center mb-4">
                 <span className="text-2xl font-bold text-white">AD</span>
               </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white">Armando Manuel Diarte Velázquez</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">Armando Manuel Diarte Velázquez</h3>
               <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">Socio & Desarrollador Full Stack</p>
               <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                 Socio partícipe activo con experiencia en desarrollo Full Stack, contribuyendo al crecimiento técnico de la empresa.
@@ -228,7 +242,7 @@ const Empresa = () => {
                 <MapPin className="h-3 w-3" />
                 <span>Minga Guazu, Paraguay</span>
               </div>
-            </div>
+            </Link>
           </div>
         </Container>
       </section>
