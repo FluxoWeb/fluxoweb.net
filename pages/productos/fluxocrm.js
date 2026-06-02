@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
 import { Disclosure, Transition } from "@headlessui/react";
 import { Users, Check, MessageCircle, ArrowRight, Zap, Shield, Clock, BarChart3, Mail, Phone, Calendar, Target, TrendingUp, Database, ChevronDown } from "lucide-react";
@@ -347,7 +346,6 @@ const FluxoCRM = () => {
       </section>
 
       <Footer />
-      <PopupWidget />
     </>
   );
 };

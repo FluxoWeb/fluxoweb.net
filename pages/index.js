@@ -3,7 +3,6 @@ import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Faq from "../components/faq";
-import PopupWidget from "../components/popupWidget";
 import Container from "../components/container";
 import Link from "next/link";
 import { Code, Globe, Smartphone, Cloud, Brain, ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
@@ -248,7 +247,6 @@ const Home = () => {
       </section>
 
       <Footer />
-      <PopupWidget />
     </>
   );
 };

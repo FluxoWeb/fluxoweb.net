@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
 import {
   Users, Building2, BarChart3, FileText, ShoppingCart, Warehouse,
@@ -281,7 +280,6 @@ const Productos = () => {
       </section>
 
       <Footer />
-      <PopupWidget />
     </>
   );
 };

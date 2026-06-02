@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
 import { Target, Eye, Lightbulb, Users, Shield, Zap, BookOpen, Heart, MessageCircle, Calendar, MapPin, Rocket } from "lucide-react";
 
@@ -279,7 +278,6 @@ const Empresa = () => {
       </section>
 
       <Footer />
-      <PopupWidget />
     </>
   );
 };

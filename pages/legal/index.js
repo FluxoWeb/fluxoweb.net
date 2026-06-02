@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
 import { FileText, Lock, Code2, RefreshCw, Headphones, Scale, ArrowRight } from "lucide-react";
 
@@ -175,7 +174,6 @@ const Legal = () => {
       </section>
 
       <Footer />
-      <PopupWidget />
     </>
   );
 };

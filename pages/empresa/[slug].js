@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import PopupWidget from "../../components/popupWidget";
 import Container from "../../components/container";
 import { memberSlugs, getMember } from "../../data/members";
 import {
@@ -274,7 +273,6 @@ export default function MemberPortfolio({ member }) {
       )}
 
       <Footer />
-      <PopupWidget />
     </>
   );
 }
