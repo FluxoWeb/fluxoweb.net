@@ -40,10 +40,10 @@ const member = {
   ],
   experience: [
     {
-      year: "2025",
-      title: "Socio & Desarrollador Full Stack — Fluxo Web",
+      year: "2026",
+      title: "Socio Principal & Desarrollador Full Stack — Fluxo Web",
       company: "Fluxo Web Group E.A.S.",
-      description: "Desarrollo front-end y back-end de aplicaciones web. Diseño de interfaces, arquitectura de sistemas y mantenimiento del sitio institucional.",
+      description: "Desarrollo de soluciones que conectan lógica de negocio, datos e interfaces funcionales. Trabajo en backend y frontend buscando que cada parte del sistema tenga sentido técnico y utilidad real para el usuario.",
     },
   ],
   education: [

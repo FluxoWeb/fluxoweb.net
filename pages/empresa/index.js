@@ -20,7 +20,8 @@ const hitos = [
   { año: "2020", titulo: "Expansión", descripcion: "El negocio crece y comienza a ofrecer ensamblado y venta de computadoras. La reputación de calidad se expande en la región." },
   { año: "2020", titulo: "Transformación", descripcion: "Identificando las necesidades de software de sus clientes, Oscar decide especializarse en desarrollo web y software, renombrando la empresa a Fluxo Web." },
   { año: "2025", titulo: "Nuevos socios", descripcion: "Se incorporan Alberto David Servin Meira (Co-fundador e Ing. en Informática) y Wildo Yamil Valenzuela Panderi (Co-fundador y Gerente Administrativo), fortaleciendo el equipo directivo de la empresa." },
-  { año: "Hoy", titulo: "Crecimiento", descripcion: "Fluxo Web Group E.A.S. cuenta con un equipo de desarrollo dedicado, brindando soluciones tecnológicas a pequeñas y medianas empresas de la región." },
+  { año: "2026", titulo: "Socio principal", descripcion: "El Ingeniero en Informática Armando Manuel Diarte Velázquez se incorpora como socio principal de Fluxo Web Group E.A.S. Especializado en desarrollar soluciones que conectan lógica de negocio, datos e interfaces funcionales, trabaja tanto en backend como en frontend buscando que cada parte del sistema tenga sentido técnico y utilidad real para el usuario." },
+  { año: "Hoy", titulo: "Infraestructura propia", descripcion: "Fluxo Web Group E.A.S. opera con infraestructura de servidores propia, ofreciendo servicios de hosting cloud, despliegue de aplicaciones y gestión de sistemas a empresas de la región. El equipo combina desarrollo a medida con una plataforma de infraestructura estable, escalable y administrada internamente." },
 ];
 
 const Empresa = () => {

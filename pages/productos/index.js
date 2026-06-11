@@ -1,12 +1,37 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import Container from "../../components/container";
 import {
   Users, Building2, BarChart3, FileText, ShoppingCart, Warehouse,
-  MessageCircle, ArrowRight, Check, Zap, Shield, Clock,
+  MessageCircle, ArrowRight, Check, Zap, Shield, Clock, ExternalLink,
 } from "lucide-react";
+
+const demos = [
+  {
+    nombre: "Nova ERP",
+    descripcion: "Plataforma de gestión empresarial desarrollada por Fluxo Web. Explorá todas las funcionalidades en el entorno de demo.",
+    url: "https://nova.fluxoweb.app/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fnova.fluxoweb.app%2F?w=800&h=500",
+    badge: "En producción",
+  },
+  {
+    nombre: "Mase Pastelería",
+    descripcion: "Sitio web institucional para pastelería artesanal. Diseño moderno con catálogo de productos y formulario de contacto.",
+    url: "https://masepasteleria.fluxoweb.net/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fmasepasteleria.fluxoweb.net%2F?w=800&h=500",
+    badge: "En producción",
+  },
+  {
+    nombre: "Esmalt",
+    descripcion: "Plataforma web desarrollada por Fluxo Web. Accedé al sitio y explorá el trabajo realizado.",
+    url: "https://esmalt.fluxoweb.net/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fesmalt.fluxoweb.net%2F?w=800&h=500",
+    badge: "En producción",
+  },
+];
 
 const productos = [
   {
@@ -245,6 +270,73 @@ const Productos = () => {
                 );
               })}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Demos en vivo */}
+      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#1D1D1D]">
+        <Container>
+          <div className="mb-10">
+            <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
+              Demos en vivo
+            </span>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+              Probá nuestros productos
+            </h2>
+            <p className="mt-3 text-base text-gray-600 dark:text-gray-400 max-w-xl">
+              Accedé a los entornos de demostración y explorá las funcionalidades antes de decidir.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {demos.map((demo) => (
+              <Link
+                key={demo.nombre}
+                href={demo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-md transition-all"
+              >
+                {/* Preview screenshot */}
+                <div className="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800" style={{ paddingBottom: "62.5%" }}>
+                  <Image
+                    src={demo.preview}
+                    alt={`Preview de ${demo.nombre}`}
+                    fill
+                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                    unoptimized
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-gray-900/90 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white shadow-lg">
+                      <ExternalLink className="h-4 w-4" />
+                      Abrir demo
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card body */}
+                <div className="p-5 flex flex-col gap-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                      {demo.nombre}
+                    </h3>
+                    <span className="flex-shrink-0 inline-flex items-center rounded-full border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-400">
+                      <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                      {demo.badge}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {demo.descripcion}
+                  </p>
+                  <div className="flex items-center gap-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400 group-hover:gap-2.5 transition-all pt-1">
+                    Ver demo completo
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </Container>
       </section>
