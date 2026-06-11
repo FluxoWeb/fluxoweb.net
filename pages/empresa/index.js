@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../../components/navbar";
+
 import Footer from "../../components/footer";
 import Container from "../../components/container";
 import { Target, Eye, Lightbulb, Users, Shield, Zap, BookOpen, Heart, MessageCircle, Calendar, MapPin, Rocket } from "lucide-react";
@@ -230,19 +231,32 @@ const Empresa = () => {
 
             {/* Armando */}
             <Link href="/empresa/armando-diarte" className="group p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 text-center hover:border-cyan-300 dark:hover:border-cyan-700 hover:shadow-sm transition-all">
-              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center mb-4">
-                <span className="text-2xl font-bold text-white">AD</span>
+              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden relative mb-4 ring-2 ring-cyan-200 dark:ring-cyan-900">
+                <Image src="/armando.png" alt="Armando Manuel Diarte Velázquez" fill className="object-cover object-top" />
               </div>
               <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">Armando Manuel Diarte Velázquez</h3>
               <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">Socio & Desarrollador Full Stack</p>
               <p className="mt-3 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                Socio partícipe activo con experiencia en desarrollo Full Stack, contribuyendo al crecimiento técnico de la empresa.
+                Full Stack con foco en sistemas empresariales: .NET, PostgreSQL, React. Arquitectura, APIs y resultados que funcionan en producción.
               </p>
               <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                 <MapPin className="h-3 w-3" />
-                <span>Minga Guazu, Paraguay</span>
+                <span>Minga Guazú, Paraguay</span>
               </div>
             </Link>
+          </div>
+
+          {/* Collaboration note */}
+          <div className="mt-10 max-w-6xl mx-auto rounded-xl border border-indigo-100 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950/40 px-6 py-5 flex items-start gap-4">
+            <div className="flex-shrink-0 flex items-center justify-center h-9 w-9 rounded-md bg-indigo-100 dark:bg-indigo-900 border border-indigo-200 dark:border-indigo-800 mt-0.5">
+              <Users className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">Equipo que construye junto</p>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Todos los socios de FluxoWeb participan activamente en el desarrollo: desde la arquitectura del sistema hasta la interfaz final. Cada producto y solución que ofrecemos es el resultado de un trabajo colaborativo donde todos contribuyen con su expertise técnico.
+              </p>
+            </div>
           </div>
         </Container>
       </section>
