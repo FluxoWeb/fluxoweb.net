@@ -2,7 +2,7 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure, Transition } from "@headlessui/react";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { MessageCircle, Menu, X, FileText } from "lucide-react";
 
 const Navbar = () => {
   const navigation = [
@@ -45,6 +45,13 @@ const Navbar = () => {
 
               {/* Desktop Actions */}
               <div className="hidden lg:flex lg:items-center lg:gap-3">
+                <Link
+                  href="/presentacion"
+                  className="inline-flex items-center justify-center h-9 w-9 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  title="Carta de presentación"
+                >
+                  <FileText className="h-4 w-4" />
+                </Link>
                 <Link
                   href="https://wa.link/18ywdk"
                   className="inline-flex items-center gap-2 h-9 px-4 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
@@ -92,7 +99,15 @@ const Navbar = () => {
                     {item.title}
                   </Disclosure.Button>
                 ))}
-                <div className="pt-4">
+                <div className="pt-4 flex flex-col gap-2">
+                  <Disclosure.Button
+                    as={Link}
+                    href="/presentacion"
+                    className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    <FileText className="h-4 w-4" />
+                    Carta de presentación
+                  </Disclosure.Button>
                   <Link
                     href="https://wa.link/18ywdk"
                     className="flex items-center justify-center gap-2 h-10 w-full text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
