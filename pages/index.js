@@ -5,7 +5,8 @@ import Footer from "../components/footer";
 import Faq from "../components/faq";
 import Container from "../components/container";
 import Link from "next/link";
-import { Code, Globe, Smartphone, Cloud, Brain, ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
+import Image from "next/image";
+import { Code, Globe, Smartphone, Cloud, Brain, ArrowRight, MessageCircle, CheckCircle, ExternalLink } from "lucide-react";
 
 const stats = [
   { valor: "2019", etiqueta: "Año de fundación" },
@@ -44,6 +45,33 @@ const serviciosDestacados = [
     titulo: "Hosting Cloud",
     descripcion: "Infraestructura segura y escalable con backups y soporte incluido.",
     link: "/hosting",
+  },
+];
+
+const clientes = [
+  {
+    nombre: "Quiro AI",
+    descripcion: "Plataforma web con inteligencia artificial desarrollada por Fluxo Web.",
+    url: "https://quiro-ai.com/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fquiro-ai.com%2F?w=800&h=500",
+  },
+  {
+    nombre: "Millonai",
+    descripcion: "Asistente de finanzas personales con inteligencia artificial.",
+    url: "https://millonai.com.py/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fmillonai.com.py%2F?w=800&h=500",
+  },
+  {
+    nombre: "Pro Aqua",
+    descripcion: "Ecommerce para Pro Aqua, con catálogo de productos y carrito de compras.",
+    url: "https://pro-aqua.com.py/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fpro-aqua.com.py%2F?w=800&h=500",
+  },
+  {
+    nombre: "Bruno Info Sorteos",
+    descripcion: "Sistema de información de sorteos en tiempo real, desarrollado por Fluxo Web.",
+    url: "https://brunoinfosorteos.fluxoweb.app/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fbrunoinfosorteos.fluxoweb.app%2F?w=800&h=500",
   },
 ];
 
@@ -188,6 +216,73 @@ const Home = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Clientes */}
+      <section className="py-16 md:py-24">
+        <Container>
+          <div className="mb-10">
+            <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
+              Clientes
+            </span>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+              Empresas que confían en Fluxo Web
+            </h2>
+            <p className="mt-3 text-base text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
+              Trabajamos con empresas de distintos sectores, entregando soluciones que funcionan en producción.
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {clientes.map((cliente) => (
+              <Link
+                key={cliente.nombre}
+                href={cliente.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-md transition-all"
+              >
+                <div className="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800" style={{ paddingBottom: "62.5%" }}>
+                  <Image
+                    src={cliente.preview}
+                    alt={`Preview de ${cliente.nombre}`}
+                    fill
+                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-gray-900/90 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white shadow-lg">
+                      <ExternalLink className="h-4 w-4" />
+                      Visitar sitio
+                    </span>
+                  </div>
+                </div>
+                <div className="p-4 flex flex-col gap-2">
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                      {cliente.nombre}
+                    </h3>
+                    <span className="flex-shrink-0 inline-flex items-center rounded-full border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-400">
+                      <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
+                      Activo
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {cliente.descripcion}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex items-center gap-4">
+            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
+            <p className="text-sm text-gray-500 dark:text-gray-400 text-center px-2">
+              Y muchos más clientes en distintos sectores que confían en nosotros para llevar sus proyectos a producción.
+            </p>
+            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
           </div>
         </Container>
       </section>

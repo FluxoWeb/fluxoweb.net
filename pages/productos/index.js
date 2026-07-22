@@ -31,6 +31,13 @@ const demos = [
     preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fesmalt.fluxoweb.net%2F?w=800&h=500",
     badge: "En producción",
   },
+  {
+    nombre: "VentaFlow",
+    descripcion: "Sistema de gestión de ventas desarrollado por Fluxo Web. Explorá el flujo completo de ventas y administración.",
+    url: "https://ventaflow.fluxoweb.net/",
+    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fventaflow.fluxoweb.net%2F?w=800&h=500",
+    badge: "En producción",
+  },
 ];
 
 const productos = [
