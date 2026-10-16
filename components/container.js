@@ -1,14 +1,8 @@
 import React from "react";
 
-const Container = (props) => {
-  return (
-    <div
-      className={`container px-4 mx-auto sm:px-6 lg:px-8 ${
-        props.className ? props.className : ""
-      }`}>
-      {props.children}
-    </div>
-  );
+// Ancho y márgenes alineados con el contenido del hero enmarcado.
+const Container = ({ className = "", children, as: Tag = "div" }) => {
+  return <Tag className={`mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-12 ${className}`}>{children}</Tag>;
 };
 
 export default Container;

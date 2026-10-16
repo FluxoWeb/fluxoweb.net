@@ -3,6 +3,7 @@ const member = {
   name: "Armando Manuel Diarte Velázquez",
   initials: "AD",
   role: "Socio & Desarrollador Full Stack",
+  summary: "Full Stack con foco en sistemas empresariales: .NET, PostgreSQL, React. Arquitectura, APIs y resultados que funcionan en producción.",
   color: "cyan",
   photo: "/armando.png",
   location: "Minga Guazú, Paraguay",

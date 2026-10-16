@@ -10,40 +10,61 @@ yarn build      # Production build
 yarn start      # Start production server
 ```
 
-No test suite configured.
+Package manager is Yarn v1 (`yarn.lock`). If `yarn` is not installed globally, use `npx yarn@1.22.22 <cmd>`.
+
+No test suite configured. Verify UI changes visually (playwright-cli) at 1440 and 390 wide, in both dark and light theme.
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and set:
-- `BREVO_API_KEY` — SMTP password for Brevo relay used by the contact form API
+No environment variables are required.
+
+## Product and design context
+
+- `PRODUCT.md` — product truth: audience, positioning, evidence on hand, and what must never be fabricated (testimonials, client logos, project counts, 24/7 or uptime claims).
+- `.impeccable/surfaces/` — per-page design briefs (direction contract for the home).
+- Design direction: **"Ñandutí de circuitos"** — the Guaraní spider-web lace woven from the logo's circuit traces. Identity is black + white + green; green is used as solid fields (sections, primary buttons, live nodes), never as glow.
 
 ## Architecture
 
-**Framework:** Next.js 13 with the **Pages Router** (no App Router). Plain JavaScript — no TypeScript.
+**Framework:** Next.js 14 with the **Pages Router** (no App Router). Plain JavaScript — no TypeScript.
 
-**Routing:** File-based under `pages/`. Current routes:
+**Routing:** File-based under `pages/`:
 - `/` — landing page (home)
-- `/servicios`, `/productos`, `/hosting` — service/product pages
-- `/empresa` — company page (founders, timeline, values)
-- `/legal`, `/terminos`, `/privacidad` — legal pages
+- `/servicios`, `/hosting` — services and hosting plans
+- `/productos` — FluxoCRM, ERPNext and live systems; `/productos/fluxocrm` — FluxoCRM product page
+- `/empresa` — company page (vision, timeline, values, partners); `/empresa/[slug]` — per-partner portfolio (SSG)
+- `/presentacion` — printable A4 cover letter (own `@media print` styles, no Navbar/Footer)
+- `/legal`, `/terminos`, `/privacidad` — legal pages (rendered by `components/legalDocument.js`)
 
-**API:** `pages/api/sendEmail.js` — POST endpoint that receives `{ name, email, subject, message }` and sends a formatted HTML email via Brevo SMTP relay to `fluxoweb.py@gmail.com`.
+There are no API routes.
 
-**Styling:** Tailwind CSS v3. Dark mode uses `next-themes` with `attribute="class"` and `defaultTheme="system"`. The dark background color is `#1D1D1D` (not the Tailwind default). All components must support both light and dark variants.
+**Data:**
+- `data/members/<slug>.js` — each partner (name, role, summary, photo, skills, projects, experience). `data/members/index.js` exports `memberSlugs`, `getMember(slug)`, `getAllMembers()`. Pages read members via `getStaticProps` and `pickMember` (from `components/members.js`) so full portfolios never ship to the client. Never hardcode member info in pages.
+- `data/projects.js` — live systems shown on home, hero carousel and `/productos`. Screenshots are static files in `public/img/proyectos/` (captured with playwright-cli at 1440×900).
 
-**Component structure (`components/`):**
-- `navbar.js` — sticky header with navigation links and WhatsApp CTA; uses Headless UI `Disclosure` for mobile menu
-- `popupWidget.js` — floating contact form button (bottom-right), submits to `/api/sendEmail`
-- `data.js` — static content for the `Benefits` sections (bullets, icons, images)
-- `container.js` — simple max-width wrapper, use it for consistent page padding
-- `DarkSwitch.js` — theme toggle button
+**Live chat:** Chatwoot (`components/ChatwootWidget.js`), mounted once globally in `pages/_app.js`.
 
-**Icons:** Use `lucide-react` for new icons. `@heroicons/react/24/solid` is also present but prefer Lucide for consistency with recent changes.
+**Styling:** Tailwind CSS v3 with color tokens as CSS variables (`css/tailwind.css`), so light and dark share the same classes — use `bg-ground`, `bg-panel`, `text-ink`, `text-muted`, `border-line/15`, `bg-green`, `text-green-ink`, never `dark:` pairs or raw Tailwind grays. `night-*` colors are surfaces that stay dark in both themes (heroes, closing panel, nav pills). `next-themes` with `attribute="class"`, `defaultTheme="dark"`. Tailwind purges classes it can't see literally: never build class names by interpolation.
+
+**Type:** Host Grotesk (display light 300, text 400–500) and Geist Mono, self-hosted in `public/fonts/`. Mono is only for data (numbers, years, hostnames, clause numbers) and the nav labels — never as a "technical" costume.
+
+**Components (`components/`):**
+- `navbar.js` — floating pill nav inside the hero frame; exports `navigation`
+- `hero.js` — home hero: framed panel, ñandutí canvas, verifiable stats, WhatsApp CTA, project carousel
+- `nanduti.js` — the signature canvas (variants `hero`, `edge`, `quiet`); respects `prefers-reduced-motion`, pauses offscreen
+- `pageHero.js` — framed header for inner pages; `closing.js` — closing CTA panel for every page
+- `projectCarousel.js`, `members.js`, `pricing.js`, `faq.js` (accepts `items`), `legalDocument.js`
+- `ui.js` — `WhatsAppButton`, `ArrowLink`, `Terminal`, `SectionHeading`, `WHATSAPP_URL`
+- `container.js` — max-width wrapper aligned with the hero padding; `footer.js`; `DarkSwitch.js`
+
+**Icons:** `lucide-react` only.
 
 **Deployment:** Vercel. `next.config.js` sets `output: "standalone"`.
 
 ## Conventions
 
-- Every page wraps content in `<Navbar />` + `<Footer />` + `<PopupWidget />`.
-- Static page data (arrays of objects for sections, team members, etc.) lives inline in the page file or in `components/data.js` — no external CMS.
-- WhatsApp contact link: `https://wa.link/18ywdk` — used in Navbar and CTAs.
+- Site language is Spanish, **neutral Latin American tone** (tú: "Escríbenos", "Cuéntanos") — no voseo. Audience is PyMEs in Paraguay and the region.
+- Every page (except `/presentacion`) renders `<Navbar />` + `<main>` + `<Footer />`, starts with a framed dark panel (`Hero` or `PageHero`) and usually ends with `<Closing />`.
+- No eyebrow/kicker labels above headings; section headings use `SectionHeading`.
+- Only verifiable claims and numbers (see `PRODUCT.md` → Evidence on Hand).
+- WhatsApp contact link: `https://wa.link/18ywdk` (`WHATSAPP_URL` in `components/ui.js`).

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const SERVICIOS = [
   { n: "01", t: "Desarrollo Web a Medida", d: "Aplicaciones y sitios construidos según los procesos de tu empresa." },
@@ -11,13 +12,24 @@ const SERVICIOS = [
 ];
 
 const EQUIPO = [
-  { i: "OG", c: "#4338ca", n: "Oscar G. Ramírez González", r: "Fundador & CEO", l: "Ciudad del Este", d: "Fundador de Fluxo Web. Autodidacta con visión técnica y liderazgo, construyó la empresa desde cero en 2019." },
-  { i: "AS", c: "#059669", n: "Alberto D. Servin Meira", r: "Co-fundador · Ing. en Informática", l: "Minga Guazú", d: "Ingeniero especializado en arquitectura de sistemas y desarrollo de software a escala empresarial." },
-  { i: "WY", c: "#d97706", n: "Wildo Y. Valenzuela Panderi", r: "Co-fundador · Gerente Administrativo", l: "Presidente Franco", d: "Responsable de la gestión operativa y administrativa. Garantiza la eficiencia en todos los proyectos." },
-  { i: "AD", c: "#0891b2", n: "Armando M. Diarte Velázquez", r: "Socio · Desarrollador Full Stack", l: "Minga Guazú", d: "Full Stack Developer con foco en sistemas empresariales: .NET, PostgreSQL y React en producción." },
+  { i: "OG", c: "#1D1D1D", n: "Oscar G. Ramírez González", r: "Fundador & CEO", l: "Ciudad del Este", d: "Fundador de Fluxo Web. Autodidacta con visión técnica y liderazgo, construyó la empresa desde cero en 2019." },
+  { i: "AS", c: "#1D1D1D", n: "Alberto D. Servin Meira", r: "Co-fundador · Ing. en Informática", l: "Minga Guazú", d: "Ingeniero especializado en arquitectura de sistemas y desarrollo de software a escala empresarial." },
+  { i: "WY", c: "#1D1D1D", n: "Wildo Y. Valenzuela Panderi", r: "Co-fundador · Gerente Administrativo", l: "Presidente Franco", d: "Responsable de la gestión operativa y administrativa. Garantiza la eficiencia en todos los proyectos." },
+  { i: "AD", c: "#1D1D1D", n: "Armando M. Diarte Velázquez", r: "Socio · Desarrollador Full Stack", l: "Minga Guazú", d: "Full Stack Developer con foco en sistemas empresariales: .NET, PostgreSQL y React en producción." },
 ];
 
 export default function Presentacion() {
+  // En pantallas angostas la hoja A4 (794px) se escala para entrar sin scroll horizontal.
+  useEffect(() => {
+    const fit = () => {
+      const scale = Math.min(1, (window.innerWidth - 24) / 794);
+      document.documentElement.style.setProperty("--a4-fit", String(scale));
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
+
   const handlePrint = () => {
     if (typeof window !== "undefined") window.print();
   };
@@ -31,8 +43,8 @@ export default function Presentacion() {
           *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
           body {
-            background: #7c83a0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: #8A8A85;
+            font-family: 'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
           }
 
           /* ── Toolbar ── */
@@ -49,11 +61,11 @@ export default function Presentacion() {
           .tb-label { font-size: 12px; color: #3f3f46; }
           .btn-dl {
             height: 30px; padding: 0 14px; border: none; border-radius: 5px;
-            background: #4338ca; color: #fff; font-size: 12px; font-weight: 600;
+            background: #138A47; color: #fff; font-size: 12px; font-weight: 600;
             font-family: inherit; cursor: pointer;
             display: inline-flex; align-items: center; gap: 5px; transition: background .15s;
           }
-          .btn-dl:hover { background: #3730a3; }
+          .btn-dl:hover { background: #0E803E; }
 
           /* ── A4 ── */
           .a4 {
@@ -70,7 +82,7 @@ export default function Presentacion() {
           .side {
             width: 42%;
             flex-shrink: 0;
-            background: linear-gradient(170deg, #1e1b4b 0%, #13113a 100%);
+            background: linear-gradient(170deg, #1D1D1D 0%, #121212 100%);
             padding: 30px 24px;
             display: flex;
             flex-direction: column;
@@ -82,20 +94,20 @@ export default function Presentacion() {
             content: ''; position: absolute;
             top: -70px; right: -70px;
             width: 220px; height: 220px; border-radius: 50%;
-            background: rgba(99,102,241,0.12);
+            background: rgba(39,212,107,0.12);
             pointer-events: none;
           }
           .side::after {
             content: ''; position: absolute;
             bottom: -50px; left: -50px;
             width: 170px; height: 170px; border-radius: 50%;
-            background: rgba(99,102,241,0.07);
+            background: rgba(39,212,107,0.07);
             pointer-events: none;
           }
           .side-ring {
             position: absolute; top: 110px; right: -35px;
             width: 110px; height: 110px; border-radius: 50%;
-            border: 1px solid rgba(99,102,241,0.18);
+            border: 1px solid rgba(39,212,107,0.18);
             pointer-events: none;
           }
 
@@ -133,32 +145,32 @@ export default function Presentacion() {
             line-height: 1; letter-spacing: -1px;
           }
           .stat .sl {
-            display: block; font-size: 6pt; color: rgba(165,180,252,.6);
+            display: block; font-size: 6pt; color: rgba(127,217,163,.6);
             text-transform: uppercase; letter-spacing: 1.2px; margin-top: 3px;
           }
 
           /* Contact */
           .side-sec-label {
             font-size: 6pt; font-weight: 800; letter-spacing: 1.5px;
-            text-transform: uppercase; color: rgba(165,180,252,.55);
+            text-transform: uppercase; color: rgba(127,217,163,.55);
             margin-bottom: 9px; position: relative; z-index: 1;
           }
           .citem {
             display: flex; align-items: flex-start; gap: 7px;
             margin-bottom: 6px; position: relative; z-index: 1;
           }
-          .citem svg { flex-shrink: 0; margin-top: 1px; color: rgba(99,102,241,.8); }
+          .citem svg { flex-shrink: 0; margin-top: 1px; color: rgba(39,212,107,.8); }
           .citem-text { font-size: 7.5pt; color: rgba(255,255,255,.75); line-height: 1.4; }
-          .citem-text a { color: rgba(165,180,252,.85); text-decoration: none; }
+          .citem-text a { color: rgba(127,217,163,.85); text-decoration: none; }
 
           /* Avail badge */
           .avail {
             display: inline-flex; align-items: center; gap: 5px;
             margin-top: 10px;
-            background: rgba(99,102,241,.15);
-            border: 1px solid rgba(99,102,241,.3);
+            background: rgba(39,212,107,.15);
+            border: 1px solid rgba(39,212,107,.3);
             border-radius: 20px; padding: 4px 10px;
-            font-size: 6.5pt; color: rgba(165,180,252,.85); font-weight: 600;
+            font-size: 6.5pt; color: rgba(127,217,163,.85); font-weight: 600;
             position: relative; z-index: 1;
           }
           .g-dot { width: 5px; height: 5px; border-radius: 50%; background: #4ade80; flex-shrink: 0; }
@@ -168,11 +180,11 @@ export default function Presentacion() {
           .why-item { display: flex; align-items: flex-start; gap: 7px; }
           .why-num {
             flex-shrink: 0; width: 16px; height: 16px;
-            background: rgba(99,102,241,.25); border: 1px solid rgba(99,102,241,.4);
+            background: rgba(39,212,107,.25); border: 1px solid rgba(39,212,107,.4);
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             margin-top: .5px;
           }
-          .why-num span { font-size: 7px; font-weight: 800; color: #a5b4fc; line-height: 1; }
+          .why-num span { font-size: 7px; font-weight: 800; color: #7FD9A3; line-height: 1; }
           .why-item p { font-size: 7.5pt; color: rgba(255,255,255,.7); line-height: 1.45; }
           .why-item strong { color: rgba(255,255,255,.92); font-weight: 700; }
 
@@ -187,14 +199,14 @@ export default function Presentacion() {
 
           /* Accent top bar */
           .content-top {
-            background: #f8f7ff;
-            border-bottom: 1px solid #ede9fe;
+            background: #F5FBF7;
+            border-bottom: 1px solid #E3F6EA;
             padding: 9px 24px;
             display: flex; align-items: center; justify-content: space-between;
             flex-shrink: 0;
           }
-          .content-top-label { font-size: 6pt; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #4338ca; }
-          .content-top-co { font-size: 6pt; color: #a5b4fc; letter-spacing: .5px; }
+          .content-top-label { font-size: 6pt; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #138A47; }
+          .content-top-co { font-size: 6pt; color: #7FD9A3; letter-spacing: .5px; }
 
           /* Main */
           .content-main { flex: 1; padding: 18px 24px 14px; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
@@ -203,9 +215,9 @@ export default function Presentacion() {
           .sec-ttl {
             display: flex; align-items: center; gap: 10px;
             font-size: 6pt; font-weight: 800; letter-spacing: 1.4px;
-            text-transform: uppercase; color: #4338ca; margin-bottom: 9px;
+            text-transform: uppercase; color: #138A47; margin-bottom: 9px;
           }
-          .sec-ttl::after { content: ''; flex: 1; height: 1px; background: #ede9fe; }
+          .sec-ttl::after { content: ''; flex: 1; height: 1px; background: #E3F6EA; }
 
           /* Intro */
           .intro-p { font-size: 8pt; color: #4b5563; line-height: 1.72; }
@@ -218,11 +230,11 @@ export default function Presentacion() {
             padding: 8px 10px 8px 12px;
             background: #fafafa;
             border: 1px solid #f0f0f0;
-            border-left: 2.5px solid #6366f1;
+            border-left: 2.5px solid #27D46B;
             border-radius: 0 5px 5px 0;
           }
-          .srv-num { font-size: 6pt; font-weight: 900; color: #c7d2fe; letter-spacing: .5px; display: block; margin-bottom: 2px; }
-          .srv-name { font-size: 7.5pt; font-weight: 700; color: #1e1b4b; display: block; margin-bottom: 2px; }
+          .srv-num { font-size: 6pt; font-weight: 900; color: #BDE8CE; letter-spacing: .5px; display: block; margin-bottom: 2px; }
+          .srv-name { font-size: 7.5pt; font-weight: 700; color: #1D1D1D; display: block; margin-bottom: 2px; }
           .srv-desc { font-size: 6.5pt; color: #6b7280; line-height: 1.4; }
 
           /* Team */
@@ -240,13 +252,13 @@ export default function Presentacion() {
             font-size: 8pt; font-weight: 800; color: #fff; letter-spacing: -.5px;
           }
           .team-info h4 { font-size: 7.5pt; font-weight: 700; color: #111827; line-height: 1.2; }
-          .team-info p { font-size: 6.5pt; color: #4338ca; font-weight: 600; margin-top: 1px; }
+          .team-info p { font-size: 6.5pt; color: #138A47; font-weight: 600; margin-top: 1px; }
           .team-loc { font-size: 6pt; color: #9ca3af; display: block; margin-bottom: 4px; }
           .team-desc { font-size: 6.5pt; color: #6b7280; line-height: 1.45; }
 
           /* Footer */
           .content-footer {
-            background: #1e1b4b;
+            background: #1D1D1D;
             padding: 10px 24px;
             display: flex; align-items: center; justify-content: space-between;
             flex-shrink: 0;
@@ -254,7 +266,17 @@ export default function Presentacion() {
           .ftr-l { font-size: 7pt; color: rgba(255,255,255,.45); }
           .ftr-l strong { color: rgba(255,255,255,.75); }
           .ftr-r { display: flex; gap: 14px; }
-          .ftr-r a { font-size: 7pt; color: rgba(165,180,252,.75); text-decoration: none; }
+          .ftr-r a { font-size: 7pt; color: rgba(127,217,163,.75); text-decoration: none; }
+
+          @media screen {
+            /* El margen también se escala con el zoom: se compensa para no quedar bajo la barra. */
+            .a4 { zoom: var(--a4-fit, 1); margin-top: calc(66px / var(--a4-fit, 1)); }
+            .btn-dl { white-space: nowrap; }
+          }
+          @media screen and (max-width: 600px) {
+            .toolbar { padding: 0 12px; }
+            .tb-sep, .tb-label { display: none; }
+          }
 
           /* ── PRINT ── */
           @media print {
@@ -327,12 +349,12 @@ export default function Presentacion() {
               <span className="sl">Año de fundación</span>
             </div>
             <div className="stat">
-              <span className="sv">50+</span>
-              <span className="sl">Proyectos entregados</span>
+              <span className="sv">8</span>
+              <span className="sl">Sistemas en línea</span>
             </div>
             <div className="stat">
               <span className="sv">4</span>
-              <span className="sl">Especialistas en el equipo</span>
+              <span className="sl">Socios</span>
             </div>
           </div>
 

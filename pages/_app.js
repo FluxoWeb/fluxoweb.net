@@ -4,7 +4,7 @@ import ChatwootWidget from "../components/ChatwootWidget";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <Component {...pageProps} />
       <ChatwootWidget />
     </ThemeProvider>

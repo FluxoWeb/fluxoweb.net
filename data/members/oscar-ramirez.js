@@ -3,6 +3,7 @@ const member = {
   name: "Oscar Gabriel Ramirez Gonzalez",
   initials: "OG",
   role: "Fundador & CEO",
+  summary: "Autodidacta apasionado por la tecnología, comenzó reparando computadoras y hoy lidera el equipo de desarrollo.",
   color: "indigo",
   location: "Ciudad del Este, Paraguay",
   contact: {

@@ -3,6 +3,7 @@ const member = {
   name: "Wildo Yamil Valenzuela Panderi",
   initials: "WV",
   role: "Co-fundador & Gerente Administrativo",
+  summary: "Encargado de la gestión administrativa y operativa, asegurando la eficiencia en todos los procesos de la empresa.",
   color: "amber",
   location: "Presidente Franco, Paraguay",
   contact: {

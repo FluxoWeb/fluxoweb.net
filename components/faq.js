@@ -1,40 +1,41 @@
 import React from "react";
 import { Disclosure, Transition } from "@headlessui/react";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 
-const Faq = () => {
+// Preguntas frecuentes: filas separadas por hilos, el signo + gira al abrir.
+const Faq = ({ items = faqdata }) => {
   return (
-    <div className="w-full max-w-2xl mx-auto">
-        <div className="divide-y divide-gray-200 dark:divide-gray-800 border border-gray-200 dark:border-gray-800 rounded-lg">
-          {faqdata.map((item, index) => (
-            <Disclosure key={item.question}>
-              {({ open }) => (
-                <div>
-                  <Disclosure.Button className="flex items-center justify-between w-full px-5 py-4 text-left text-sm font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">
-                    <span>{item.question}</span>
-                    <ChevronDown
-                      className={`${
-                        open ? "rotate-180" : ""
-                      } h-4 w-4 text-gray-500 dark:text-gray-400 transition-transform duration-200`}
-                    />
-                  </Disclosure.Button>
-                  <Transition
-                    enter="transition duration-100 ease-out"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="transition duration-75 ease-out"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <Disclosure.Panel className="px-5 pb-4 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {item.answer}
-                    </Disclosure.Panel>
-                  </Transition>
-                </div>
-              )}
-            </Disclosure>
-          ))}
-        </div>
+    <div className="border-t border-line/15">
+      {items.map((item) => (
+        <Disclosure key={item.question} as="div" className="border-b border-line/15">
+          {({ open }) => (
+            <>
+              <Disclosure.Button className="group flex w-full items-start justify-between gap-6 py-6 text-left">
+                <span className="text-lg font-medium tracking-tight sm:text-xl">{item.question}</span>
+                <span
+                  className={`mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-colors duration-300 ${
+                    open ? "border-green bg-green text-[#0B0B0B]" : "border-line/20 text-muted group-hover:border-line/40"
+                  }`}
+                >
+                  <Plus className={`h-4 w-4 transition-transform duration-500 ease-out-expo ${open ? "rotate-45" : ""}`} />
+                </span>
+              </Disclosure.Button>
+              <Transition
+                enter="transition duration-300 ease-out-expo"
+                enterFrom="opacity-0 -translate-y-1"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition duration-150 ease-in"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <Disclosure.Panel className="max-w-[62ch] pb-7 pr-14 text-[16px] leading-relaxed text-muted">
+                  {item.answer}
+                </Disclosure.Panel>
+              </Transition>
+            </>
+          )}
+        </Disclosure>
+      ))}
     </div>
   );
 };
@@ -87,4 +88,5 @@ const faqdata = [
 ];
 
 
+export { faqdata };
 export default Faq;

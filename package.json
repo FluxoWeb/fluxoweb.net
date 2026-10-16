@@ -1,42 +1,28 @@
 {
   "name": "fluxoweb.net",
   "version": "0.1.0",
-  "description": "Landing Page Fluxo Web",
+  "description": "Sitio web de Fluxo Web Group E.A.S.",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/web3templates/nextly-template"
-  },
   "keywords": [
-    "nextjs",
-    "tailwindcss",
-    "free"
+    "fluxo web",
+    "software",
+    "paraguay"
   ],
-  "author": "OscarGRG",
+  "author": "Fluxo Web Group E.A.S.",
   "license": "ISC",
   "dependencies": {
-    "@emotion/css": "^11.10.6",
-    "@emotion/react": "^11.10.6",
-    "@emotion/server": "^11.10.0",
-    "@emotion/styled": "^11.10.6",
     "@headlessui/react": "^1.7.14",
-    "@heroicons/react": "^2.0.17",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "fs": "^0.0.1-security",
     "lucide-react": "^0.562.0",
-    "next": "^13.3.1",
+    "next": "14.2.35",
     "next-themes": "^0.2.1",
-    "nodemailer": "^6.9.7",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.43.9",
-    "sharp": "^0.33.0",
-    "swiper": "^11.0.5"
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

@@ -3,6 +3,7 @@ const member = {
   name: "Alberto David Servin Meira",
   initials: "AS",
   role: "Co-fundador & Ing. en Informática",
+  summary: "Ingeniero en Informática con amplia experiencia en desarrollo de software y arquitectura de sistemas.",
   color: "green",
   location: "Minga Guazú, Paraguay",
   contact: {

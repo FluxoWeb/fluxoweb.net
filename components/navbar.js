@@ -1,122 +1,136 @@
 import Link from "next/link";
-import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { Disclosure, Transition } from "@headlessui/react";
-import { MessageCircle, Menu, X, FileText } from "lucide-react";
+import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
+import ThemeChanger from "./DarkSwitch";
+import { WHATSAPP_URL } from "./ui";
 
+export const navigation = [
+  { title: "Servicios", link: "/servicios" },
+  { title: "Productos", link: "/productos" },
+  { title: "Hosting", link: "/hosting" },
+  { title: "Empresa", link: "/empresa" },
+];
+
+// Navbar píldora flotante: vive dentro del marco del hero y se vuelve sólida al hacer scroll.
 const Navbar = () => {
-  const navigation = [
-    { title: "Servicios", link: "/servicios" },
-    { title: "Productos", link: "/productos" },
-    { title: "Hosting", link: "/hosting" },
-    { title: "Empresa", link: "/empresa" },
-  ];
+  const { pathname } = useRouter();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const isActive = (link) => pathname === link || pathname.startsWith(`${link}/`);
+  const pill = `border transition-colors duration-500 ${
+    scrolled ? "border-white/10 bg-night/85 backdrop-blur-xl" : "border-white/[0.08] bg-white/[0.04] backdrop-blur-md"
+  }`;
 
   return (
-    <Disclosure as="header" className="sticky top-0 z-50 w-full border-b border-gray-200/60 dark:border-gray-800/60 bg-white/95 dark:bg-[#1D1D1D] backdrop-blur-md">
-      {({ open }) => (
+    <Disclosure as="header" className="fixed inset-x-0 top-0 z-50 px-2 pt-2 sm:px-3 sm:pt-3">
+      {({ open, close }) => (
         <>
-          <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex h-16 items-center justify-between">
-              {/* Logo */}
-              <Link href="/" className="flex items-center gap-2 font-semibold text-gray-900 dark:text-white">
-                <Image
-                  src="/img/Brain.png"
-                  alt="Fluxo Web"
-                  width={28}
-                  height={28}
-                  className="h-7 w-7"
-                />
-                <span className="text-lg">Fluxo Web</span>
+          <nav className="mx-auto flex items-center justify-between gap-3 px-3 pt-3 sm:px-5 sm:pt-4" aria-label="Principal">
+            <Link
+              href="/"
+              className={`flex h-12 items-center gap-2.5 rounded-full pl-1.5 pr-4 text-night-ink ${pill}`}
+              onClick={() => close()}
+            >
+              <Image src="/img/Brain.png" alt="" width={36} height={36} className="h-9 w-9 rounded-full" priority />
+              <span className="text-[15px] font-medium tracking-tight">Fluxo Web</span>
+            </Link>
+
+            <div className={`hidden h-12 items-center gap-1 rounded-full pl-2 pr-1.5 lg:flex ${pill}`}>
+              {navigation.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.link}
+                  aria-current={isActive(item.link) ? "page" : undefined}
+                  className={`rounded-full px-3.5 py-2 font-mono text-[12px] uppercase tracking-label transition-colors ${
+                    isActive(item.link) ? "bg-white/10 text-night-ink" : "text-night-muted hover:text-night-ink"
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              ))}
+              <span className="mx-1 h-5 w-px bg-white/10" aria-hidden="true" />
+              <Link
+                href="/presentacion"
+                className="grid h-9 w-9 place-items-center rounded-full text-night-muted transition-colors hover:bg-white/10 hover:text-night-ink"
+                aria-label="Carta de presentación"
+                title="Carta de presentación"
+              >
+                <FileText className="h-4 w-4" strokeWidth={1.8} />
               </Link>
+              <ThemeChanger />
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 inline-flex h-9 items-center gap-1.5 rounded-full bg-green px-4 font-mono text-[12px] font-medium uppercase tracking-label text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
+              >
+                Contacto
+                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
+              </a>
+            </div>
 
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex lg:items-center lg:gap-1">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.link}
-                    className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </div>
-
-              {/* Desktop Actions */}
-              <div className="hidden lg:flex lg:items-center lg:gap-3">
-                <Link
-                  href="/presentacion"
-                  className="inline-flex items-center justify-center h-9 w-9 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
-                  title="Carta de presentación"
-                >
-                  <FileText className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="https://wa.link/18ywdk"
-                  className="inline-flex items-center gap-2 h-9 px-4 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Contáctenos
-                </Link>
-                <ThemeChanger />
-              </div>
-
-              {/* Mobile Menu Button */}
-              <div className="flex items-center gap-3 lg:hidden">
-                <ThemeChanger />
-                <Disclosure.Button className="inline-flex items-center justify-center h-9 w-9 rounded-md border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                  <span className="sr-only">Abrir menú</span>
-                  {open ? (
-                    <X className="h-4 w-4 text-gray-600 dark:text-gray-300" />
-                  ) : (
-                    <Menu className="h-4 w-4 text-gray-600 dark:text-gray-300" />
-                  )}
-                </Disclosure.Button>
-              </div>
+            <div className={`flex h-12 items-center gap-1 rounded-full px-1.5 lg:hidden ${pill}`}>
+              <ThemeChanger />
+              <Disclosure.Button className="grid h-9 w-9 place-items-center rounded-full text-night-ink transition-colors hover:bg-white/10">
+                <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
+                {open ? <X className="h-[18px] w-[18px]" /> : <Menu className="h-[18px] w-[18px]" />}
+              </Disclosure.Button>
             </div>
           </nav>
 
-          {/* Mobile Menu Panel */}
           <Transition
-            show={open}
-            enter="transition duration-150 ease-out"
+            enter="transition duration-300 ease-out-expo"
             enterFrom="opacity-0 -translate-y-2"
             enterTo="opacity-100 translate-y-0"
-            leave="transition duration-100 ease-in"
-            leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-0 -translate-y-2"
+            leave="transition duration-150 ease-in"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
-            <Disclosure.Panel static className="lg:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-[#1D1D1D]">
-              <div className="container mx-auto px-4 py-4 space-y-1">
+            <Disclosure.Panel className="mx-3 mt-2 rounded-[24px] border border-white/10 bg-night/95 p-3 text-night-ink backdrop-blur-xl sm:mx-5 lg:hidden">
+              <ul className="divide-y divide-white/10">
                 {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.title}
-                    as={Link}
-                    href={item.link}
-                    className="block px-4 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  >
-                    {item.title}
-                  </Disclosure.Button>
+                  <li key={item.title}>
+                    <Disclosure.Button
+                      as={Link}
+                      href={item.link}
+                      aria-current={isActive(item.link) ? "page" : undefined}
+                      className="flex items-center justify-between px-3 py-4 text-2xl font-medium tracking-tight"
+                    >
+                      {item.title}
+                      {isActive(item.link) && <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />}
+                    </Disclosure.Button>
+                  </li>
                 ))}
-                <div className="pt-4 flex flex-col gap-2">
+                <li>
                   <Disclosure.Button
                     as={Link}
                     href="/presentacion"
-                    className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="flex items-center gap-2 px-3 py-4 text-[15px] text-night-muted"
                   >
                     <FileText className="h-4 w-4" />
                     Carta de presentación
                   </Disclosure.Button>
-                  <Link
-                    href="https://wa.link/18ywdk"
-                    className="flex items-center justify-center gap-2 h-10 w-full text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    Contáctenos
-                  </Link>
-                </div>
-              </div>
+                </li>
+              </ul>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 flex h-14 items-center justify-center gap-2 rounded-full bg-green text-[15px] font-medium text-[#0B0B0B]"
+              >
+                Escríbenos por WhatsApp
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
             </Disclosure.Panel>
           </Transition>
         </>

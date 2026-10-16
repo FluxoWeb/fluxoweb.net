@@ -8,3 +8,7 @@ export const memberSlugs = [
 export function getMember(slug) {
   return require(`./${slug}`).default;
 }
+
+export function getAllMembers() {
+  return memberSlugs.map(getMember);
+}

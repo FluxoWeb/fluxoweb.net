@@ -1,9 +1,4 @@
-import Head from "next/head";
-import Link from "next/link";
-import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
-import Container from "../../components/container";
-import { ArrowLeft } from "lucide-react";
+import LegalDocument, { ContactLinks } from "../../components/legalDocument";
 
 const secciones = [
   {
@@ -54,102 +49,24 @@ const secciones = [
   {
     numero: "10",
     titulo: "Contacto",
-    texto: "Para consultas, solicitudes de acceso o cualquier inquietud relacionada con esta política de privacidad, podés comunicarte con nosotros a través de fluxo@fluxoweb.net o por WhatsApp.",
+    texto: (
+      <>
+        Para consultas, solicitudes de acceso o cualquier inquietud relacionada con esta política de privacidad, puedes comunicarte
+        con nosotros a través de <ContactLinks />.
+      </>
+    ),
   },
 ];
 
-const Privacidad = () => {
+export default function Privacidad() {
   return (
-    <>
-      <Head>
-        <title>Política de Privacidad — Fluxo Web Group E.A.S.</title>
-        <meta
-          name="description"
-          content="Política de privacidad de Fluxo Web Group E.A.S. Cómo recopilamos, usamos y protegemos tu información personal."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-
-      <section className="py-16 md:py-20">
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            {/* Back link */}
-            <Link
-              href="/legal"
-              className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors mb-8"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Volver a Legal
-            </Link>
-
-            {/* Header */}
-            <div className="mb-10 pb-8 border-b border-gray-200 dark:border-gray-800">
-              <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
-                Documento Legal
-              </span>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
-                Política de Privacidad
-              </h1>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                Fluxo Web Group E.A.S.
-              </p>
-              <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
-                Última actualización: enero de 2025
-              </p>
-            </div>
-
-            {/* Intro */}
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-10">
-              En Fluxo Web Group E.A.S. nos tomamos muy en serio la privacidad de nuestros clientes y usuarios. Esta política describe qué información recopilamos, cómo la usamos y qué derechos tenés sobre tus datos.
-            </p>
-
-            {/* Sections */}
-            <div className="space-y-8">
-              {secciones.map((seccion) => (
-                <div key={seccion.numero} id={`seccion-${seccion.numero}`}>
-                  <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-3">
-                    <span className="flex items-center justify-center h-7 w-7 rounded-md bg-indigo-50 dark:bg-indigo-950 border border-indigo-100 dark:border-indigo-900 text-xs font-bold text-indigo-600 dark:text-indigo-400 flex-shrink-0">
-                      {seccion.numero}
-                    </span>
-                    {seccion.titulo}
-                  </h2>
-                  <p className="pl-10 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {seccion.numero === "10" ? (
-                      <>
-                        Para consultas, solicitudes de acceso o cualquier inquietud relacionada con esta política, podés comunicarte con nosotros a través de{" "}
-                        <a href="mailto:fluxo@fluxoweb.net" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                          fluxo@fluxoweb.net
-                        </a>{" "}
-                        o por{" "}
-                        <Link href="https://wa.link/18ywdk" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                          WhatsApp
-                        </Link>.
-                      </>
-                    ) : (
-                      seccion.texto
-                    )}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Footer note */}
-            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
-                Esta política de privacidad está redactada en cumplimiento de los principios generales de protección de datos. Para consultas adicionales, contactanos en{" "}
-                <a href="mailto:fluxo@fluxoweb.net" className="text-indigo-500 hover:underline">
-                  fluxo@fluxoweb.net
-                </a>.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <Footer />
-    </>
+    <LegalDocument
+      title="Política de privacidad"
+      description="Política de privacidad de Fluxo Web Group E.A.S.: qué información recopilamos, cómo la usamos y cómo la protegemos."
+      subtitle="Fluxo Web Group E.A.S."
+      updated="enero de 2025"
+      intro="En Fluxo Web Group E.A.S. nos tomamos muy en serio la privacidad de nuestros clientes y usuarios. Esta política describe qué información recopilamos, cómo la usamos y qué derechos tienes sobre tus datos."
+      sections={secciones}
+    />
   );
-};
-
-export default Privacidad;
+}

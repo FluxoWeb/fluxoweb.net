@@ -1,9 +1,4 @@
-import Head from "next/head";
-import Link from "next/link";
-import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
-import Container from "../../components/container";
-import { ArrowLeft } from "lucide-react";
+import LegalDocument, { ContactLinks } from "../../components/legalDocument";
 
 const secciones = [
   {
@@ -85,101 +80,20 @@ const secciones = [
   },
 ];
 
-const Terminos = () => {
+export default function Terminos() {
   return (
-    <>
-      <Head>
-        <title>Términos y Condiciones — Fluxo Web Group E.A.S.</title>
-        <meta
-          name="description"
-          content="Términos y condiciones de los servicios de desarrollo de software y web de Fluxo Web Group E.A.S."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-
-      <section className="py-16 md:py-20">
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            {/* Back link */}
-            <Link
-              href="/legal"
-              className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors mb-8"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Volver a Legal
-            </Link>
-
-            {/* Header */}
-            <div className="mb-10 pb-8 border-b border-gray-200 dark:border-gray-800">
-              <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
-                Documento Legal
-              </span>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">
-                Términos y Condiciones
-              </h1>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                Servicio de Desarrollo de Software y Web · Fluxo Web Group E.A.S.
-              </p>
-              <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
-                Última actualización: enero de 2025
-              </p>
-            </div>
-
-            {/* Intro */}
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-10">
-              Al contratar los servicios de Fluxo Web Group E.A.S., el Cliente acepta los presentes términos y condiciones en su totalidad. Si tenés alguna consulta sobre este documento, contactanos en{" "}
-              <a href="mailto:fluxo@fluxoweb.net" className="text-indigo-600 dark:text-indigo-400 hover:underline">
-                fluxo@fluxoweb.net
-              </a>.
-            </p>
-
-            {/* Sections */}
-            <div className="space-y-10">
-              {secciones.map((seccion) => (
-                <div key={seccion.numero} id={`seccion-${seccion.numero}`}>
-                  <h2 className="text-base font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-3">
-                    <span className="flex items-center justify-center h-7 w-7 rounded-md bg-indigo-50 dark:bg-indigo-950 border border-indigo-100 dark:border-indigo-900 text-xs font-bold text-indigo-600 dark:text-indigo-400 flex-shrink-0">
-                      {seccion.numero}
-                    </span>
-                    {seccion.titulo}
-                  </h2>
-                  <div className="pl-10 space-y-4">
-                    {seccion.contenido.map((item) => (
-                      <div key={item.subtitulo}>
-                        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
-                          {item.subtitulo}
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                          {item.texto}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Footer note */}
-            <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-xs text-gray-400 dark:text-gray-500 leading-relaxed">
-                Para consultas sobre estos términos, comunicate con nosotros en{" "}
-                <a href="mailto:fluxo@fluxoweb.net" className="text-indigo-500 hover:underline">
-                  fluxo@fluxoweb.net
-                </a>{" "}
-                o a través de{" "}
-                <Link href="https://wa.link/18ywdk" className="text-indigo-500 hover:underline">
-                  WhatsApp
-                </Link>.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <Footer />
-    </>
+    <LegalDocument
+      title="Términos y condiciones"
+      description="Términos y condiciones de los servicios de desarrollo de software y web de Fluxo Web Group E.A.S."
+      subtitle="Servicio de desarrollo de software y web · Fluxo Web Group E.A.S."
+      updated="enero de 2025"
+      intro={
+        <>
+          Al contratar los servicios de Fluxo Web Group E.A.S., el Cliente acepta los presentes términos y condiciones en su
+          totalidad. Si tienes alguna consulta sobre este documento, contáctanos en <ContactLinks />.
+        </>
+      }
+      sections={secciones}
+    />
   );
-};
-
-export default Terminos;
+}

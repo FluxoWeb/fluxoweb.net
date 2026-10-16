@@ -14,3 +14,9 @@ package-lock.json
 
 # Environment
 .env
+# Artefactos de revisión visual (capturas y sesiones de playwright)
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+.impeccable/config.local.json
+.playwright-cli/

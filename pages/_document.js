@@ -3,12 +3,12 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="es">
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap"
-            rel="stylesheet"
-          />
+          <link rel="preload" href="/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+          <link rel="preload" href="/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+          <link rel="icon" href="/favicon.ico" />
+          <meta name="theme-color" content="#121212" />
         </Head>
         <body>
           <Main />

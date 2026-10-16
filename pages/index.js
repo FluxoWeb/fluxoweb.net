@@ -1,349 +1,242 @@
 import Head from "next/head";
-import Hero from "../components/hero";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Navbar from "../components/navbar";
+import Hero from "../components/hero";
 import Footer from "../components/footer";
 import Faq from "../components/faq";
 import Container from "../components/container";
-import Link from "next/link";
-import Image from "next/image";
-import { Code, Globe, Smartphone, Cloud, Brain, ArrowRight, MessageCircle, CheckCircle, ExternalLink } from "lucide-react";
+import Closing from "../components/closing";
+import Members, { pickMember } from "../components/members";
+import { SectionHeading, Terminal } from "../components/ui";
+import { projects, hostOf } from "../data/projects";
+import { getAllMembers } from "../data/members";
 
-const stats = [
-  { valor: "2019", etiqueta: "Año de fundación" },
-  { valor: "50+", etiqueta: "Proyectos entregados" },
-  { valor: "4", etiqueta: "Especialistas en el equipo" },
-  { valor: "24/7", etiqueta: "Soporte técnico" },
-];
-
-const serviciosDestacados = [
+const services = [
   {
-    icono: Brain,
-    titulo: "Inteligencia Artificial",
-    descripcion: "Chatbots, automatizaciones y modelos de lenguaje integrados en tus sistemas.",
-    link: "/servicios",
+    name: "Software a medida",
+    description: "Sistemas de gestión diseñados sobre los procesos reales de tu empresa: ventas, stock, caja, reportes.",
+    href: "/servicios",
   },
   {
-    icono: Code,
-    titulo: "Software a medida",
-    descripcion: "Sistemas personalizados que se adaptan exactamente a tus procesos de negocio.",
-    link: "/servicios",
+    name: "Inteligencia artificial",
+    description: "Asistentes, automatizaciones y modelos de lenguaje integrados en los sistemas que ya usas.",
+    href: "/servicios",
   },
   {
-    icono: Globe,
-    titulo: "Desarrollo Web",
-    descripcion: "Sitios y aplicaciones web modernas, rápidas y optimizadas para SEO.",
-    link: "/servicios",
+    name: "Desarrollo web",
+    description: "Sitios y aplicaciones web rápidas, administrables y preparadas para aparecer en Google.",
+    href: "/servicios",
   },
   {
-    icono: Smartphone,
-    titulo: "Apps Móviles",
-    descripcion: "Aplicaciones nativas e híbridas para iOS y Android con UX excepcional.",
-    link: "/servicios",
+    name: "Aplicaciones móviles",
+    description: "Apps para Android e iOS conectadas a tu sistema, con notificaciones y pagos.",
+    href: "/servicios",
   },
   {
-    icono: Cloud,
-    titulo: "Hosting Cloud",
-    descripcion: "Infraestructura segura y escalable con backups y soporte incluido.",
-    link: "/hosting",
+    name: "Hosting en la nube",
+    description: "Tus sistemas alojados en nuestros servidores, con copias de seguridad y monitoreo.",
+    href: "/hosting",
   },
 ];
 
-const clientes = [
+const endToEnd = [
   {
-    nombre: "Quiro AI",
-    descripcion: "Plataforma web con inteligencia artificial desarrollada por Fluxo Web.",
-    url: "https://quiro-ai.com/",
-    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fquiro-ai.com%2F?w=800&h=500",
+    title: "Infraestructura propia",
+    text: "No solo programamos: alojamos tus sistemas en nuestros propios servidores. Un solo proveedor hasta producción.",
   },
   {
-    nombre: "Millonai",
-    descripcion: "Asistente de finanzas personales con inteligencia artificial.",
-    url: "https://millonai.com.py/",
-    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fmillonai.com.py%2F?w=800&h=500",
+    title: "Productos propios",
+    text: "FluxoCRM y Nova son una base probada que adaptamos a tu empresa, en lugar de empezar de cero.",
   },
   {
-    nombre: "Pro Aqua",
-    descripcion: "Ecommerce para Pro Aqua, con catálogo de productos y carrito de compras.",
-    url: "https://pro-aqua.com.py/",
-    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fpro-aqua.com.py%2F?w=800&h=500",
+    title: "IA aplicada",
+    text: "Integramos inteligencia artificial en sistemas reales que hoy están en línea, como Quiro y MillonAI.",
   },
   {
-    nombre: "Bruno Info Sorteos",
-    descripcion: "Sistema de información de sorteos en tiempo real, desarrollado por Fluxo Web.",
-    url: "https://brunoinfosorteos.fluxoweb.app/",
-    preview: "https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fbrunoinfosorteos.fluxoweb.app%2F?w=800&h=500",
+    title: "Trato con los socios",
+    text: "Hablas directamente con los dueños de la empresa, no con intermediarios ni vendedores.",
   },
 ];
 
-const porQueElegirnos = [
-  {
-    titulo: "100% personalizado",
-    descripcion: "Cada sistema se diseña desde cero para adaptarse a los procesos únicos de tu negocio.",
-  },
-  {
-    titulo: "Ciclo completo",
-    descripcion: "Análisis, diseño, desarrollo, testing, implementación y soporte post-entrega.",
-  },
-  {
-    titulo: "Tecnología actual",
-    descripcion: "Stack moderno con enfoque en escalabilidad, seguridad y performance desde el día uno.",
-  },
-  {
-    titulo: "Comunicación directa",
-    descripcion: "Acceso al equipo de desarrollo sin intermediarios. Siempre sabés el estado de tu proyecto.",
-  },
-];
+export default function Home({ members }) {
+  const [featured, ...rest] = projects;
+  const second = rest.shift();
 
-const Home = () => {
   return (
     <>
       <Head>
-        <title>Fluxo Web Group E.A.S. — Desarrollo de Software a Medida</title>
+        <title>Fluxo Web — Software, IA e infraestructura para PyMEs</title>
         <meta
           name="description"
-          content="Fluxo Web — desarrollo y gestión de sistemas para pequeñas y medianas empresas en Paraguay. Software personalizado, apps móviles, hosting cloud e inteligencia artificial."
+          content="Desarrollamos, alojamos y mantenemos el software de PyMEs en Paraguay y la región: sistemas a medida, inteligencia artificial, apps y hosting propio."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Fluxo Web — Software que conecta toda tu empresa" />
+        <meta property="og:description" content="Desarrollo, infraestructura y soporte de software para PyMEs en Paraguay y la región." />
+        <meta property="og:type" content="website" />
       </Head>
+
       <Navbar />
-      <Hero />
+      <main>
+        <Hero />
 
-      {/* Stats bar */}
-      <section className="border-y border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-[#1D1D1D]">
-        <Container className="py-8">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.etiqueta} className="text-center">
-                <p className="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">{stat.valor}</p>
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{stat.etiqueta}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Servicios overview */}
-      <section className="py-16 md:py-24">
-        <Container>
-          <div className="text-center mb-12">
-            <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
-              Qué hacemos
-            </span>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
-              Soluciones tecnológicas para tu empresa
-            </h2>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Desde aplicaciones web hasta sistemas empresariales complejos. Construimos la tecnología que tu negocio necesita para crecer.
-            </p>
-          </div>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {serviciosDestacados.map((servicio) => {
-              const Icon = servicio.icono;
-              return (
-                <Link
-                  key={servicio.titulo}
-                  href={servicio.link}
-                  className="group flex gap-4 p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-sm transition-all"
-                >
-                  <div className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-lg bg-indigo-50 dark:bg-indigo-950 border border-indigo-100 dark:border-indigo-900">
-                    <Icon className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {servicio.titulo}
-                    </h3>
-                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {servicio.descripcion}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
-
-            {/* Ver todos */}
-            <Link
-              href="/servicios"
-              className="group flex items-center justify-center gap-3 p-5 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-600 transition-colors"
-            >
-              <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                Ver todos los servicios
-              </span>
-              <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-indigo-500 transition-colors" />
-            </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* Por qué elegirnos */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#1D1D1D]">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
-            <div>
-              <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
-                Por qué elegirnos
-              </span>
-              <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl leading-snug">
-                Nos enfocamos en entender tu negocio antes de escribir código
-              </h2>
-              <p className="mt-4 text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                No somos una fábrica de software. Analizamos cada caso, proponemos la mejor solución y trabajamos codo a codo con vos durante todo el proyecto.
-              </p>
-              <div className="mt-8">
-                <Link
-                  href="https://wa.link/18ywdk"
-                  className="inline-flex items-center gap-2 h-10 px-5 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Consultar gratis
-                </Link>
+        {/* Servicios: la red */}
+        <section className="pt-24 sm:pt-32" aria-labelledby="servicios-title">
+          <Container className="grid gap-14 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-5">
+              <div className="lg:sticky lg:top-32">
+                <SectionHeading title={<span id="servicios-title">Todo lo que tu empresa necesita, en una sola red.</span>}>
+                  Cada servicio es un nodo conectado al resto: lo que programamos, lo alojamos y lo mantenemos nosotros.
+                </SectionHeading>
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {porQueElegirnos.map((item) => (
-                <div
-                  key={item.titulo}
-                  className="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle className="h-4 w-4 text-indigo-500 flex-shrink-0" />
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{item.titulo}</h3>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed pl-6">
-                    {item.descripcion}
-                  </p>
-                </div>
+            <ol className="relative lg:col-span-7">
+              <span aria-hidden="true" className="absolute bottom-10 left-[5px] top-10 w-px bg-line/15" />
+              {services.map((s) => (
+                <li key={s.name}>
+                  <Link
+                    href={s.href}
+                    className="group relative grid grid-cols-[12px_1fr_auto] items-start gap-x-6 border-b border-line/10 py-8 first:pt-2"
+                  >
+                    <Terminal className="relative mt-3 bg-ground text-line/40 transition-colors duration-300 group-hover:border-green group-hover:bg-green" />
+                    <div>
+                      <h3 className="text-[clamp(1.5rem,2.6vw,2.25rem)] font-medium leading-tight tracking-tight transition-colors duration-300 group-hover:text-green-ink">
+                        {s.name}
+                      </h3>
+                      <p className="mt-3 max-w-[52ch] text-[16px] leading-relaxed text-muted">{s.description}</p>
+                    </div>
+                    <ArrowRight
+                      className="mt-3 h-5 w-5 text-muted transition-transform duration-500 ease-out-expo group-hover:translate-x-1 group-hover:text-green-ink"
+                      strokeWidth={1.6}
+                    />
+                  </Link>
+                </li>
               ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+            </ol>
+          </Container>
+        </section>
 
-      {/* Clientes */}
-      <section className="py-16 md:py-24">
-        <Container>
-          <div className="mb-10">
-            <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
-              Clientes
-            </span>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
-              Empresas que confían en Fluxo Web
-            </h2>
-            <p className="mt-3 text-base text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-              Trabajamos con empresas de distintos sectores, entregando soluciones que funcionan en producción.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {clientes.map((cliente) => (
-              <Link
-                key={cliente.nombre}
-                href={cliente.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-md transition-all"
-              >
-                <div className="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800" style={{ paddingBottom: "62.5%" }}>
-                  <Image
-                    src={cliente.preview}
-                    alt={`Preview de ${cliente.nombre}`}
-                    fill
-                    className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-                    unoptimized
-                  />
-                  <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors duration-300 flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-gray-900/90 px-4 py-2 text-sm font-medium text-gray-900 dark:text-white shadow-lg">
-                      <ExternalLink className="h-4 w-4" />
-                      Visitar sitio
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 flex flex-col gap-2">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {cliente.nombre}
-                    </h3>
-                    <span className="flex-shrink-0 inline-flex items-center rounded-full border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-400">
-                      <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-                      Activo
-                    </span>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {cliente.descripcion}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-8 flex items-center gap-4">
-            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
-            <p className="text-sm text-gray-500 dark:text-gray-400 text-center px-2">
-              Y muchos más clientes en distintos sectores que confían en nosotros para llevar sus proyectos a producción.
-            </p>
-            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-800" />
-          </div>
-        </Container>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 md:py-24">
-        <Container>
-          <div className="text-center mb-12">
-            <span className="inline-flex items-center rounded-full border border-indigo-200 dark:border-indigo-900 bg-indigo-50 dark:bg-indigo-950 px-3 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-4">
-              FAQ
-            </span>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
-              Preguntas frecuentes
-            </h2>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-              Algunas de las preguntas más comunes que nos hacen sobre nuestros servicios y forma de trabajo.
-            </p>
-          </div>
-          <Faq />
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-[#1D1D1D]">
-        <Container>
-          <div className="relative overflow-hidden rounded-2xl bg-indigo-600 dark:bg-indigo-700 px-6 py-12 md:px-12 md:py-16">
-            <div className="relative z-10 max-w-2xl mx-auto text-center">
-              <h2 className="text-2xl font-bold text-white sm:text-3xl">
-                ¿Tenés un proyecto en mente?
+        {/* De punta a punta: campo verde */}
+        <section className="px-2 pt-24 sm:px-3 sm:pt-32" aria-labelledby="punta-title">
+          <div className="frame bg-green text-[#0B0B0B]">
+            <Container className="py-16 sm:py-24">
+              <h2 id="punta-title" className="max-w-[18ch] text-title font-normal">
+                Un solo proveedor. Del código al servidor.
               </h2>
-              <p className="mt-4 text-base text-indigo-100">
-                Contanos qué necesitás y te respondemos en menos de 24 horas con una propuesta sin compromiso.
+              <p className="mt-6 max-w-[56ch] text-lead text-[#0B0B0B]/75">
+                La mayoría de las empresas termina coordinando a un programador, a un hosting y a un soporte distintos. Con
+                Fluxo es una sola conversación.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                <Link
-                  href="https://wa.link/18ywdk"
-                  className="inline-flex items-center justify-center gap-2 h-11 px-6 text-sm font-medium text-indigo-600 bg-white rounded-md hover:bg-indigo-50 transition-colors"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Contactar por WhatsApp
-                </Link>
-                <Link
-                  href="/empresa"
-                  className="inline-flex items-center justify-center gap-2 h-11 px-6 text-sm font-medium text-white border border-white/30 rounded-md hover:bg-white/10 transition-colors"
-                >
-                  Conocer el equipo
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="absolute inset-0 -z-0 opacity-30">
-              <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-indigo-500 blur-3xl" />
-              <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-indigo-800 blur-3xl" />
-            </div>
-          </div>
-        </Container>
-      </section>
 
+              <ol className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4 lg:gap-8">
+                <span aria-hidden="true" className="absolute left-0 right-0 top-[6px] hidden h-px bg-[#0B0B0B]/30 lg:block" />
+                {endToEnd.map((item, i) => (
+                  <li key={item.title} className="relative">
+                    <span
+                      aria-hidden="true"
+                      className={`relative block h-3 w-3 rounded-full border-[1.5px] border-[#0B0B0B] ${i === 0 ? "bg-[#0B0B0B]" : "bg-green"}`}
+                    />
+                    <h3 className="mt-6 text-xl font-medium tracking-tight">{item.title}</h3>
+                    <p className="mt-3 max-w-[34ch] text-[15px] leading-relaxed text-[#0B0B0B]/75">{item.text}</p>
+                  </li>
+                ))}
+              </ol>
+            </Container>
+          </div>
+        </section>
+
+        {/* Proyectos en producción */}
+        <section id="proyectos" className="scroll-mt-24 pt-24 sm:pt-32" aria-labelledby="proyectos-title">
+          <Container>
+            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+              <SectionHeading title={<span id="proyectos-title">Sistemas que hoy están en línea.</span>}>
+                Plataformas con inteligencia artificial, ventas por WhatsApp, gestión comercial y comercio electrónico
+                desarrolladas por Fluxo Web. Todas se pueden visitar.
+              </SectionHeading>
+            </div>
+
+            <ul className="mt-14 grid gap-x-5 gap-y-12 md:grid-cols-6">
+              {[featured, second].map((p) => (
+                <ProjectTile key={p.slug} project={p} className="md:col-span-3" large />
+              ))}
+              {rest.map((p) => (
+                <ProjectTile key={p.slug} project={p} className="md:col-span-3 lg:col-span-2" />
+              ))}
+            </ul>
+          </Container>
+        </section>
+
+        {/* Equipo */}
+        <section className="pt-24 sm:pt-32" aria-labelledby="equipo-title">
+          <Container>
+            <SectionHeading title={<span id="equipo-title">Hablas directo con los socios.</span>}>
+              Cuatro socios, cuatro anclajes de la misma red. Cada proyecto lo acompaña alguien que decide en la empresa.
+            </SectionHeading>
+
+            <div className="mt-16">
+              <Members members={members} />
+            </div>
+          </Container>
+        </section>
+
+        {/* Preguntas frecuentes */}
+        <section className="pt-24 sm:pt-32" aria-labelledby="faq-title">
+          <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-4">
+              <h2 id="faq-title" className="text-title font-normal">
+                Preguntas frecuentes
+              </h2>
+              <p className="mt-6 max-w-[34ch] text-lead text-muted">
+                ¿No encuentras la tuya? Escríbenos y te responde uno de los socios.
+              </p>
+            </div>
+            <div className="lg:col-span-8">
+              <Faq />
+            </div>
+          </Container>
+        </section>
+
+        <Closing />
+      </main>
       <Footer />
     </>
   );
-};
+}
 
-export default Home;
+function ProjectTile({ project, className = "", large = false }) {
+  return (
+    <li className={className}>
+      <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block">
+        <span className="relative block aspect-[16/10] overflow-hidden rounded-[20px] border border-line/10 bg-panel">
+          <Image
+            src={project.image}
+            alt={`Captura de ${project.name}`}
+            fill
+            sizes={large ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
+            className="object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
+          />
+        </span>
+        <span className="mt-5 flex items-start justify-between gap-4">
+          <span className="min-w-0">
+            <span className={`block font-medium tracking-tight ${large ? "text-2xl" : "text-xl"}`}>{project.name}</span>
+            <span className="mt-2 block max-w-[46ch] text-[15px] leading-relaxed text-muted">{project.description}</span>
+          </span>
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line/15 transition-colors duration-300 group-hover:border-green group-hover:bg-green group-hover:text-[#0B0B0B]">
+            <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+          </span>
+        </span>
+        <span className="mt-4 flex items-center gap-3 text-[13px] text-muted">
+          <span>{project.kind}</span>
+          <span aria-hidden="true" className="h-px w-4 bg-line/25" />
+          <span className="font-mono text-[12px]">{hostOf(project.url)}</span>
+        </span>
+      </a>
+    </li>
+  );
+}
+
+export function getStaticProps() {
+  return { props: { members: getAllMembers().map(pickMember) } };
+}
