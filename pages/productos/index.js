@@ -8,7 +8,7 @@ import Container from "../../components/container";
 import PageHero from "../../components/pageHero";
 import Closing from "../../components/closing";
 import { SectionHeading, WHATSAPP_URL } from "../../components/ui";
-import { projects, hostOf } from "../../data/projects";
+import { projects, hostOf, relationLabel } from "../../data/projects";
 
 const erpModules = [
   { name: "Contabilidad", text: "Gestión financiera completa" },
@@ -135,7 +135,12 @@ export default function Productos() {
                     </span>
                     <span className="min-w-0">
                       <span className="block text-xl font-medium tracking-tight transition-colors group-hover:text-green-ink">{p.name}</span>
-                      <span className="mt-1 block text-[14px] text-muted">{p.kind}</span>
+                      <span className="mt-1 block text-[14px] text-muted">
+                        {relationLabel(p) && (
+                          <span className={`font-medium ${p.own ? "text-green-ink" : p.partner ? "text-ink" : ""}`}>{relationLabel(p)} · </span>
+                        )}
+                        {p.kind}
+                      </span>
                     </span>
                     <span className="hidden max-w-[44ch] text-[15px] leading-relaxed text-muted sm:block">
                       {p.description}

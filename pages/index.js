@@ -10,7 +10,7 @@ import Container from "../components/container";
 import Closing from "../components/closing";
 import Members, { pickMember } from "../components/members";
 import { SectionHeading, Terminal } from "../components/ui";
-import { projects, hostOf } from "../data/projects";
+import { projects, hostOf, relationLabel } from "../data/projects";
 import { getAllMembers } from "../data/members";
 
 const services = [
@@ -48,7 +48,7 @@ const endToEnd = [
   },
   {
     title: "Productos propios",
-    text: "FluxoCRM y Nova son una base probada que adaptamos a tu empresa, en lugar de empezar de cero.",
+    text: "Nova, VentaFlow, Masé, Esmalté y Ogady ya trabajan para sus clientes. Son una base probada que adaptamos a tu empresa, en lugar de empezar de cero.",
   },
   {
     title: "IA aplicada",
@@ -61,8 +61,6 @@ const endToEnd = [
 ];
 
 export default function Home({ members }) {
-  const [featured, ...rest] = projects;
-  const second = rest.shift();
 
   return (
     <>
@@ -157,12 +155,9 @@ export default function Home({ members }) {
               </SectionHeading>
             </div>
 
-            <ul className="mt-14 grid gap-x-5 gap-y-12 md:grid-cols-6">
-              {[featured, second].map((p) => (
-                <ProjectTile key={p.slug} project={p} className="md:col-span-3" large />
-              ))}
-              {rest.map((p) => (
-                <ProjectTile key={p.slug} project={p} className="md:col-span-3 lg:col-span-2" />
+            <ul className="mt-14 grid gap-x-5 gap-y-12 md:grid-cols-2 lg:grid-cols-12">
+              {projects.map((p, i) => (
+                <ProjectTile key={p.slug} project={p} size={tileSize(i, projects.length)} />
               ))}
             </ul>
           </Container>
@@ -205,7 +200,29 @@ export default function Home({ members }) {
   );
 }
 
-function ProjectTile({ project, className = "", large = false }) {
+// Galería escalonada: 2 grandes arriba y el resto en filas de 3 (medianas) y de 4 (chicas),
+// combinadas para que ninguna fila quede incompleta sin importar cuántos proyectos haya.
+function tileSize(i, total) {
+  if (i < 2) return "large";
+  const rest = total - 2;
+  const mediumRows = [1, 0, 2, 3].find((a) => rest - 3 * a >= 0 && (rest - 3 * a) % 4 === 0);
+  const medium = mediumRows === undefined ? rest : mediumRows * 3;
+  const size = i - 2 < medium ? "medium" : "small";
+  // En tablet (2 columnas) la última ficha impar ocupa el ancho completo.
+  return i === total - 1 && total % 2 === 1 ? `${size}-last` : size;
+}
+
+const tileSpan = {
+  large: "lg:col-span-6",
+  medium: "lg:col-span-4",
+  small: "lg:col-span-3",
+  "medium-last": "md:col-span-2 lg:col-span-4",
+  "small-last": "md:col-span-2 lg:col-span-3",
+};
+
+function ProjectTile({ project, size }) {
+  const large = size === "large";
+  const className = tileSpan[size];
   return (
     <li className={className}>
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="group block">
@@ -214,7 +231,7 @@ function ProjectTile({ project, className = "", large = false }) {
             src={project.image}
             alt={`Captura de ${project.name}`}
             fill
-            sizes={large ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
+            sizes={large ? "(min-width: 768px) 50vw, 100vw" : size.startsWith("medium") ? "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"}
             className="object-cover object-top transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
           />
         </span>
@@ -227,7 +244,10 @@ function ProjectTile({ project, className = "", large = false }) {
             <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
           </span>
         </span>
-        <span className="mt-4 flex items-center gap-3 text-[13px] text-muted">
+        <span className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-muted">
+          {relationLabel(project) && (
+            <span className={`font-medium ${project.own ? "text-green-ink" : project.partner ? "text-ink" : ""}`}>{relationLabel(project)}</span>
+          )}
           <span>{project.kind}</span>
           <span aria-hidden="true" className="h-px w-4 bg-line/25" />
           <span className="font-mono text-[12px]">{hostOf(project.url)}</span>

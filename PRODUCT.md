@@ -12,13 +12,13 @@ Owners and managers of small and medium businesses (PyMEs) in Paraguay and the w
 
 ## Product Purpose
 
-Marketing site for Fluxo Web Group E.A.S., a software company from Ciudad del Este, Paraguay (founded 2019). It presents services (custom software, web, mobile apps, applied AI, cloud hosting), own products (FluxoCRM, Nova ERP), real client work and the founding team. Success = a qualified visitor starts a WhatsApp conversation.
+Marketing site for Fluxo Web Group E.A.S., a software company from Ciudad del Este, Paraguay (founded 2019). It presents services (custom software, web, mobile apps, applied AI, cloud hosting), own products (FluxoCRM, Nova, VentaFlow, Masé, Esmalté, Ogady), live systems and the founding team. Success = a qualified visitor starts a WhatsApp conversation.
 
 ## Positioning
 
 One provider end to end, run by its owners:
 - **Own infrastructure** — Fluxo builds and also hosts on its own servers; the client has a single provider from development to production.
-- **Own products** — FluxoCRM and Nova ERP give a proven base instead of starting from zero.
+- **Own products** — FluxoCRM, Nova, VentaFlow, Masé, Esmalté and Ogady, already used by clients, give a proven base instead of starting from zero.
 - **Applied AI** — AI integrated into real business systems (Quiro AI, Millonai as proof).
 - **Direct access to the partners** — clients talk to the engineers who own the company, not to salespeople.
 
@@ -31,7 +31,7 @@ One provider end to end, run by its owners:
 ## Capabilities and Constraints
 
 - Services: custom software, web development, mobile apps (iOS/Android), AI integrations (chatbots, automation, LLMs), cloud hosting plans.
-- Products: FluxoCRM, Nova ERP (ERPNext-based modules).
+- Own products: FluxoCRM, Nova, VentaFlow, Masé, Esmalté, Ogady. Also implements ERPNext (Frappe Technologies).
 - Language: Spanish only, professional neutral Latin American tone (no voseo, no regionalisms). No English version planned.
 - Contact is WhatsApp-first; there is no contact form or booking tool.
 
@@ -44,7 +44,8 @@ One provider end to end, run by its owners:
 ## Evidence on Hand
 
 - Founded 2019 in Ciudad del Este; 4 partners (data in `data/members/`).
-- Live client projects: Quiro AI, Millonai, Pro Aqua, Bruno Info Sorteos (home); Nova ERP, Mase Pastelería, Esmalt, VentaFlow (productos demos).
+- Live systems, single source in `data/projects.js`: Quiro, MillonAI, Redfin, Ogady, Nova, Pro-Aqua, VentaFlow, BrunoInfo Sorteos, Masé, Esmalté.
+- **Own products already used by clients (confirmed by the user):** Nova, VentaFlow, Masé, Esmalté and Ogady — flagged `own: true` in `data/projects.js`. Plus FluxoCRM (own, `/productos/fluxocrm`). Quiro, MillonAI, BrunoInfo Sorteos and Redfin (business financing platform, redfin.com.py) were developed by Fluxo and are owned by their clients; Fluxo remains associated as technology partner (`partner: true`, label "Socio tecnológico"). Pro-Aqua is a client's own e-commerce built by Fluxo, no partnership (`client: true`, label "Cliente").
 - Company timeline in `pages/empresa/index.js`.
 - **Absent — do not fabricate:** testimonials, client logos, ratings, project counts ("50+"), 24/7 support claims, uptime SLAs. Only verifiable numbers may appear (founding year, team size, number of projects actually shown).
 

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
+import { projects } from "../data/projects";
 
 const SERVICIOS = [
   { n: "01", t: "Desarrollo Web a Medida", d: "Aplicaciones y sitios construidos según los procesos de tu empresa." },
@@ -349,7 +350,7 @@ export default function Presentacion() {
               <span className="sl">Año de fundación</span>
             </div>
             <div className="stat">
-              <span className="sv">8</span>
+              <span className="sv">{projects.length}</span>
               <span className="sl">Sistemas en línea</span>
             </div>
             <div className="stat">
