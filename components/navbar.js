@@ -7,11 +7,13 @@ import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
 import ThemeChanger from "./DarkSwitch";
 import { WHATSAPP_URL } from "./ui";
 
+// En lenguaje de cliente. Hosting no va en el menú principal (sus precios técnicos invitan a comparar):
+// vive en el footer y en /servicios.
 export const navigation = [
-  { title: "Servicios", link: "/servicios" },
+  { title: "Soluciones", link: "/servicios" },
+  { title: "Casos", link: "/#casos" },
   { title: "Productos", link: "/productos" },
-  { title: "Hosting", link: "/hosting" },
-  { title: "Empresa", link: "/empresa" },
+  { title: "Nosotros", link: "/empresa" },
 ];
 
 // Navbar píldora flotante: vive dentro del marco del hero y se vuelve sólida al hacer scroll.
@@ -51,7 +53,7 @@ const Navbar = () => {
                   key={item.title}
                   href={item.link}
                   aria-current={isActive(item.link) ? "page" : undefined}
-                  className={`rounded-full px-3.5 py-2 font-mono text-[12px] uppercase tracking-label transition-colors ${
+                  className={`rounded-full px-3.5 py-2 text-[14px] font-medium transition-colors ${
                     isActive(item.link) ? "bg-white/10 text-night-ink" : "text-night-muted hover:text-night-ink"
                   }`}
                 >
@@ -72,9 +74,9 @@ const Navbar = () => {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 inline-flex h-9 items-center gap-1.5 rounded-full bg-green px-4 font-mono text-[12px] font-medium uppercase tracking-label text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
+                className="ml-1 inline-flex h-9 items-center gap-1.5 rounded-full bg-green px-4 text-[14px] font-medium text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
               >
-                Contacto
+                Hablemos
                 <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
               </a>
             </div>
@@ -128,7 +130,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="mt-2 flex h-14 items-center justify-center gap-2 rounded-full bg-green text-[15px] font-medium text-[#0B0B0B]"
               >
-                Escríbenos por WhatsApp
+                Pedir un diagnóstico
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </Disclosure.Panel>

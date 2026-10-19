@@ -46,11 +46,11 @@ There are no API routes.
 
 **Styling:** Tailwind CSS v3 with color tokens as CSS variables (`css/tailwind.css`), so light and dark share the same classes — use `bg-ground`, `bg-panel`, `text-ink`, `text-muted`, `border-line/15`, `bg-green`, `text-green-ink`, never `dark:` pairs or raw Tailwind grays. `night-*` colors are surfaces that stay dark in both themes (heroes, closing panel, nav pills). `next-themes` with `attribute="class"`, `defaultTheme="dark"`. Tailwind purges classes it can't see literally: never build class names by interpolation.
 
-**Type:** Host Grotesk (display light 300, text 400–500) and Geist Mono, self-hosted in `public/fonts/`. Mono is only for data (numbers, years, hostnames, clause numbers) and the nav labels — never as a "technical" costume.
+**Type:** Host Grotesk (display light 300, text 400–500) and Geist Mono, self-hosted in `public/fonts/`. Mono is only for data (numbers, years, prices, step and clause numbers) — never for navigation, hostnames or as a "technical" costume.
 
 **Components (`components/`):**
-- `navbar.js` — floating pill nav inside the hero frame; exports `navigation`
-- `hero.js` — home hero: framed panel, ñandutí canvas, verifiable stats, WhatsApp CTA, project carousel
+- `navbar.js` — floating pill nav inside the hero frame, client-language labels (Soluciones · Casos · Productos · Nosotros; Hosting lives in the footer); exports `navigation`
+- `hero.js` — home hero: framed panel, ñandutí canvas, "Tu negocio sabe más de lo que imaginas", verifiable stats, diagnosis CTA, project carousel
 - `nanduti.js` — the signature canvas (variants `hero`, `edge`, `quiet`); respects `prefers-reduced-motion`, pauses offscreen
 - `pageHero.js` — framed header for inner pages; `closing.js` — closing CTA panel for every page
 - `projectCarousel.js`, `members.js`, `pricing.js`, `faq.js` (accepts `items`), `legalDocument.js`
@@ -67,4 +67,6 @@ There are no API routes.
 - Every page (except `/presentacion`) renders `<Navbar />` + `<main>` + `<Footer />`, starts with a framed dark panel (`Hero` or `PageHero`) and usually ends with `<Closing />`.
 - No eyebrow/kicker labels above headings; section headings use `SectionHeading`.
 - Only verifiable claims and numbers (see `PRODUCT.md` → Evidence on Hand).
+- Write for a business owner who does not know what they want, not for a developer: lead with the client's problem or situation, describe services by outcome, no jargon (vCPU, LLM, arquitectura) on first contact. The primary CTA is "Pedir un diagnóstico". See `PRODUCT.md` → Commercial focus.
+- No published prices anywhere: plans in `components/pricing.js` show what each level includes and lead to "Pedir propuesta".
 - WhatsApp contact link: `https://wa.link/18ywdk` (`WHATSAPP_URL` in `components/ui.js`).

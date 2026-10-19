@@ -8,7 +8,7 @@ import Container from "../../components/container";
 import PageHero from "../../components/pageHero";
 import Closing from "../../components/closing";
 import { SectionHeading, WHATSAPP_URL } from "../../components/ui";
-import { projects, hostOf, relationLabel } from "../../data/projects";
+import { projects, relationLabel } from "../../data/projects";
 
 const erpModules = [
   { name: "Contabilidad", text: "Gestión financiera completa" },
@@ -144,7 +144,6 @@ export default function Productos() {
                     </span>
                     <span className="hidden max-w-[44ch] text-[15px] leading-relaxed text-muted sm:block">
                       {p.description}
-                      <span className="mt-1 block font-mono text-[12px]">{hostOf(p.url)}</span>
                     </span>
                     <span className="grid h-10 w-10 place-items-center rounded-full border border-line/15 transition-colors duration-300 group-hover:border-green group-hover:bg-green group-hover:text-[#0B0B0B]">
                       <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />

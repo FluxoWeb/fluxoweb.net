@@ -4,8 +4,8 @@ import { WhatsAppButton } from "./ui";
 
 // Cierre de página: el ñandutí en calma y una sola acción.
 export default function Closing({
-  title = "¿Hablamos de tu proyecto?",
-  text = "Cuéntanos qué necesita tu empresa y te respondemos con una propuesta, sin compromiso.",
+  title = "Empecemos por tu negocio.",
+  text = "Cuéntanos qué pasa en tu empresa, con tus palabras. Te ayudamos a encontrar qué vale la pena resolver primero.",
   label,
 }) {
   return (

@@ -101,7 +101,7 @@ components:
     textColor: "{colors.on-green}"
   nav-link:
     textColor: "{colors.night-muted}"
-    typography: "{typography.label}"
+    typography: "{typography.body}"
     rounded: "{rounded.pill}"
     padding: "8px 14px"
   nav-link-active:
@@ -181,13 +181,13 @@ A three-voice palette: near-black, warm off-white, and one saturated circuit gre
 - **Title** (500, 1.25–2.25rem, tight leading, -0.025em): card, service, member and plan names.
 - **Lead** (400, clamp 1.0625rem–1.25rem, 1.55): the sentence under every display or headline, muted, 46–60ch.
 - **Body** (400, 15–16px, 1.625): descriptions, FAQ answers and legal text at max 62–68ch.
-- **Label** (Geist Mono 400–500, 11–12px, 0.08em, uppercase): navigation links, the nav contact pill and carousel hostnames only.
-- **Data** (Geist Mono 500, tabular figures, 1.875rem–3.75rem): hero stats, prices, step numbers, years, clause numbers, hostnames and the carousel counter.
+- **Label** (Geist Mono 400–500, 11–12px, 0.08em, uppercase): reserved; no current use. Navigation is set in Host Grotesk 14px medium, in sentence case.
+- **Data** (Geist Mono 500, tabular figures, 1.875rem–3.75rem): hero stats, step numbers, years, clause numbers and the carousel counter.
 
 ### Named Rules
 **The Light Display Rule.** Page h1s are weight 300; headlines are 400; nothing above 500 appears anywhere in the system.
 
-**The Mono Is Data Rule.** Geist Mono sets only numbers, hostnames, clause numbers and the nav labels. It never sets sentences, headings or labels above headings.
+**The Mono Is Data Rule.** Geist Mono sets only numbers, years, step numbers and clause numbers. It never sets navigation, hostnames, sentences, headings or labels above headings: the audience is business owners, and code-styled type reads as a site for developers.
 
 **The No Eyebrow Rule.** Headings stand alone: a title and its lead, stacked. No kicker, eyebrow or small-caps label sits above a heading.
 
@@ -230,7 +230,7 @@ Confident, round, and always pointing somewhere.
 
 ### Navigation
 - **Style:** a floating pill bar fixed inside the top of the hero frame: logo pill on the left, link pill on the right, both 48px tall, translucent white at 4% with an 8% white border and blur over the canvas, turning to 85% Night with heavy blur after 24px of scroll.
-- **Links:** Geist Mono 12px uppercase at 0.08em in Night Muted; hover and active go to Night Ink, active adds a 10% white pill.
+- **Links:** Host Grotesk 14px medium, sentence case, in Night Muted; hover and active go to Night Ink, active adds a 10% white pill. Labels are in client language (Soluciones, Casos, Productos, Nosotros).
 - **Actions:** a hairline divider, circular icon buttons for the cover letter and theme toggle (system, light, dark), and a green mono "Contacto" pill.
 - **Mobile:** a 24px-radius Night sheet with links at 24px medium separated by hairlines, the active link marked by a green dot, and a full-width 56px green WhatsApp pill.
 
@@ -253,7 +253,7 @@ Services, process steps, partner portraits and the company timeline hang from on
 - **Do** keep Night panels dark in both themes and verify every other surface in light and dark.
 - **Do** use Circuit Green as a solid field, a pill fill or a lit node, with Ink on Green on top.
 - **Do** set page h1s at weight 300 with -0.035em tracking, and pair every heading with a muted lead.
-- **Do** use Geist Mono with tabular figures for numbers, hostnames, years, prices and clause numbers.
+- **Do** use Geist Mono with tabular figures for numbers, years, step numbers and clause numbers.
 - **Do** join related items with a hairline thread and round terminal nodes.
 - **Do** keep copy in neutral Latin American Spanish (tú: "Escríbenos", "Cuéntanos") and show only verifiable figures: founding year, number of partners, projects actually listed.
 

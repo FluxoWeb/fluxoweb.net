@@ -12,13 +12,11 @@ const plans = [
   {
     name: "Starter",
     description: "Para emprendedores y equipos de ventas pequeños.",
-    price: "25",
     features: ["Hasta 500 contactos", "2 usuarios", "Embudo de ventas básico", "Gestión de tareas", "Historial de actividades", "Soporte por email"],
   },
   {
     name: "Professional",
     description: "Para equipos en crecimiento que necesitan más potencia.",
-    price: "65",
     featured: true,
     features: [
       "Hasta 5.000 contactos",
@@ -34,7 +32,6 @@ const plans = [
   {
     name: "Enterprise",
     description: "Para empresas con alta demanda.",
-    price: "150",
     features: [
       "Contactos ilimitados",
       "Usuarios ilimitados",
@@ -105,7 +102,7 @@ export default function FluxoCRM() {
         <section className="pt-24 sm:pt-32" aria-labelledby="planes-title">
           <Container>
             <SectionHeading title={<span id="planes-title">Planes.</span>}>
-              Precios en dólares, por mes. Todos los planes incluyen 14 días de prueba.
+              Todos los planes incluyen 14 días de prueba. Te enviamos una propuesta según la cantidad de usuarios y lo que necesite tu equipo.
             </SectionHeading>
             <div className="mt-14">
               <Pricing plans={plans} />

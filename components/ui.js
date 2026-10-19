@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 export const WHATSAPP_URL = "https://wa.link/18ywdk";
 
 // CTA principal: píldora verde con la flecha dentro de una terminal negra (el nodo del logo).
-export function WhatsAppButton({ label = "Escríbenos por WhatsApp", className = "" }) {
+export function WhatsAppButton({ label = "Pedir un diagnóstico", className = "" }) {
   return (
     <a
       href={WHATSAPP_URL}

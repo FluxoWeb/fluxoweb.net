@@ -3,10 +3,10 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { Plus } from "lucide-react";
 
 // Preguntas frecuentes: filas separadas por hilos, el signo + gira al abrir.
-const Faq = ({ items = faqdata }) => {
+const Faq = ({ items = faqdata, lead = [] }) => {
   return (
     <div className="border-t border-line/15">
-      {items.map((item) => (
+      {[...lead, ...items].map((item) => (
         <Disclosure key={item.question} as="div" className="border-b border-line/15">
           {({ open }) => (
             <>

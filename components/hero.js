@@ -7,7 +7,7 @@ import { projects } from "../data/projects";
 const stats = [
   { value: "2019", label: "Desde" },
   { value: "4", label: "Socios" },
-  { value: String(projects.length), label: "Sistemas en línea" },
+  { value: String(projects.length), label: "Sistemas funcionando" },
 ];
 
 const Hero = () => {
@@ -24,11 +24,11 @@ const Hero = () => {
         <div className="relative z-10 flex flex-1 flex-col justify-end gap-10 px-5 pb-5 pt-32 sm:px-8 sm:pb-8 md:justify-between lg:px-12 lg:pb-10 lg:pt-28">
           <div>
             <h1 data-web-avoid className="fx-rise max-w-[11ch] text-display font-light">
-              Software que <span className="text-green">conecta</span> toda tu empresa.
+              Tu negocio <span className="text-green">sabe más</span> de lo que imaginas.
             </h1>
             <p data-web-avoid className="fx-rise mt-7 max-w-[46ch] text-lead text-night-muted [animation-delay:120ms]">
-              Desarrollamos, alojamos y mantenemos los sistemas de PyMEs en Paraguay y la región. Un solo equipo, desde la
-              primera línea de código hasta el servidor.
+              Transformamos el conocimiento, los problemas y las ideas de tu empresa en soluciones tecnológicas. No necesitas
+              saber qué sistema quieres: empezamos por entender tu negocio.
             </p>
           </div>
 
@@ -44,8 +44,8 @@ const Hero = () => {
               </dl>
               <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
                 <WhatsAppButton />
-                <ArrowLink href="#proyectos" className="text-night-ink">
-                  Ver proyectos
+                <ArrowLink href="#empezar" className="text-night-ink">
+                  ¿Por dónde empezar?
                 </ArrowLink>
               </div>
             </div>

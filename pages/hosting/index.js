@@ -8,40 +8,33 @@ import Faq from "../../components/faq";
 import Pricing from "../../components/pricing";
 import { SectionHeading } from "../../components/ui";
 
+// Planes descritos por uso, no por especificaciones técnicas. Sin precio publicado: se cotiza por propuesta.
 const plans = [
   {
-    name: "Hobby",
-    description: "Proyectos personales y pruebas de concepto.",
-    price: "15",
-    features: ["1 vCPU", "1 GB RAM", "10 GB SSD", "100 GB de transferencia", "SSL gratuito", "1 dominio", "Soporte por email"],
+    name: "Para empezar",
+    description: "Un sitio web, una tienda pequeña o un primer sistema.",
+    features: ["Certificado de seguridad (SSL)", "1 dominio", "Espacio para tu sitio y tus archivos", "Soporte por email"],
   },
   {
-    name: "Project",
-    description: "Para startups y proyectos en crecimiento.",
-    price: "45",
+    name: "Para crecer",
+    description: "Sistemas con varios usuarios que tu empresa usa todos los días.",
     featured: true,
     features: [
-      "2 vCPU",
-      "4 GB RAM",
-      "50 GB SSD",
-      "500 GB de transferencia",
-      "SSL gratuito",
-      "5 dominios",
+      "Certificado de seguridad (SSL)",
+      "Hasta 5 dominios",
+      "Más capacidad para usuarios y datos",
       "Copias de seguridad diarias",
       "Soporte prioritario",
     ],
   },
   {
-    name: "Enterprise",
-    description: "Empresas con alta demanda.",
-    price: "120",
+    name: "Para operación exigente",
+    description: "Empresas con mucho movimiento, que no pueden detenerse.",
     features: [
-      "4 vCPU",
-      "16 GB RAM",
-      "200 GB SSD",
-      "Transferencia ilimitada",
-      "SSL gratuito",
+      "Certificado de seguridad (SSL)",
       "Dominios ilimitados",
+      "La mayor capacidad de procesamiento y almacenamiento",
+      "Transferencia ilimitada",
       "Copias de seguridad en tiempo real",
     ],
   },
@@ -80,7 +73,7 @@ export default function Hosting() {
         <title>Hosting en la nube — Fluxo Web</title>
         <meta
           name="description"
-          content="Hosting en servidores propios para tus aplicaciones. Planes desde USD 15 por mes con SSL, copias de seguridad y soporte del equipo que desarrolla."
+          content="Tus sistemas alojados en nuestros propios servidores, con copias de seguridad y el soporte del mismo equipo que los desarrolla."
         />
       </Head>
       <Navbar />
@@ -101,8 +94,8 @@ export default function Hosting() {
 
         <section className="pt-24 sm:pt-32" aria-labelledby="planes-title">
           <Container>
-            <SectionHeading title={<span id="planes-title">Planes y precios.</span>}>
-              Precios en dólares, por mes. Sin contratos de permanencia: cancelas cuando quieras.
+            <SectionHeading title={<span id="planes-title">Elige según tu operación.</span>}>
+              Cada plan se ajusta a lo que tu empresa necesita. Te enviamos una propuesta con la inversión, sin contratos de permanencia.
             </SectionHeading>
 
             <div className="mt-14">

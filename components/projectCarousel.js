@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { projects, hostOf } from "../data/projects";
+import { projects } from "../data/projects";
 
 const INTERVAL = 4800;
 const pad = (n) => String(n).padStart(2, "0");
@@ -66,7 +66,7 @@ export default function ProjectCarousel({ className = "", ...rest }) {
       <div className="flex items-end justify-between gap-3 px-2 pb-1 pt-3">
         <div className="min-w-0" aria-live="polite">
           <p className="truncate text-[15px] font-medium">{project.name}</p>
-          <p className="truncate font-mono text-[11px] uppercase tracking-label text-night-muted">{hostOf(project.url)}</p>
+          <p className="truncate text-[13px] text-night-muted">{project.kind}</p>
         </div>
         <div className="flex shrink-0 items-center gap-1">
           <button

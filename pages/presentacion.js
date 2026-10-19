@@ -351,7 +351,7 @@ export default function Presentacion() {
             </div>
             <div className="stat">
               <span className="sv">{projects.length}</span>
-              <span className="sl">Sistemas en línea</span>
+              <span className="sl">Sistemas funcionando</span>
             </div>
             <div className="stat">
               <span className="sv">4</span>

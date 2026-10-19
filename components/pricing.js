@@ -1,8 +1,10 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import { WHATSAPP_URL } from "./ui";
 
-// Planes: el destacado es un campo verde completo, no una tarjeta con borde de color.
-export default function Pricing({ plans, period = "/ mes" }) {
+// Planes sin precio publicado: muestran qué incluye cada nivel y llevan a una propuesta.
+// La inversión se define después de entender la operación del cliente, no se compara en la web.
+// El destacado es un campo verde completo, no una tarjeta con borde de color.
+export default function Pricing({ plans }) {
   return (
     <ul className="grid gap-3 lg:grid-cols-3">
       {plans.map((plan) => {
@@ -17,17 +19,15 @@ export default function Pricing({ plans, period = "/ mes" }) {
               <h3 className="text-2xl font-medium tracking-tight">{plan.name}</h3>
               {on && (
                 <span className="rounded-full border border-[#0B0B0B]/30 px-3 py-1 text-[13px] font-medium">
-                  Más elegido
+                  Recomendado
                 </span>
               )}
             </div>
-            <p className={`mt-2 text-[15px] ${soft}`}>{plan.description}</p>
-            <p className="mt-10 flex items-baseline gap-2">
-              <span className={`font-mono text-[13px] ${soft}`}>USD</span>
-              <span className="tabular font-mono text-6xl font-medium tracking-tight">{plan.price}</span>
-              <span className={`text-[15px] ${soft}`}>{period}</span>
+            <p className={`mt-2 min-h-[3em] text-[15px] leading-normal ${soft}`}>{plan.description}</p>
+            <p className={`mt-10 border-t pt-6 text-[15px] font-medium ${on ? "border-[#0B0B0B]/20" : "border-line/15"}`}>
+              Inversión según tu operación
             </p>
-            <ul className={`mt-10 flex-1 space-y-3 border-t pt-8 ${on ? "border-[#0B0B0B]/20" : "border-line/15"}`}>
+            <ul className="mt-6 flex-1 space-y-3">
               {plan.features.map((f) => (
                 <li key={f} className="flex items-center gap-3 text-[15px]">
                   <Check className={`h-4 w-4 shrink-0 ${on ? "" : "text-green-ink"}`} strokeWidth={2} />
@@ -45,7 +45,7 @@ export default function Pricing({ plans, period = "/ mes" }) {
                   : "border border-line/20 hover:border-green hover:bg-green hover:text-[#0B0B0B]"
               }`}
             >
-              {plan.cta || `Contratar ${plan.name}`}
+              {plan.cta || "Pedir propuesta"}
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </li>

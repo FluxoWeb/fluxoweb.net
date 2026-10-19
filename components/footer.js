@@ -27,7 +27,7 @@ export default function Footer() {
               <span className="text-lg font-medium tracking-tight">Fluxo Web</span>
             </Link>
             <p className="mt-5 max-w-[38ch] text-[15px] leading-relaxed text-muted">
-              Desarrollo, infraestructura y soporte de software para PyMEs en Paraguay y la región.
+              Convertimos el conocimiento, los problemas y las ideas de tu empresa en soluciones tecnológicas.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -50,6 +50,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/hosting" className="text-[15px] transition-colors hover:text-green-ink">
+                  Hosting
+                </Link>
+              </li>
               <li>
                 <Link href="/presentacion" className="text-[15px] transition-colors hover:text-green-ink">
                   Carta de presentación

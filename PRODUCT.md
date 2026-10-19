@@ -10,6 +10,8 @@ web
 
 Owners and managers of small and medium businesses (PyMEs) in Paraguay and the wider region (Argentina, Brazil, Latin America). They arrive with an operational problem — manual processes, scattered spreadsheets, an outdated system, no web presence — and are evaluating whether Fluxo can build and run the software that fixes it. They are not technical buyers; they judge on trust, proof and how easy it is to talk to someone.
 
+**Commercial focus (confirmed by the team):** attract owners who do not know what they want. Fluxo turns their needs, problems and ideas into solutions, and sells the diagnosis and the outcome — not hours, specs or a price comparison — so clients accept Fluxo's conditions and prices. The site must read as written for a business owner, never for a developer: no code-styled type, no technical jargon on first contact, no commodity specs (vCPU, RAM) on the home or in the main navigation. Strategic source: `docs/Arquitetura_de_Imperio_Fluxo_Web.docx` (campaign "Empresas que Piensan"; entries "Tengo un problema" / "Tengo una idea").
+
 ## Product Purpose
 
 Marketing site for Fluxo Web Group E.A.S., a software company from Ciudad del Este, Paraguay (founded 2019). It presents services (custom software, web, mobile apps, applied AI, cloud hosting), own products (FluxoCRM, Nova, VentaFlow, Masé, Esmalté, Ogady), live systems and the founding team. Success = a qualified visitor starts a WhatsApp conversation.
@@ -55,3 +57,6 @@ One provider end to end, run by its owners:
 2. One conversation away: WhatsApp is always reachable within one action.
 3. Show the people: the partners are the differentiator, not a footnote.
 4. End to end: present build + host + support as one continuous offer.
+5. Problem before technology: every page leads with the client's situation; services are described by the outcome they produce.
+6. The diagnosis is the offer: the primary action everywhere is starting a diagnostic conversation, not requesting a quote.
+7. No published prices: plans (hosting, FluxoCRM) show what each level includes and end in "Pedir propuesta"; the investment is defined after understanding the client's operation (team decision). Never reintroduce price figures or popularity claims such as "Más elegido".
