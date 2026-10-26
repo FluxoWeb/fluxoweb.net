@@ -61,7 +61,7 @@ const why = [
   },
   {
     title: "Productos que ya funcionan",
-    text: "Nova, VentaFlow, Masé, Esmalté y Ogady ya trabajan para sus clientes. Partimos de algo probado, no de cero.",
+    text: "Zap Pulse, Nova, VentaFlow, Masé, Esmalté y Ogady ya trabajan para sus clientes. Partimos de algo probado, no de cero.",
   },
   {
     title: "Un solo equipo",

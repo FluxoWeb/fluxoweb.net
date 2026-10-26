@@ -33,6 +33,15 @@ export const projects = [
     partner: true,
   },
   {
+    slug: "zap-pulse",
+    name: "Zap Pulse",
+    kind: "Asistente de ventas con IA",
+    description: "Contesta a tus clientes por WhatsApp en segundos: responde precios, toma pedidos y agenda turnos, incluso de noche.",
+    url: "https://zap-pulse.fluxoweb.app/",
+    image: "/img/proyectos/zap-pulse.jpg",
+    own: true,
+  },
+  {
     slug: "ogady",
     name: "Ogady",
     kind: "Directorio de locales",

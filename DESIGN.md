@@ -1,6 +1,6 @@
 ---
 name: Fluxo Web
-description: Software, IA e infraestructura para PyMEs, woven as one network from code to server.
+description: Convierte lo que sabe un negocio en soluciones tecnológicas, woven as one network and written for business owners, not developers.
 colors:
   green: "#27D46B"
   green-hover: "#3BE07D"
@@ -133,7 +133,9 @@ components:
 
 Fluxo Web is drawn as a literal web: the Guaraní ñandutí lace woven from the circuit traces of the Fluxo logo. Every service, product and partner is a node on one network that the company runs end to end. The visual language is black, white and green, the brand colors the company owns, applied with discipline: near-black framed panels carry hairline white threads, and green appears only where something is solid, actionable or alive.
 
-The page reads as a sequence of framed rooms on a quiet ground. A dark framed panel opens every page (the hero, with the woven canvas behind the text), open sections of type and threads follow on the theme ground, a single solid green field states the end-to-end promise, and a single dark framed panel closes each marketing page with one WhatsApp action. Density is low; type is large, light and tightly tracked; proof (live projects, partners, dates) carries the persuasion instead of decoration.
+The page reads as a sequence of framed rooms on a quiet ground. A dark framed panel opens every page (the hero, with the woven canvas behind the text), open sections of type and threads follow on the theme ground, a single solid green field carries the manifesto ("Tu empresa aprendió de cada cliente…"), and a single dark framed panel closes each marketing page with one diagnosis action. Density is low; type is large, light and tightly tracked; proof (live projects, partners, dates) carries the persuasion instead of decoration.
+
+The reader is a business owner who often does not know what they want, never a developer. Every page leads with the client's situation or problem, describes solutions by the outcome they produce, publishes no prices, and asks for one thing: a diagnostic conversation on WhatsApp ("Pedir un diagnóstico").
 
 It rejects the indigo SaaS template (badge pill, blob gradient, three equal cards) and its neon-dark opposite: no glow, no gradient accents, no eyebrow labels.
 
@@ -149,10 +151,11 @@ It rejects the indigo SaaS template (badge pill, blob gradient, three equal card
 A three-voice palette: near-black, warm off-white, and one saturated circuit green, with light and dark themes sharing the same role names.
 
 ### Primary
-- **Circuit Green** (green): the brand's live color. Solid fills only: the primary WhatsApp pill, the featured pricing card, the end-to-end section field, lit terminals, the canvas core and travelling pulses, the carousel progress bar, selection background and the focus ring.
+- **Circuit Green** (green): the brand's live color. Solid fills only: the primary diagnosis pill, the featured door ("No sé por dónde empezar"), the featured plan, the manifesto field, the lit "Diagnóstico" step, lit terminals, the canvas core and travelling pulses, the carousel progress bar, selection background and the focus ring.
 - **Lit Green** (green-hover): the hover state of green pills, one step brighter. Never used at rest.
 - **Deep Text Green** (green-ink-light / green-ink-dark): green as ink on the theme ground, for text links, hover states of titles and the final timeline year. In light mode it darkens to stay legible on off-white; in dark mode it equals Circuit Green.
 - **Ink on Green** (on-green): the near-black used for every text, icon and terminal sitting on a green field, and for the dark arrow terminal inside the primary pill.
+- **Relationship labels** on project tiles: "Producto propio" in Deep Text Green, "Socio tecnológico" in Ink, "Cliente" in Muted, so ownership reads at a glance.
 
 ### Neutral
 - **Night** (night): the fixed dark surface of the hero, page heroes, closing panel and the dark product card. Dark in both themes.
@@ -195,7 +198,7 @@ A three-voice palette: near-black, warm off-white, and one saturated circuit gre
 
 Content sits in a container of max 1360px with gutters of 20px, 32px from 640px and 48px from 1024px, aligned with the content inside the hero frame. Framed panels break the container and run near full-bleed, inset 8px (12px from 640px) from the viewport. Sections are separated by 96px of top space (128px from 640px); the footer follows after the same gap behind a hairline.
 
-The grid is 12 columns from 1024px. Recurring compositions: a 5/7 split with a sticky heading beside a threaded list (services), a 4/8 split with a sticky index (FAQ, legal clauses), and four-across timelines joined by a single horizontal thread at 1024px and up. Project tiles run 2 large then 3-up on a 6-column grid. The hero fills the viewport height minus its inset; on mobile its text stacks at the bottom and the web becomes the background of the whole panel.
+The grid is 12 columns from 1024px. Recurring compositions: three equal doors (the client's situation) right after the hero; a 5/7 split with a sticky heading beside a threaded list (problems the client recognises, solutions on /servicios); a 4/8 split with a sticky index (FAQ, legal clauses); and four-across timelines joined by a single horizontal thread at 1024px and up (manifesto points, process steps). Project tiles are adaptive on 12 columns: always 2 large on top, then the rest in complete rows of 3 (medium) and 4 (small), chosen so no row is left incomplete; on tablet (2 columns) an odd last tile spans the full width. The hero fills the viewport height minus its inset; on mobile its text stacks at the bottom and the web becomes the background of the whole panel.
 
 ## Elevation & Depth
 
@@ -216,7 +219,7 @@ Two geometries: the rounded rectangle of the frame and the circle of the logo's 
 ### Buttons
 Confident, round, and always pointing somewhere.
 - **Shape:** full pill (9999px).
-- **Primary (WhatsApp):** Circuit Green, 56px tall, 24px left / 8px right padding, 15px medium text in Ink on Green, ending in a 40px Ink on Green circle holding a green up-right arrow (the logo terminal).
+- **Primary (diagnosis, opens WhatsApp):** default label "Pedir un diagnóstico". Circuit Green, 56px tall, 24px left / 8px right padding, 15px medium text in Ink on Green, ending in a 40px Ink on Green circle holding a green up-right arrow (the logo terminal).
 - **Hover / Focus:** fill steps to Lit Green over 300ms; the arrow terminal rotates 45 degrees with out-expo over 500ms. Focus is a 2px green outline at 3px offset.
 - **On a green field:** inverts to an Ink on Green pill with green text, 48px tall.
 - **Outline:** 48px pill with a 20% line border; on hover it fills Circuit Green with Ink on Green text.
@@ -224,15 +227,21 @@ Confident, round, and always pointing somewhere.
 
 ### Cards / Containers
 - **Corner Style:** 28px frame radius.
-- **Background:** White/Carbon Panel with a 15% line border; the featured plan and the end-to-end section are solid Circuit Green with no border; the lead product card is Night.
+- **Background:** White/Carbon Panel with a 15% line border; the featured door, the featured plan and the manifesto section are solid Circuit Green with no border; the lead product card is Night.
 - **Shadow Strategy:** none (see Flat Ground Rule).
 - **Internal Padding:** 28px, 36px from 640px (40px on product cards).
+
+### Plans (no published price)
+Plan cards show a name, a use-based description (fixed minimum height so dividers align), a hairline, the line "Inversión según tu operación", what the level includes (check icons) and a "Pedir propuesta" pill. No figures, currencies or periods; the featured plan is a green field labelled "Recomendado", never a popularity claim. Hosting plans are named by use (Para empezar · Para crecer · Para operación exigente) and list outcomes, not specs (no vCPU, RAM or SSD).
+
+### Doors
+Three framed cards after the hero, one per client situation: "Tengo un problema", "Tengo una idea" and "No sé por dónde empezar" (featured, green). Title at 1.5–2rem regular, a muted paragraph and "Hablar con nosotros" with an arrow that rotates on hover; the whole card is the WhatsApp link.
 
 ### Navigation
 - **Style:** a floating pill bar fixed inside the top of the hero frame: logo pill on the left, link pill on the right, both 48px tall, translucent white at 4% with an 8% white border and blur over the canvas, turning to 85% Night with heavy blur after 24px of scroll.
 - **Links:** Host Grotesk 14px medium, sentence case, in Night Muted; hover and active go to Night Ink, active adds a 10% white pill. Labels are in client language (Soluciones, Casos, Productos, Nosotros).
-- **Actions:** a hairline divider, circular icon buttons for the cover letter and theme toggle (system, light, dark), and a green mono "Contacto" pill.
-- **Mobile:** a 24px-radius Night sheet with links at 24px medium separated by hairlines, the active link marked by a green dot, and a full-width 56px green WhatsApp pill.
+- **Actions:** a hairline divider, circular icon buttons for the cover letter and theme toggle (system, light, dark), and a green "Hablemos" pill in Host Grotesk 14px medium. Hosting is not in the main navigation; it lives in the footer and on /servicios.
+- **Mobile:** a 24px-radius Night sheet with links at 24px medium separated by hairlines, the active link marked by a green dot, and a full-width 56px green "Pedir un diagnóstico" pill.
 
 ### FAQ rows
 Rows separated by hairlines; the question is 18–20px medium, the toggle a 32px circle with a plus that rotates 45 degrees and fills Circuit Green when open.
@@ -241,15 +250,16 @@ Rows separated by hairlines; the question is 18–20px medium, the toggle a 32px
 A canvas drawn behind every Night panel: 32 spokes and 9 rings with alternating straight, outward and inward scallops, circuit extensions bending at 45 degrees into ring terminals, and a green core. It weaves thread by thread over about 2.8 seconds, then green pulses travel from the core along a spoke and light the terminals they reach; threads within 150px of the pointer pull toward it and spring back. Three variants: `hero` (web right of center), `edge` (web emerging from the right edge on page heroes), `quiet` (centered and dimmed at 85% in the closing panel). On desktop, elements marked as text zones push every trace and terminal at least 24px away from the copy. Under reduced motion it renders the finished web statically; it pauses offscreen.
 
 ### Project carousel
-A 22px-radius translucent Night card with the Float shadow: 16:10 screenshot, project name, mono hostname, round prev/next buttons, a mono `01/08` counter and segmented 2px progress bars filled in green over 4.8 seconds. Pauses on hover and focus.
+A 22px-radius translucent Night card with the Float shadow: 16:10 screenshot, project name, the kind of business in sans (never the hostname), round prev/next buttons, a mono counter (`01/10`, derived from the project count) and segmented 2px progress bars filled in green over 4.8 seconds. Pauses on hover and focus.
 
 ### Threaded lists and timelines
-Services, process steps, partner portraits and the company timeline hang from one hairline thread with a terminal node per item; the first or current item is lit green.
+Problems, solutions, process steps, partner portraits and the company timeline hang from one hairline thread with a terminal node per item; the first or current item is lit green. Problems are set as the owner's own words in quotes ("Se me pierden ventas y presupuestos") with the solution in a muted line below.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** open every page with a Night framed panel (28px radius, 8–12px inset); marketing pages end with exactly one closing panel holding one WhatsApp action, while legal documents end on the document itself.
+- **Do** open every page with a Night framed panel (28px radius, 8–12px inset); marketing pages end with exactly one closing panel holding one diagnosis action, while legal documents end on the document itself.
+- **Do** lead with the client's situation or problem and describe solutions by outcome, in words a business owner uses.
 - **Do** keep Night panels dark in both themes and verify every other surface in light and dark.
 - **Do** use Circuit Green as a solid field, a pill fill or a lit node, with Ink on Green on top.
 - **Do** set page h1s at weight 300 with -0.035em tracking, and pair every heading with a muted lead.
@@ -263,4 +273,6 @@ Services, process steps, partner portraits and the company timeline hang from on
 - **Don't** set sentences or headings in Geist Mono.
 - **Don't** add shadows to cards on the ground; only the floating carousel casts one.
 - **Don't** use voseo ("Contanos", "Tenés") or invented stats, testimonials or client logos.
+- **Don't** publish prices, currencies or popularity claims ("Más elegido"), or technical specs and jargon (vCPU, RAM, LLM, arquitectura) on first contact.
+- **Don't** show hostnames or code-styled type to the visitor; the site must never read as written for developers.
 - **Don't** use weights above 500 or square corners on interactive controls.
