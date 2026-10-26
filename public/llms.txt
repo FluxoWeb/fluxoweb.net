@@ -1,0 +1,50 @@
+
+# Fluxo Web Group E.A.S.
+
+> Fluxo Web Group E.A.S. es una empresa tecnológica paraguaya con sede en Ciudad del Este, Alto Paraná, Paraguay. Desarrolla software a medida, productos SaaS, aplicaciones web, integraciones, automatizaciones e infraestructura tecnológica para empresas, pymes y emprendedores.
+
+Fluxo Web trabaja en el diseño, desarrollo, implementación, alojamiento y mantenimiento de soluciones digitales. También crea productos tecnológicos propios y participa como socio tecnológico en proyectos de terceros.
+
+## Empresa y servicios
+
+- [Sitio oficial](https://fluxoweb.net/): información institucional y propuesta de valor.
+- [Servicios](https://fluxoweb.net/servicios): desarrollo de software, automatización, aplicaciones e infraestructura.
+- [Productos](https://fluxoweb.net/productos): soluciones empresariales y plataformas tecnológicas.
+- [Portfolio técnico](https://oscargrg.fluxoweb.net/): proyectos y experiencia de desarrollo.
+
+## Productos y plataformas
+
+- [FluxoCRM](https://fluxoweb.net/productos): CRM para gestionar contactos, oportunidades comerciales, tareas y seguimiento de ventas.
+- [ERPNext](https://fluxoweb.net/productos): implementación y adaptación de ERPNext para procesos empresariales.
+- [VentaFlow](https://ventaflow.fluxoweb.net/): gestión de ventas, catálogos y pedidos por WhatsApp.
+- [Quiro AI](https://quiro-ai.com/): plataforma digital de bienestar personal asistida por inteligencia artificial.
+- [MillonAI](https://millonai.com.py/): gestión de finanzas personales mediante WhatsApp.
+- [Redfin](https://redfin.com.py/): plataforma relacionada con financiamiento empresarial.
+- [Nova](https://nova.fluxoweb.app/): gestión comercial, ventas, inventario, caja y presupuestos.
+- [Ogady](https://ogady.app/): directorio de restaurantes, bares, cafés y negocios.
+- [Masé](https://masepasteleria.fluxoweb.net/): gestión de pedidos para pastelerías.
+- [Esmalté](https://esmalt.fluxoweb.net/): reservas y pagos para profesionales de uñas.
+- [Pro-Aqua](https://pro-aqua.com.py/): comercio electrónico de sistemas de limpieza con filtro de agua.
+- [BrunoInfo Sorteos](https://brunoinfosorteos.fluxoweb.app/): plataforma de sorteos y participación en línea.
+- [Zap Pulse](https://zap-pulse.fluxoweb.app/): plataforma digital; consultar el sitio para confirmar funcionalidades vigentes.
+
+## Capacidades tecnológicas
+
+- Desarrollo de software a medida y sistemas empresariales.
+- Aplicaciones web, APIs e integraciones.
+- Aplicaciones móviles.
+- Automatización de procesos e integración de inteligencia artificial.
+- Implementación y adaptación de sistemas empresariales.
+- Hosting, despliegue, infraestructura y mantenimiento de aplicaciones.
+- Desarrollo y evolución de productos SaaS.
+
+## Ubicación
+
+- Ciudad: Ciudad del Este.
+- Departamento: Alto Paraná.
+- País: Paraguay.
+- Sitio oficial: https://fluxoweb.net/
+
+## Información oficial
+
+Para confirmar funcionalidades, disponibilidad, alcance de los servicios y condiciones comerciales, consultar las páginas oficiales de Fluxo Web y de cada plataforma.
