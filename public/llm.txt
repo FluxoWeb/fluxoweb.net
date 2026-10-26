@@ -1,0 +1,43 @@
+# Fluxo Web Group E.A.S.
+
+> Fluxo Web Group E.A.S. es una empresa tecnológica paraguaya con sede en Ciudad del Este, especializada en desarrollo de software a medida, productos SaaS, aplicaciones web, automatización de procesos e infraestructura tecnológica.
+
+Fluxo Web ayuda a empresas, pymes y emprendedores a digitalizar sus operaciones mediante soluciones de software personalizadas, integración de sistemas, desarrollo de productos digitales y servicios de infraestructura.
+
+La empresa desarrolla productos tecnológicos propios y ofrece soluciones adaptadas a las necesidades de cada negocio. Su línea Fluxo Cloud se orienta a servicios de infraestructura, hosting y despliegue de aplicaciones.
+
+Ubicación: Ciudad del Este, Alto Paraná, Paraguay.
+
+Sitio oficial: https://fluxoweb.net/
+
+## Empresa
+
+- [Sitio oficial de Fluxo Web](https://fluxoweb.net/): Información institucional y servicios de la empresa.
+- [Portfolio de desarrollo](https://oscargrg.fluxoweb.net/): Perfil técnico y proyectos de desarrollo asociados con Fluxo Web.
+
+## Productos digitales y plataformas
+
+- [VentaFlow](https://ventaflow.fluxoweb.net/): Plataforma orientada a gestionar ventas, catálogos y pedidos mediante WhatsApp.
+- [Quiro AI](https://quiro-ai.com/): Plataforma digital de bienestar personal asistida por inteligencia artificial.
+- [Zap Pulse](https://zap-pulse.fluxoweb.app/): Plataforma digital de Fluxo Web. Consultar el sitio oficial para conocer sus funcionalidades y servicios.
+- [Redfin](https://redfin.com.py/): Plataforma digital disponible en Paraguay. Consultar el sitio oficial para conocer sus servicios y funcionalidades.
+- [Nova](https://nova.fluxoweb.app/): Plataforma digital de Fluxo Web. Consultar el sitio oficial para conocer sus funcionalidades y servicios.
+
+## Servicios
+
+- Desarrollo de software a medida: sistemas empresariales, aplicaciones web, APIs e integraciones.
+- Aplicaciones móviles: desarrollo de soluciones móviles según los requisitos de cada proyecto.
+- Automatización e inteligencia artificial: integración de modelos de IA y automatización de procesos empresariales.
+- Infraestructura y hosting: despliegue, alojamiento y mantenimiento de aplicaciones y servicios digitales.
+- Productos SaaS: diseño, desarrollo y evolución de plataformas de software como servicio.
+
+## Ubicación y contacto
+
+- País: Paraguay.
+- Departamento: Alto Paraná.
+- Ciudad: Ciudad del Este.
+- Sitio web: https://fluxoweb.net/
+
+## Información adicional
+
+Para confirmar servicios disponibles, alcance de los proyectos, condiciones comerciales y datos de contacto, consultar el sitio oficial de Fluxo Web.
