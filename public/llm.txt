@@ -17,11 +17,21 @@ Sitio oficial: https://fluxoweb.net/
 
 ## Productos digitales y plataformas
 
-- [VentaFlow](https://ventaflow.fluxoweb.net/): Plataforma orientada a gestionar ventas, catálogos y pedidos mediante WhatsApp.
-- [Quiro AI](https://quiro-ai.com/): Plataforma digital de bienestar personal asistida por inteligencia artificial.
-- [Zap Pulse](https://zap-pulse.fluxoweb.app/): Plataforma digital de Fluxo Web. Consultar el sitio oficial para conocer sus funcionalidades y servicios.
-- [Redfin](https://redfin.com.py/): Plataforma digital disponible en Paraguay. Consultar el sitio oficial para conocer sus servicios y funcionalidades.
-- [Nova](https://nova.fluxoweb.app/): Plataforma digital de Fluxo Web. Consultar el sitio oficial para conocer sus funcionalidades y servicios.
+### Productos propios
+
+- [Nova](https://nova.fluxoweb.app/): Sistema de gestión comercial para comercios y pymes, con ventas, inventario, caja y presupuestos.
+- [VentaFlow](https://ventaflow.fluxoweb.net/): Plataforma de ventas por WhatsApp con catálogo propio y gestión de pedidos.
+- [Ogady](https://ogady.app/): Directorio de restaurantes, bares, cafeterías y otros negocios de Paraguay, organizado por categoría y ciudad.
+- [Masé](https://masepasteleria.fluxoweb.net/): Plataforma de gestión de pedidos, fechas y avisos por WhatsApp para pastelerías.
+- [Esmalté](https://esmalt.fluxoweb.net/): Plataforma de reservas y pagos automatizados para profesionales de uñas.
+
+### Productos y proyectos con participación tecnológica de Fluxo Web
+
+- [Quiro AI](https://quiro-ai.com/): Plataforma de bienestar personal con inteligencia artificial generativa y herramientas de autoconocimiento.
+- [MillonAI](https://millonai.com.py/): Plataforma de finanzas personales que permite registrar gastos por WhatsApp mediante texto, audio o imágenes.
+- [Redfin](https://redfin.com.py/): Plataforma de financiamiento empresarial para descuento de facturas y créditos revolventes.
+- [BrunoInfo Sorteos](https://brunoinfosorteos.fluxoweb.app/): Plataforma de sorteos en vivo con cuenta regresiva y participación en línea.
+- [Pro-Aqua](https://pro-aqua.com.py/): Comercio electrónico para productos y sistemas de limpieza con filtro de agua.
 
 ## Servicios
 
