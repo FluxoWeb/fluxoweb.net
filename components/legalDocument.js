@@ -33,7 +33,8 @@ export default function LegalDocument({ title, description, subtitle, updated, i
           <p className="text-[14px] text-night-muted">Última actualización: {updated}</p>
         </PageHero>
 
-        <Container className="grid gap-12 pt-20 sm:pt-24 lg:grid-cols-12 lg:gap-8">
+        <div className="band-light py-20 sm:py-24">
+        <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <nav className="hidden lg:col-span-4 lg:block" aria-label="Cláusulas">
             <ol className="sticky top-32 space-y-2.5 border-l border-line/15 pl-5">
               {sections.map((s) => (
@@ -70,6 +71,7 @@ export default function LegalDocument({ title, description, subtitle, updated, i
             </div>
           </article>
         </Container>
+        </div>
       </main>
       <Footer />
     </>

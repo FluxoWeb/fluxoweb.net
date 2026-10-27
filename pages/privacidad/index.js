@@ -51,7 +51,7 @@ const secciones = [
     titulo: "Contacto",
     texto: (
       <>
-        Para consultas, solicitudes de acceso o cualquier inquietud relacionada con esta política de privacidad, puedes comunicarte
+        Para consultas, solicitudes de acceso o cualquier inquietud relacionada con esta política de privacidad, podés comunicarte
         con nosotros a través de <ContactLinks />.
       </>
     ),
@@ -65,7 +65,7 @@ export default function Privacidad() {
       description="Política de privacidad de Fluxo Web Group E.A.S.: qué información recopilamos, cómo la usamos y cómo la protegemos."
       subtitle="Fluxo Web Group E.A.S."
       updated="enero de 2025"
-      intro="En Fluxo Web Group E.A.S. nos tomamos muy en serio la privacidad de nuestros clientes y usuarios. Esta política describe qué información recopilamos, cómo la usamos y qué derechos tienes sobre tus datos."
+      intro="En Fluxo Web Group E.A.S. nos tomamos muy en serio la privacidad de nuestros clientes y usuarios. Esta política describe qué información recopilamos, cómo la usamos y qué derechos tenés sobre tus datos."
       sections={secciones}
     />
   );

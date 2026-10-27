@@ -40,7 +40,7 @@ export default function MemberPortfolio({ member }) {
                     href={href}
                     target={href.startsWith("mailto:") ? undefined : "_blank"}
                     rel="noopener noreferrer"
-                    className="inline-flex h-10 items-center gap-2 rounded-full border border-white/15 px-4 text-[14px] text-night-ink transition-colors hover:border-green hover:bg-green hover:text-[#0B0B0B]"
+                    className="inline-flex h-10 items-center gap-2 rounded-control border border-white/15 px-4 text-[14px] text-night-ink transition-colors hover:border-green hover:bg-green hover:text-[#0B0B0B]"
                   >
                     <Icon className="h-4 w-4" strokeWidth={1.8} />
                     {label}
@@ -57,7 +57,7 @@ export default function MemberPortfolio({ member }) {
           </div>
         </PageHero>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="perfil-title">
+        <section className="band-light py-20 sm:py-28" aria-labelledby="perfil-title">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
               <span className="block h-40 w-40 overflow-hidden rounded-full border border-line/20 p-1.5 sm:h-48 sm:w-48">
@@ -81,13 +81,13 @@ export default function MemberPortfolio({ member }) {
               <h2 id="perfil-title" className="sr-only">
                 Perfil
               </h2>
-              <p className="max-w-[56ch] text-[clamp(1.25rem,1.8vw,1.625rem)] font-light leading-relaxed">{member.bio}</p>
+              <p className="max-w-[56ch] text-[clamp(1.125rem,1.6vw,1.375rem)] leading-relaxed">{member.bio}</p>
             </div>
           </Container>
         </section>
 
         {member.skills?.length > 0 && (
-          <section className="pt-24 sm:pt-32" aria-labelledby="skills-title">
+          <section className="py-20 sm:py-28" aria-labelledby="skills-title">
             <Container>
               <SectionHeading title={<span id="skills-title">Habilidades.</span>} />
               <dl className="mt-14 grid border-t border-line/15 sm:grid-cols-2 lg:grid-cols-4">
@@ -112,7 +112,7 @@ export default function MemberPortfolio({ member }) {
         )}
 
         {member.projects?.length > 0 && (
-          <section className="pt-24 sm:pt-32" aria-labelledby="proyectos-title">
+          <section className="band-light py-20 sm:py-28" aria-labelledby="proyectos-title">
             <Container>
               <SectionHeading title={<span id="proyectos-title">Proyectos.</span>} />
               {featured.length > 0 && (
@@ -148,7 +148,7 @@ export default function MemberPortfolio({ member }) {
         )}
 
         {(member.experience?.length > 0 || member.education?.length > 0) && (
-          <section className="pt-24 sm:pt-32" aria-label="Trayectoria">
+          <section className="py-20 sm:py-28" aria-label="Trayectoria">
             <Container className="grid gap-16 lg:grid-cols-2 lg:gap-8">
               {member.experience?.length > 0 && <Timeline title="Experiencia" items={member.experience} />}
               {member.education?.length > 0 && <Timeline title="Formación" items={member.education} />}
@@ -193,7 +193,7 @@ function ProjectLink({ url }) {
 function Timeline({ title, items }) {
   return (
     <div>
-      <h2 className="text-title font-normal">{title}</h2>
+      <h2 className="text-title font-semibold">{title}</h2>
       <ol className="relative mt-10">
         <span aria-hidden="true" className="absolute bottom-3 left-[5px] top-3 w-px bg-line/15" />
         {items.map((item, i) => (

@@ -1,42 +1,40 @@
 ---
 name: Fluxo Web
-description: Convierte lo que sabe un negocio en soluciones tecnológicas, woven as one network and written for business owners, not developers.
+description: Turns what a business already knows into technology, drawn as one circuit that starts in the Fluxo logo and reaches every area of the company.
 colors:
   green: "#27D46B"
   green-hover: "#3BE07D"
   green-ink-light: "#0E803E"
-  green-ink-dark: "#27D46B"
   on-green: "#0B0B0B"
-  night: "#1D1D1D"
+  ground: "#1D1D1D"
+  panel: "#262626"
   night-raised: "#2A2A2A"
-  night-ink: "#F4F4F1"
-  night-muted: "#A3A39E"
+  ink: "#F4F4F1"
+  muted: "#A3A39E"
+  line: "#FFFFFF"
   ground-light: "#F6F6F3"
   panel-light: "#FFFFFF"
   ink-light: "#111111"
   muted-light: "#585854"
-  ground-dark: "#121212"
-  panel-dark: "#1D1D1D"
-  ink-dark: "#F4F4F1"
-  muted-dark: "#A3A39E"
+  line-light: "#111111"
 typography:
   display:
     fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.75rem, min(6.6vw, 11svh), 6rem)"
-    fontWeight: 300
-    lineHeight: 1
-    letterSpacing: "-0.035em"
-  headline:
-    fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 4.2vw, 3.75rem)"
-    fontWeight: 400
-    lineHeight: 1.02
-    letterSpacing: "-0.035em"
+    fontSize: "clamp(2.375rem, min(5.2vw, 9.5svh), 4.5rem)"
+    fontWeight: 600
+    lineHeight: 1.04
+    letterSpacing: "-0.03em"
   title:
+    fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.75rem, 3.3vw, 3rem)"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "-0.025em"
+  card-title:
     fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.25rem"
     fontWeight: 500
-    lineHeight: 1.25
+    lineHeight: 1.4
     letterSpacing: "-0.025em"
   lead:
     fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
@@ -48,127 +46,152 @@ typography:
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.625
-  label:
-    fontFamily: "Geist Mono, ui-monospace, monospace"
-    fontSize: "12px"
-    fontWeight: 400
-    lineHeight: 1.6
-    letterSpacing: "0.08em"
+  control:
+    fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 500
+    lineHeight: 1.5
+  wordmark:
+    fontFamily: "Host Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: "0.28em"
   data:
     fontFamily: "Geist Mono, ui-monospace, monospace"
-    fontSize: "2.25rem"
+    fontSize: "1.125rem"
     fontWeight: 500
-    lineHeight: 1.1
-    letterSpacing: "-0.025em"
+    lineHeight: 1.55
     fontFeature: "tnum"
 rounded:
-  frame: "28px"
-  tile: "20px"
-  pill: "9999px"
+  control: "10px"
+  inset: "12px"
+  card: "16px"
+  round: "9999px"
 spacing:
-  frame-inset-sm: "8px"
-  frame-inset: "12px"
   gutter-sm: "20px"
   gutter-md: "32px"
-  gutter-lg: "48px"
+  gutter-lg: "40px"
+  container-max: "1280px"
   card-pad: "28px"
   card-pad-lg: "36px"
-  section-sm: "96px"
-  section: "128px"
-  container-max: "1360px"
+  section: "80px"
+  section-lg: "112px"
+  nav-height: "72px"
 components:
   button-primary:
     backgroundColor: "{colors.green}"
     textColor: "{colors.on-green}"
-    typography: "{typography.body}"
-    rounded: "{rounded.pill}"
-    padding: "0 8px 0 24px"
-    height: "56px"
+    typography: "{typography.control}"
+    rounded: "{rounded.control}"
+    padding: "0 20px"
+    height: "48px"
   button-primary-hover:
     backgroundColor: "{colors.green-hover}"
-  button-primary-on-green:
-    backgroundColor: "{colors.on-green}"
-    textColor: "{colors.green}"
-    rounded: "{rounded.pill}"
-    height: "48px"
-  button-outline:
-    textColor: "{colors.ink-light}"
-    rounded: "{rounded.pill}"
+  button-primary-lg:
+    backgroundColor: "{colors.green}"
+    textColor: "{colors.on-green}"
+    rounded: "{rounded.control}"
     padding: "0 24px"
+    height: "56px"
+  button-outline:
+    textColor: "{colors.ink}"
+    typography: "{typography.control}"
+    rounded: "{rounded.control}"
+    padding: "0 20px"
     height: "48px"
   button-outline-hover:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.on-green}"
+    textColor: "{colors.green}"
+  button-dark:
+    backgroundColor: "{colors.on-green}"
+    textColor: "{colors.green}"
+    rounded: "{rounded.control}"
+    height: "48px"
+  button-dark-hover:
+    backgroundColor: "{colors.panel}"
   nav-link:
-    textColor: "{colors.night-muted}"
-    typography: "{typography.body}"
-    rounded: "{rounded.pill}"
-    padding: "8px 14px"
+    textColor: "{colors.muted}"
+    typography: "{typography.control}"
   nav-link-active:
-    textColor: "{colors.night-ink}"
-  panel-night:
-    backgroundColor: "{colors.night}"
-    textColor: "{colors.night-ink}"
-    rounded: "{rounded.frame}"
-  panel-green:
-    backgroundColor: "{colors.green}"
-    textColor: "{colors.on-green}"
-    rounded: "{rounded.frame}"
+    textColor: "{colors.ink}"
   card:
     backgroundColor: "{colors.panel-light}"
     textColor: "{colors.ink-light}"
-    rounded: "{rounded.frame}"
+    rounded: "{rounded.card}"
     padding: "{spacing.card-pad-lg}"
-  icon-button:
-    textColor: "{colors.night-muted}"
-    rounded: "{rounded.pill}"
-    size: "36px"
+  card-featured:
+    backgroundColor: "{colors.green}"
+    textColor: "{colors.on-green}"
+    rounded: "{rounded.card}"
+    padding: "{spacing.card-pad-lg}"
+  card-night:
+    backgroundColor: "{colors.ground}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "40px"
+  project-card:
+    backgroundColor: "{colors.panel}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "12px"
+  area-card:
+    backgroundColor: "{colors.night-raised}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.inset}"
+    padding: "10px 16px"
+  icon-circle:
+    backgroundColor: "{colors.panel-light}"
+    textColor: "{colors.ink-light}"
+    rounded: "{rounded.round}"
+    size: "64px"
 ---
 
 # Design System: Fluxo Web
 
 ## Overview
 
-**Creative North Star: "Ñandutí de circuitos"**
+**Creative North Star: "El circuito del negocio"**
 
-Fluxo Web is drawn as a literal web: the Guaraní ñandutí lace woven from the circuit traces of the Fluxo logo. Every service, product and partner is a node on one network that the company runs end to end. The visual language is black, white and green, the brand colors the company owns, applied with discipline: near-black framed panels carry hairline white threads, and green appears only where something is solid, actionable or alive.
+The Fluxo logo is the system. The hero renders the original logo vector, a negative square with the brain/cloud and circuit lines cut out, painted the exact black of the band so the square disappears and only the lines remain. A white layer revealed top to bottom fills those lines, a green band sweeps through them, and four connectors leave the logo toward the areas of a business (Ideas, Ventas, Operación, Tecnología), carrying green pulses that light each area's terminal. Everything after the hero extends that circuit: round terminals, hairline threads, the ñandutí web behind the dark bands.
 
-The page reads as a sequence of framed rooms on a quiet ground. A dark framed panel opens every page (the hero, with the woven canvas behind the text), open sections of type and threads follow on the theme ground, a single solid green field carries the manifesto ("Tu empresa aprendió de cada cliente…"), and a single dark framed panel closes each marketing page with one diagnosis action. Density is low; type is large, light and tightly tracked; proof (live projects, partners, dates) carries the persuasion instead of decoration.
+The page is one composition, not a themed one. Full-bleed bands alternate between the logo's black and a warm off-white, edge to edge, with no inset frames and no theme switch. Type is a confident semibold grotesk set large and tight; green is solid and rare, the color of the action, the lit node and one phrase in the hero headline. Density is moderate: centered four-across rows on the light bands, generous 80–112px band padding, cards with a 16px radius and a hairline border.
 
-The reader is a business owner who often does not know what they want, never a developer. Every page leads with the client's situation or problem, describes solutions by the outcome they produce, publishes no prices, and asks for one thing: a diagnostic conversation on WhatsApp ("Pedir un diagnóstico").
-
-It rejects the indigo SaaS template (badge pill, blob gradient, three equal cards) and its neon-dark opposite: no glow, no gradient accents, no eyebrow labels.
+The identity is black, white and green. The supplied spec's cream palette was rejected by the team and does not appear anywhere in the build.
 
 **Key Characteristics:**
-- Rounded framed panels (28px) inset 8–12px from the viewport edge, the border language of every page.
-- A dark `night` surface that stays dark in both themes, carrying the ñandutí canvas.
-- Hairline threads (1px, ink at 10–15% alpha) as dividers, timelines and connectors between round terminal nodes.
-- Green as solid committed fields, primary pills and live nodes; never as glow.
-- Light display type (300) with tight negative tracking; Geist Mono reserved for data.
+- Full-bleed alternating bands: logo black (default) and off-white (light band), same token names in both.
+- The original logo vector animated as the hero's signature, never redrawn.
+- Semibold (600) display and section headings with tight negative tracking.
+- Rounded 10px controls with a trailing arrow; 16px cards; circles for icons, steps and terminals.
+- Flat: no box-shadows anywhere; depth comes from band contrast and hairlines.
 
 ## Colors
 
-A three-voice palette: near-black, warm off-white, and one saturated circuit green, with light and dark themes sharing the same role names.
+Black, white and one circuit green; the light band swaps the same roles rather than adding colors.
 
 ### Primary
-- **Circuit Green** (green): the brand's live color. Solid fills only: the primary diagnosis pill, the featured door ("No sé por dónde empezar"), the featured plan, the manifesto field, the lit "Diagnóstico" step, lit terminals, the canvas core and travelling pulses, the carousel progress bar, selection background and the focus ring.
-- **Lit Green** (green-hover): the hover state of green pills, one step brighter. Never used at rest.
-- **Deep Text Green** (green-ink-light / green-ink-dark): green as ink on the theme ground, for text links, hover states of titles and the final timeline year. In light mode it darkens to stay legible on off-white; in dark mode it equals Circuit Green.
-- **Ink on Green** (on-green): the near-black used for every text, icon and terminal sitting on a green field, and for the dark arrow terminal inside the primary pill.
-- **Relationship labels** on project tiles: "Producto propio" in Deep Text Green, "Socio tecnológico" in Ink, "Cliente" in Muted, so ownership reads at a glance.
+- **Circuit Green** (green): primary button fill, the "Hablemos" nav button, featured plan and product fields, lit terminals, hero pulses and scan band, the open FAQ toggle, focus ring and text selection. On dark bands it is also the ink for one emphasised phrase ("Juntos construimos") and the green relationship label.
+- **Lit Green** (green-hover): hover fill of every green button. Never at rest.
+- **Deep Text Green** (green-ink-light): green used as text on light bands (the "Producto propio" label, check icons, title hovers), darkened to stay legible on off-white. On dark bands the green-ink role resolves to Circuit Green.
+- **Ink on Green** (on-green): every text and icon on a green field, and the fill of the dark button used on green fields.
 
 ### Neutral
-- **Night** (night): the fixed dark surface of the hero, page heroes, closing panel and the dark product card. Dark in both themes.
-- **Night Raised** (night-raised): image wells and initials avatars inside Night.
-- **Night Ink / Night Muted** (night-ink, night-muted): primary and secondary text on Night.
-- **Bone Ground / White Panel** (ground-light, panel-light): light theme page ground and card surface.
-- **Carbon Ground / Carbon Panel** (ground-dark, panel-dark): dark theme page ground and card surface; Carbon Panel equals Night.
-- **Ink / Muted** (ink-*, muted-*): body text and secondary text per theme. The `line` role is Ink (light) or white (dark), always applied at 10–20% alpha, never at full strength.
+- **Logo Black** (ground): the default band, the navbar once scrolled, the footer, the closing panel and the dark product card. It is the exact black of the logo square.
+- **Carbon Panel** (panel): card surface inside dark bands; also the hover of the dark button.
+- **Raised Carbon** (night-raised): image wells, initials avatars and the hero area cards.
+- **Bone Ink / Ash Muted** (ink, muted): primary and secondary text on dark bands.
+- **Hairline** (line): white on dark bands, applied only at 10–35% alpha.
+- **Bone Ground / White Panel** (ground-light, panel-light): light band ground and its cards.
+- **Graphite Ink / Stone Muted** (ink-light, muted-light): text on light bands.
+- **Hairline (light)** (line-light): near-black, again only at 10–35% alpha.
+- **Relationship labels**: "Producto propio" in the green-ink role, "Socio tecnológico" and "Cliente" in the muted role.
 
 ### Named Rules
-**The Solid Green Rule.** Green is a fill, a node or a word of ink; it is never a glow, gradient, blur halo or colored shadow. If green needs to feel brighter, it becomes a bigger solid field.
+**The Logo Black Rule.** The dark band is the logo's own black. The hero logo is a cut-out square painted in that same value; change the band black and the square reappears as a box.
 
-**The Night Holds Rule.** Night panels stay dark in both themes. Theme switching changes the ground and the cards around them, never the framed panels that carry the web.
+**The Band Swap Rule.** Light sections are a class on the band that redefines ground, panel, ink, muted, line and green-ink. Components keep the same role classes in both bands; there are no light/dark class pairs and no theme switcher.
+
+**The Solid Green Rule.** Green is a fill, a node or a word of ink. The single exception is native to the world: the soft-edged scan band that travels inside the logo's line holes in the hero. Nowhere else is green a glow, halo, gradient or colored shadow.
 
 ## Typography
 
@@ -176,103 +199,106 @@ A three-voice palette: near-black, warm off-white, and one saturated circuit gre
 **Body Font:** Host Grotesk
 **Label/Mono Font:** Geist Mono (with ui-monospace), self-hosted 400–600
 
-**Character:** A light, wide-open grotesk set large and tight against a precise monospaced data voice: the engineer's numbers beside the company's plain-spoken sentences.
+**Character:** A firm, plain-spoken grotesk at semibold for headings and regular for reading, with a monospaced voice kept strictly for numbers.
 
 ### Hierarchy
-- **Display** (300, clamp 2.75rem–6rem capped by 11svh, line-height 1, -0.035em): the one h1 per page, in the hero and page heroes, max 11–16ch.
-- **Headline** (400, clamp 2rem–3.75rem, 1.02, -0.035em): section h2s via the section heading and the closing panel.
-- **Title** (500, 1.25–2.25rem, tight leading, -0.025em): card, service, member and plan names.
-- **Lead** (400, clamp 1.0625rem–1.25rem, 1.55): the sentence under every display or headline, muted, 46–60ch.
+- **Display** (600, clamp 2.375rem–4.5rem capped by 9.5svh, 1.04, -0.03em): the one h1 per page, home hero and page heroes, max 14–18ch.
+- **Title** (600, clamp 1.75rem–3rem, 1.1, -0.025em): section h2s through the section heading and the closing manifesto.
+- **Card title** (500, 1.25–1.5rem, tight tracking): card, step, plan, member and project names. The home's benefit, project and step titles use 600.
+- **Lead** (400, clamp 1.0625rem–1.25rem, 1.55): the muted sentence under a display or title, 42–60ch.
 - **Body** (400, 15–16px, 1.625): descriptions, FAQ answers and legal text at max 62–68ch.
-- **Label** (Geist Mono 400–500, 11–12px, 0.08em, uppercase): reserved; no current use. Navigation is set in Host Grotesk 14px medium, in sentence case.
-- **Data** (Geist Mono 500, tabular figures, 1.875rem–3.75rem): hero stats, step numbers, years, clause numbers and the carousel counter.
+- **Control** (500, 14–16px): buttons, nav links and arrow links, sentence case.
+- **Wordmark** (500, 15px, 0.28em, uppercase): "FLUXO WEB" beside the symbol in the nav and footer only.
+- **Data** (Geist Mono 500, tabular figures, 12–18px): step numbers (01–04), years and clause numbers.
 
 ### Named Rules
-**The Light Display Rule.** Page h1s are weight 300; headlines are 400; nothing above 500 appears anywhere in the system.
+**The Semibold Heading Rule.** Display and section headings are 600. Heading weight comes from the face, never from color or a label stacked above it.
 
-**The Mono Is Data Rule.** Geist Mono sets only numbers, years, step numbers and clause numbers. It never sets navigation, hostnames, sentences, headings or labels above headings: the audience is business owners, and code-styled type reads as a site for developers.
+**The Mono Is Data Rule.** Geist Mono sets only step numbers, years and clause numbers. Never sentences, headings, navigation or hostnames.
 
-**The No Eyebrow Rule.** Headings stand alone: a title and its lead, stacked. No kicker, eyebrow or small-caps label sits above a heading.
+**The No Eyebrow Rule.** A heading stands alone with its lead below. No kicker, eyebrow or small label sits above it.
 
 ## Layout
 
-Content sits in a container of max 1360px with gutters of 20px, 32px from 640px and 48px from 1024px, aligned with the content inside the hero frame. Framed panels break the container and run near full-bleed, inset 8px (12px from 640px) from the viewport. Sections are separated by 96px of top space (128px from 640px); the footer follows after the same gap behind a hairline.
+Content sits in a 1280px container with 20px gutters, 32px from 640px and 40px from 1024px. Every section is a full-bleed band with 80px vertical padding (112px from 640px). The navbar is 72px tall and fixed, so heroes start with 112–160px of top padding.
 
-The grid is 12 columns from 1024px. Recurring compositions: three equal doors (the client's situation) right after the hero; a 5/7 split with a sticky heading beside a threaded list (problems the client recognises, solutions on /servicios); a 4/8 split with a sticky index (FAQ, legal clauses); and four-across timelines joined by a single horizontal thread at 1024px and up (manifesto points, process steps). Project tiles are adaptive on 12 columns: always 2 large on top, then the rest in complete rows of 3 (medium) and 4 (small), chosen so no row is left incomplete; on tablet (2 columns) an odd last tile spans the full width. The hero fills the viewport height minus its inset; on mobile its text stacks at the bottom and the web becomes the background of the whole panel.
+Page sequence: a dark hero band (home Hero or PageHero), then bands that alternate light and dark, then the dark closing band and the dark footer. Legal documents put their text in one light band.
+
+The grid is 12 columns from 1024px. The home hero is a 6/6 split, text left and the logo circuit right (max 620px, 5:4), stacking on mobile where the area cards hide below 640px. Recurring compositions: four-across centered rows on light bands, divided by vertical hairlines at 1024px and up (benefits, process steps with arrows between round numbers); three equal project cards; 5/7 splits with a heading beside a hairline list; a 4/8 split with a sticky clause index for legal text; a dark band with the ñandutí `edge` web filling its right half behind a black-to-clear veil.
+
+### Named Rules
+**The Alternating Band Rule.** Sections change by band, not by frame. A new section is a new full-bleed band; cards live inside bands, never as inset framed panels.
 
 ## Elevation & Depth
 
-The system is flat. Depth comes from the contrast between Night panels and the theme ground, from hairline borders at 10–20% alpha, and from legibility veils: Night-colored linear or radial gradients that fade the canvas behind text (hero and page heroes left to right on desktop, top to bottom on mobile; closing panel radial). The floating project carousel and the floating nav pill are the only layered elements; they use translucent Night with backdrop blur, and the carousel alone carries a shadow.
-
-### Shadow Vocabulary
-- **Float** (`box-shadow: 0 24px 60px -20px rgba(0,0,0,0.7)`): the hero project carousel, floating over the canvas. Not for cards on the ground.
+The system is flat: the build has no box-shadows. Depth comes from the contrast between black and off-white bands, from hairline borders at 10–35% alpha, and from legibility veils, which are black-to-clear gradients that fade the ñandutí canvas behind text (page heroes left to right on desktop, top to bottom on mobile; radial in the closing band; left to right on the aspiration band). The scrolled navbar (95% black with blur) and the hero area cards (90% raised carbon with light blur) are the only translucent layers.
 
 ### Named Rules
-**The Flat Ground Rule.** Nothing on the theme ground casts a shadow. Cards separate by a hairline border or a solid fill.
+**The Flat Band Rule.** Nothing casts a shadow. A card separates from its band by a hairline border or a solid fill.
 
 ## Shapes
 
-Two geometries: the rounded rectangle of the frame and the circle of the logo's circuit terminals. Framed panels and cards use the 28px frame radius with overflow clipped; project image tiles use 20px. Every interactive control (buttons, nav links, icon buttons, chips, avatars, FAQ toggles) is a full pill or circle. Terminal nodes are 12px circles with a 1.5px ring, hollow at rest and filled green when lit. Lines are hairlines at 1px; the canvas draws spokes and scalloped rings at 0.9–1.4px with round caps.
+Three shapes: the 10px rounded rectangle of controls (buttons, menu toggle, social buttons), the 16px rounded card, and the circle of the logo's terminals. Image wells and hero area cards use 12px, nested inside 16px cards. Circles carry icons (64px benefit icons), step numbers (56–60px), avatars, FAQ toggles and terminals: 12px with a 1.5px ring, hollow at rest and solid green when lit. Hairlines are 1px. Connectors in the hero are 1.6px with round caps and 45-degree bends, the same geometry as the logo traces.
 
 ## Components
 
 ### Buttons
-Confident, round, and always pointing somewhere.
-- **Shape:** full pill (9999px).
-- **Primary (diagnosis, opens WhatsApp):** default label "Pedir un diagnóstico". Circuit Green, 56px tall, 24px left / 8px right padding, 15px medium text in Ink on Green, ending in a 40px Ink on Green circle holding a green up-right arrow (the logo terminal).
-- **Hover / Focus:** fill steps to Lit Green over 300ms; the arrow terminal rotates 45 degrees with out-expo over 500ms. Focus is a 2px green outline at 3px offset.
-- **On a green field:** inverts to an Ink on Green pill with green text, 48px tall.
-- **Outline:** 48px pill with a 20% line border; on hover it fills Circuit Green with Ink on Green text.
-- **Arrow link:** 15px medium text plus an arrow that advances 4px on hover; underline at 6px offset on hover.
+Square-shouldered, softly rounded, always pointing forward.
+- **Shape:** gently rounded (10px).
+- **Primary:** Circuit Green with Ink on Green text, 500 weight, ending in a right arrow. Sizes: 40px tall at 14px, 48px at 15px with 20px padding, 56px at 16px with 24px padding (the WhatsApp default, "Conversemos sobre tu negocio").
+- **Hover / Focus:** fill steps to Lit Green over 200ms; the arrow advances 2px with out-expo over 300ms. Focus is a 2px green outline at 3px offset.
+- **Outline:** a 35% hairline border in the text color; on hover the border and text turn green. Paired beside a primary ("Quiero resolver un problema", "Conocé la iniciativa").
+- **Dark:** Ink on Green fill with green text, used on green fields; hover lifts to Carbon Panel.
+- **Arrow link:** 15px medium text with an arrow that advances 4px and an underline at 6px offset on hover.
+
+### Chips
+- **Style:** full-round, 1px hairline at 15–30%, 13px text: skill tags on partner pages and the "Recomendado" marker on the featured plan.
 
 ### Cards / Containers
-- **Corner Style:** 28px frame radius.
-- **Background:** White/Carbon Panel with a 15% line border; the featured door, the featured plan and the manifesto section are solid Circuit Green with no border; the lead product card is Night.
-- **Shadow Strategy:** none (see Flat Ground Rule).
-- **Internal Padding:** 28px, 36px from 640px (40px on product cards).
+- **Corner Style:** 16px.
+- **Background:** panel with a 10–15% hairline border; the featured plan and FluxoCRM field are solid Circuit Green with no border; the lead product card is Logo Black on a light band.
+- **Shadow Strategy:** none (see the Flat Band Rule).
+- **Internal Padding:** 28px, 36px from 640px (40px on product cards); project cards use 12px around a 12px-radius 16:10 screenshot.
+- **Hover:** border warms toward green; screenshots scale to 1.03 over 700ms.
 
 ### Plans (no published price)
-Plan cards show a name, a use-based description (fixed minimum height so dividers align), a hairline, the line "Inversión según tu operación", what the level includes (check icons) and a "Pedir propuesta" pill. No figures, currencies or periods; the featured plan is a green field labelled "Recomendado", never a popularity claim. Hosting plans are named by use (Para empezar · Para crecer · Para operación exigente) and list outcomes, not specs (no vCPU, RAM or SSD).
-
-### Doors
-Three framed cards after the hero, one per client situation: "Tengo un problema", "Tengo una idea" and "No sé por dónde empezar" (featured, green). Title at 1.5–2rem regular, a muted paragraph and "Hablar con nosotros" with an arrow that rotates on hover; the whole card is the WhatsApp link.
+Name, use-based description, a hairline, the line "Inversión según tu operación", included items with check icons, and a "Pedir propuesta" control. The featured plan is a green field marked "Recomendado". No figures, currencies or periods.
 
 ### Navigation
-- **Style:** a floating pill bar fixed inside the top of the hero frame: logo pill on the left, link pill on the right, both 48px tall, translucent white at 4% with an 8% white border and blur over the canvas, turning to 85% Night with heavy blur after 24px of scroll.
-- **Links:** Host Grotesk 14px medium, sentence case, in Night Muted; hover and active go to Night Ink, active adds a 10% white pill. Labels are in client language (Soluciones, Casos, Productos, Nosotros).
-- **Actions:** a hairline divider, circular icon buttons for the cover letter and theme toggle (system, light, dark), and a green "Hablemos" pill in Host Grotesk 14px medium. Hosting is not in the main navigation; it lives in the footer and on /servicios.
-- **Mobile:** a 24px-radius Night sheet with links at 24px medium separated by hairlines, the active link marked by a green dot, and a full-width 56px green "Pedir un diagnóstico" pill.
+- **Style:** full-width bar fixed to the top, 72px, transparent over the hero; after 24px of scroll it becomes 95% Logo Black with blur and a 10% bottom hairline.
+- **Brand:** the logo symbol (40px) plus the uppercase wordmark.
+- **Links:** Soluciones · Proyectos · Nosotros, 15px in muted, ink on hover and when active. A green "Hablemos" button (44px) closes the row.
+- **Mobile:** a 44px outlined menu toggle opens a black sheet with 24px links between hairlines, a green dot on the active link and a full-width 56px green "Hablemos".
 
 ### FAQ rows
-Rows separated by hairlines; the question is 18–20px medium, the toggle a 32px circle with a plus that rotates 45 degrees and fills Circuit Green when open.
+Rows between hairlines; the question at 18–20px medium; the toggle is a 32px circle with a plus that rotates 45 degrees and fills Circuit Green when open.
 
-### Ñandutí canvas (signature)
-A canvas drawn behind every Night panel: 32 spokes and 9 rings with alternating straight, outward and inward scallops, circuit extensions bending at 45 degrees into ring terminals, and a green core. It weaves thread by thread over about 2.8 seconds, then green pulses travel from the core along a spoke and light the terminals they reach; threads within 150px of the pointer pull toward it and spring back. Three variants: `hero` (web right of center), `edge` (web emerging from the right edge on page heroes), `quiet` (centered and dimmed at 85% in the closing panel). On desktop, elements marked as text zones push every trace and terminal at least 24px away from the copy. Under reduced motion it renders the finished web statically; it pauses offscreen.
+### Logo circuit (signature)
+The home hero illustration on a 1000×800 canvas. The original logo vector, taken verbatim from the brand SVG, is painted Logo Black over a bone-white layer that scales in from the top over 1.6s, so the lines appear drawn. From 2s a green band sweeps top to bottom through the lines every 3.6s. Four 1.6px connectors at 55% white draw in, ending at terminals beside four raised cards (12px radius, lucide icon plus label: Ideas, Ventas, Operación, Tecnología). Pulses travel each connector in turn and light its terminal green. Under reduced motion the scan band and pulses are removed and the finished logo and connectors stay static.
 
-### Project carousel
-A 22px-radius translucent Night card with the Float shadow: 16:10 screenshot, project name, the kind of business in sans (never the hostname), round prev/next buttons, a mono counter (`01/10`, derived from the project count) and segmented 2px progress bars filled in green over 4.8 seconds. Pauses on hover and focus.
+### Ñandutí canvas
+The woven web from earlier versions of the site, now a secondary texture on dark bands: `edge` on page heroes and the right half of the home aspiration band, `quiet` (centered, dimmed) behind the closing manifesto. Always behind a black veil, static under reduced motion, paused offscreen.
 
 ### Threaded lists and timelines
-Problems, solutions, process steps, partner portraits and the company timeline hang from one hairline thread with a terminal node per item; the first or current item is lit green. Problems are set as the owner's own words in quotes ("Se me pierden ventas y presupuestos") with the solution in a muted line below.
+Steps, timelines and feature lists hang from a 1px hairline with a terminal per item; the first or last item is lit green.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** open every page with a Night framed panel (28px radius, 8–12px inset); marketing pages end with exactly one closing panel holding one diagnosis action, while legal documents end on the document itself.
-- **Do** lead with the client's situation or problem and describe solutions by outcome, in words a business owner uses.
-- **Do** keep Night panels dark in both themes and verify every other surface in light and dark.
-- **Do** use Circuit Green as a solid field, a pill fill or a lit node, with Ink on Green on top.
-- **Do** set page h1s at weight 300 with -0.035em tracking, and pair every heading with a muted lead.
-- **Do** use Geist Mono with tabular figures for numbers, years, step numbers and clause numbers.
-- **Do** join related items with a hairline thread and round terminal nodes.
-- **Do** keep copy in neutral Latin American Spanish (tú: "Escríbenos", "Cuéntanos") and show only verifiable figures: founding year, number of partners, projects actually listed.
+- **Do** keep the dark band at the logo's black and use the light band class for every light section.
+- **Do** render the logo from the original vector; animate it with layers behind and over it, never by redrawing its lines.
+- **Do** set display and section headings at 600 with negative tracking, each followed by a muted lead.
+- **Do** end every primary action with an arrow, on a 10px rounded green button with Ink on Green text.
+- **Do** use Geist Mono with tabular figures only for step numbers, years and clause numbers.
+- **Do** honor reduced motion in every animated piece: remove the scan and pulses, show the finished state.
+- **Do** verify every band at 1440 and 390 wide; with no theme switcher, the light and dark bands together are the whole check.
 
 ### Don't:
-- **Don't** use green as glow, gradient, blur halo or colored shadow.
+- **Don't** add a theme switcher, light/dark class pairs or raw Tailwind grays; colors come from the role tokens.
+- **Don't** use cream or beige grounds; the light band is Bone Ground.
+- **Don't** use green as glow, halo, colored shadow or gradient outside the logo's scan band.
+- **Don't** add box-shadows to cards, buttons or navigation.
 - **Don't** put eyebrow or kicker labels above headings.
-- **Don't** set sentences or headings in Geist Mono.
-- **Don't** add shadows to cards on the ground; only the floating carousel casts one.
-- **Don't** use voseo ("Contanos", "Tenés") or invented stats, testimonials or client logos.
-- **Don't** publish prices, currencies or popularity claims ("Más elegido"), or technical specs and jargon (vCPU, RAM, LLM, arquitectura) on first contact.
-- **Don't** show hostnames or code-styled type to the visitor; the site must never read as written for developers.
-- **Don't** use weights above 500 or square corners on interactive controls.
+- **Don't** set sentences, headings, navigation or hostnames in Geist Mono.
+- **Don't** wrap sections in inset framed panels; sections are full-bleed bands.
+- **Don't** show prices, currencies or popularity claims on plan cards.

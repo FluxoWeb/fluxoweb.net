@@ -15,7 +15,7 @@ const services = [
     name: "Ordenar tu operación",
     description:
       "Un sistema hecho sobre cómo trabaja tu empresa: ventas, stock, caja y reportes en un solo lugar, sin planillas sueltas ni información que depende de una persona.",
-    capabilities: ["Partimos de cómo trabajas hoy", "Se conecta con lo que ya usas", "Crece junto con tu negocio"],
+    capabilities: ["Partimos de cómo trabajás hoy", "Se conecta con lo que ya usás", "Crece junto con tu negocio"],
   },
   {
     id: "automatizacion",
@@ -28,7 +28,7 @@ const services = [
   {
     id: "vender",
     name: "Vender por internet",
-    description: "Un sitio o una tienda en línea que tú mismo puedes administrar, que aparece en Google y que lleva a tus clientes hasta la compra.",
+    description: "Un sitio o una tienda en línea que vos mismo podés administrar, que aparece en Google y que lleva a tus clientes hasta la compra.",
     capabilities: ["Se administra fácilmente", "Aparece en las búsquedas", "Funciona en cualquier pantalla"],
   },
   {
@@ -47,10 +47,10 @@ const services = [
 ];
 
 const steps = [
-  { title: "Conversación", text: "Nos cuentas qué pasa en tu negocio, con tus palabras. Sin tecnicismos." },
-  { title: "Diagnóstico", text: "Entendemos tu operación y definimos qué conviene resolver primero." },
-  { title: "Propuesta", text: "Objetivos, entregas, plazos e inversión por escrito, antes de empezar." },
-  { title: "Primera entrega", text: "Ves avances reales en etapas y seguimos contigo después del lanzamiento." },
+  { title: "Te escuchamos", text: "Conocemos tu negocio, tus ideas y tus desafíos. Sin tecnicismos." },
+  { title: "Definimos el camino", text: "Damos forma a la solución juntos y te pasamos una propuesta por escrito." },
+  { title: "Construimos con vos", text: "Desarrollamos y validamos en cada etapa, con avances que podés ver." },
+  { title: "Lo ponemos en marcha", text: "Te acompañamos en la implementación y después del lanzamiento." },
 ];
 
 export default function Servicios() {
@@ -67,7 +67,7 @@ export default function Servicios() {
       <main>
         <PageHero
           title="Soluciones para lo que tu negocio necesita."
-          lead="Primero entendemos qué te frena o qué quieres lograr. Después elegimos la tecnología. Estas son las soluciones que más construimos."
+          lead="Primero entendemos qué te frena o qué querés lograr. Después elegimos la tecnología. Estas son las soluciones que más construimos."
         >
           <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
             <WhatsAppButton />
@@ -77,7 +77,7 @@ export default function Servicios() {
           </div>
         </PageHero>
 
-        <section className="pt-24 sm:pt-32" aria-label="Soluciones">
+        <section className="band-light py-20 sm:py-28" aria-label="Soluciones">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
             <nav className="hidden lg:col-span-3 lg:block" aria-label="Índice de soluciones">
               <ul className="sticky top-32 space-y-3 border-l border-line/15 pl-5">
@@ -94,7 +94,7 @@ export default function Servicios() {
             <div className="lg:col-span-9">
               {services.map((s) => (
                 <article key={s.id} id={s.id} className="scroll-mt-28 border-t border-line/15 py-14 first:border-t-0 first:pt-0 sm:py-20">
-                  <h2 className="text-title font-normal">{s.name}</h2>
+                  <h2 className="text-title font-semibold">{s.name}</h2>
                   <p className="mt-6 max-w-[58ch] text-lead text-muted">{s.description}</p>
                   <ul className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2">
                     {s.capabilities.map((c) => (
@@ -119,10 +119,10 @@ export default function Servicios() {
           </Container>
         </section>
 
-        <section id="proceso" className="scroll-mt-24 pt-24 sm:pt-32" aria-labelledby="proceso-title">
+        <section id="proceso" className="scroll-mt-20 py-20 sm:py-28" aria-labelledby="proceso-title">
           <Container>
             <SectionHeading title={<span id="proceso-title">Cómo trabajamos.</span>}>
-              Conoces la inversión antes de empezar y ves avances reales en cada etapa.
+              Conocés la inversión antes de empezar y ves avances reales en cada etapa.
             </SectionHeading>
             <ol className="relative mt-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
               <span aria-hidden="true" className="absolute left-0 right-0 top-[30px] hidden h-px bg-line/15 lg:block" />
@@ -139,7 +139,7 @@ export default function Servicios() {
           </Container>
         </section>
 
-        <Closing title="¿No sabes cuál necesitas?" text="Es normal. Cuéntanos qué pasa en tu negocio y te ayudamos a encontrar la solución que tiene sentido." />
+        <Closing title="¿No sabés cuál necesitás?" text="Es normal. Contanos qué pasa en tu negocio y te ayudamos a encontrar la solución que tiene sentido." />
       </main>
       <Footer />
     </>

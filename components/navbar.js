@@ -3,20 +3,28 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Disclosure, Transition } from "@headlessui/react";
-import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
-import ThemeChanger from "./DarkSwitch";
+import { Menu, X, ArrowRight } from "lucide-react";
+import Container from "./container";
 import { WHATSAPP_URL } from "./ui";
 
-// En lenguaje de cliente. Hosting no va en el menú principal (sus precios técnicos invitan a comparar):
-// vive en el footer y en /servicios.
+// Navegación del documento de diseño: tres enlaces en lenguaje de cliente y un CTA.
+// Productos, Hosting y el resto viven en el footer.
 export const navigation = [
   { title: "Soluciones", link: "/servicios" },
-  { title: "Casos", link: "/#casos" },
-  { title: "Productos", link: "/productos" },
+  { title: "Proyectos", link: "/#proyectos" },
   { title: "Nosotros", link: "/empresa" },
 ];
 
-// Navbar píldora flotante: vive dentro del marco del hero y se vuelve sólida al hacer scroll.
+// Marca: el símbolo original (cerebro/nube con circuitos) + FLUXO WEB en mayúsculas espaciadas.
+export function BrandLogo({ size = 40, className = "" }) {
+  return (
+    <span className={`inline-flex items-center gap-3 ${className}`}>
+      <Image src="/img/Brain.png" alt="" width={size} height={size} className="shrink-0" style={{ width: size, height: size }} />
+      <span className="text-[15px] font-medium uppercase tracking-[0.28em]">Fluxo Web</span>
+    </span>
+  );
+}
+
 const Navbar = () => {
   const { pathname } = useRouter();
   const [scrolled, setScrolled] = useState(false);
@@ -28,111 +36,90 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isActive = (link) => pathname === link || pathname.startsWith(`${link}/`);
-  const pill = `border transition-colors duration-500 ${
-    scrolled ? "border-white/10 bg-night/85 backdrop-blur-xl" : "border-white/[0.08] bg-white/[0.04] backdrop-blur-md"
-  }`;
+  const isActive = (link) => !link.includes("#") && (pathname === link || pathname.startsWith(`${link}/`));
 
   return (
-    <Disclosure as="header" className="fixed inset-x-0 top-0 z-50 px-2 pt-2 sm:px-3 sm:pt-3">
+    <Disclosure
+      as="header"
+      className={`fixed inset-x-0 top-0 z-50 border-b text-night-ink transition-colors duration-300 ${
+        scrolled ? "border-white/10 bg-night/95 backdrop-blur-md" : "border-transparent bg-night/0"
+      }`}
+    >
       {({ open, close }) => (
         <>
-          <nav className="mx-auto flex items-center justify-between gap-3 px-3 pt-3 sm:px-5 sm:pt-4" aria-label="Principal">
-            <Link
-              href="/"
-              className={`flex h-12 items-center gap-2.5 rounded-full pl-1.5 pr-4 text-night-ink ${pill}`}
-              onClick={() => close()}
-            >
-              <Image src="/img/Brain.png" alt="" width={36} height={36} className="h-9 w-9 rounded-full" priority />
-              <span className="text-[15px] font-medium tracking-tight">Fluxo Web</span>
+          <Container as="nav" className="flex h-[72px] items-center justify-between gap-6" aria-label="Principal">
+            <Link href="/" onClick={() => close()} aria-label="Fluxo Web, inicio">
+              <BrandLogo />
             </Link>
 
-            <div className={`hidden h-12 items-center gap-1 rounded-full pl-2 pr-1.5 lg:flex ${pill}`}>
-              {navigation.map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.link}
-                  aria-current={isActive(item.link) ? "page" : undefined}
-                  className={`rounded-full px-3.5 py-2 text-[14px] font-medium transition-colors ${
-                    isActive(item.link) ? "bg-white/10 text-night-ink" : "text-night-muted hover:text-night-ink"
-                  }`}
-                >
-                  {item.title}
-                </Link>
-              ))}
-              <span className="mx-1 h-5 w-px bg-white/10" aria-hidden="true" />
-              <Link
-                href="/presentacion"
-                className="grid h-9 w-9 place-items-center rounded-full text-night-muted transition-colors hover:bg-white/10 hover:text-night-ink"
-                aria-label="Carta de presentación"
-                title="Carta de presentación"
-              >
-                <FileText className="h-4 w-4" strokeWidth={1.8} />
-              </Link>
-              <ThemeChanger />
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-1 inline-flex h-9 items-center gap-1.5 rounded-full bg-green px-4 text-[14px] font-medium text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
-              >
-                Hablemos
-                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2} />
-              </a>
-            </div>
-
-            <div className={`flex h-12 items-center gap-1 rounded-full px-1.5 lg:hidden ${pill}`}>
-              <ThemeChanger />
-              <Disclosure.Button className="grid h-9 w-9 place-items-center rounded-full text-night-ink transition-colors hover:bg-white/10">
-                <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
-                {open ? <X className="h-[18px] w-[18px]" /> : <Menu className="h-[18px] w-[18px]" />}
-              </Disclosure.Button>
-            </div>
-          </nav>
-
-          <Transition
-            enter="transition duration-300 ease-out-expo"
-            enterFrom="opacity-0 -translate-y-2"
-            enterTo="opacity-100 translate-y-0"
-            leave="transition duration-150 ease-in"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Disclosure.Panel className="mx-3 mt-2 rounded-[24px] border border-white/10 bg-night/95 p-3 text-night-ink backdrop-blur-xl sm:mx-5 lg:hidden">
-              <ul className="divide-y divide-white/10">
+            <div className="hidden items-center gap-10 lg:flex">
+              <ul className="flex items-center gap-8">
                 {navigation.map((item) => (
                   <li key={item.title}>
-                    <Disclosure.Button
-                      as={Link}
+                    <Link
                       href={item.link}
                       aria-current={isActive(item.link) ? "page" : undefined}
-                      className="flex items-center justify-between px-3 py-4 text-2xl font-medium tracking-tight"
+                      className={`text-[15px] transition-colors ${
+                        isActive(item.link) ? "text-night-ink" : "text-night-muted hover:text-night-ink"
+                      }`}
                     >
                       {item.title}
-                      {isActive(item.link) && <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />}
-                    </Disclosure.Button>
+                    </Link>
                   </li>
                 ))}
-                <li>
-                  <Disclosure.Button
-                    as={Link}
-                    href="/presentacion"
-                    className="flex items-center gap-2 px-3 py-4 text-[15px] text-night-muted"
-                  >
-                    <FileText className="h-4 w-4" />
-                    Carta de presentación
-                  </Disclosure.Button>
-                </li>
               </ul>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 flex h-14 items-center justify-center gap-2 rounded-full bg-green text-[15px] font-medium text-[#0B0B0B]"
+                className="group inline-flex h-11 items-center gap-2 rounded-control bg-green px-5 text-[15px] font-medium text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
               >
-                Pedir un diagnóstico
-                <ArrowUpRight className="h-4 w-4" />
+                Hablemos
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={2} />
               </a>
+            </div>
+
+            <Disclosure.Button className="grid h-11 w-11 place-items-center rounded-control border border-white/15 transition-colors hover:bg-white/10 lg:hidden">
+              <span className="sr-only">{open ? "Cerrar menú" : "Abrir menú"}</span>
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Disclosure.Button>
+          </Container>
+
+          <Transition
+            enter="transition duration-200 ease-out"
+            enterFrom="opacity-0 -translate-y-1"
+            enterTo="opacity-100 translate-y-0"
+            leave="transition duration-150 ease-in"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Disclosure.Panel className="border-t border-white/10 bg-night lg:hidden">
+              <Container className="py-4">
+                <ul className="divide-y divide-white/10">
+                  {navigation.map((item) => (
+                    <li key={item.title}>
+                      <Disclosure.Button
+                        as={Link}
+                        href={item.link}
+                        aria-current={isActive(item.link) ? "page" : undefined}
+                        className="flex items-center justify-between py-4 text-2xl font-medium tracking-tight"
+                      >
+                        {item.title}
+                        {isActive(item.link) && <span className="h-2 w-2 rounded-full bg-green" aria-hidden="true" />}
+                      </Disclosure.Button>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex h-14 items-center justify-center gap-2 rounded-control bg-green text-[16px] font-medium text-[#0B0B0B]"
+                >
+                  Hablemos
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Container>
             </Disclosure.Panel>
           </Transition>
         </>

@@ -1,491 +1,163 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-16T12:00:00Z",
+  "generatedAt": "2026-10-26T12:00:00Z",
   "title": "Design System: Fluxo Web",
   "extensions": {
     "colorMeta": {
-      "green": {
-        "role": "primary",
-        "displayName": "Circuit Green",
-        "canonical": "rgb(39 212 107)",
-        "tonalRamp": [
-          "#06311A",
-          "#0A4A26",
-          "#0E803E",
-          "#16A653",
-          "#27D46B",
-          "#5FE091",
-          "#A3EEC0",
-          "#E3F9EB"
-        ]
-      },
-      "green-hover": {
-        "role": "primary",
-        "displayName": "Lit Green",
-        "canonical": "#3BE07D",
-        "tonalRamp": [
-          "#06311A",
-          "#0A4A26",
-          "#0E803E",
-          "#16A653",
-          "#3BE07D",
-          "#6FE59D",
-          "#A9F0C5",
-          "#E6FAEE"
-        ]
-      },
-      "green-ink-light": {
-        "role": "primary",
-        "displayName": "Deep Text Green (light theme)",
-        "canonical": "rgb(14 128 62)",
-        "tonalRamp": [
-          "#06311A",
-          "#0A4A26",
-          "#0E803E",
-          "#16A653",
-          "#27D46B",
-          "#5FE091",
-          "#A3EEC0",
-          "#E3F9EB"
-        ]
-      },
-      "green-ink-dark": {
-        "role": "primary",
-        "displayName": "Deep Text Green (dark theme)",
-        "canonical": "rgb(39 212 107)",
-        "tonalRamp": [
-          "#06311A",
-          "#0A4A26",
-          "#0E803E",
-          "#16A653",
-          "#27D46B",
-          "#5FE091",
-          "#A3EEC0",
-          "#E3F9EB"
-        ]
-      },
-      "on-green": {
-        "role": "neutral",
-        "displayName": "Ink on Green",
-        "canonical": "#0B0B0B",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#8A8A85",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F6F6F3"
-        ]
-      },
-      "night": {
-        "role": "neutral",
-        "displayName": "Night",
-        "canonical": "#1D1D1D",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "night-raised": {
-        "role": "neutral",
-        "displayName": "Night Raised",
-        "canonical": "#2A2A2A",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "night-ink": {
-        "role": "neutral",
-        "displayName": "Night Ink",
-        "canonical": "#F4F4F1",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "night-muted": {
-        "role": "neutral",
-        "displayName": "Night Muted",
-        "canonical": "#A3A39E",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "ground-light": {
-        "role": "neutral",
-        "displayName": "Bone Ground",
-        "canonical": "rgb(246 246 243)",
-        "tonalRamp": [
-          "#111111",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#8A8A85",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F6F6F3"
-        ]
-      },
-      "panel-light": {
-        "role": "neutral",
-        "displayName": "White Panel",
-        "canonical": "rgb(255 255 255)",
-        "tonalRamp": [
-          "#111111",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#8A8A85",
-          "#A3A39E",
-          "#D9D9D4",
-          "#FFFFFF"
-        ]
-      },
-      "ink-light": {
-        "role": "neutral",
-        "displayName": "Ink",
-        "canonical": "rgb(17 17 17)",
-        "tonalRamp": [
-          "#111111",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#8A8A85",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F6F6F3"
-        ]
-      },
-      "muted-light": {
-        "role": "neutral",
-        "displayName": "Muted",
-        "canonical": "rgb(88 88 84)",
-        "tonalRamp": [
-          "#111111",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#8A8A85",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F6F6F3"
-        ]
-      },
-      "ground-dark": {
-        "role": "neutral",
-        "displayName": "Carbon Ground",
-        "canonical": "rgb(18 18 18)",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "panel-dark": {
-        "role": "neutral",
-        "displayName": "Carbon Panel",
-        "canonical": "rgb(29 29 29)",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "ink-dark": {
-        "role": "neutral",
-        "displayName": "Ink (dark theme)",
-        "canonical": "rgb(244 244 241)",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      },
-      "muted-dark": {
-        "role": "neutral",
-        "displayName": "Muted (dark theme)",
-        "canonical": "rgb(163 163 158)",
-        "tonalRamp": [
-          "#0B0B0B",
-          "#121212",
-          "#1D1D1D",
-          "#2A2A2A",
-          "#585854",
-          "#A3A39E",
-          "#D9D9D4",
-          "#F4F4F1"
-        ]
-      }
+      "green": { "role": "primary", "displayName": "Circuit Green", "canonical": "rgb(39 212 107)", "tonalRamp": ["#06311A", "#0A4A26", "#0E803E", "#16A653", "#27D46B", "#5FE091", "#A3EEC0", "#E3F9EB"] },
+      "green-hover": { "role": "primary", "displayName": "Lit Green", "canonical": "#3BE07D", "tonalRamp": ["#06311A", "#0A4A26", "#0E803E", "#16A653", "#3BE07D", "#6FE59D", "#A9F0C5", "#E6FAEE"] },
+      "green-ink-light": { "role": "primary", "displayName": "Deep Text Green", "canonical": "rgb(14 128 62)", "tonalRamp": ["#06311A", "#0A4A26", "#0E803E", "#16A653", "#27D46B", "#5FE091", "#A3EEC0", "#E3F9EB"] },
+      "on-green": { "role": "primary", "displayName": "Ink on Green", "canonical": "#0B0B0B", "tonalRamp": ["#0B0B0B", "#1D1D1D", "#333333", "#4D4D4D", "#6B6B6B", "#939393", "#C2C2C2", "#EDEDED"] },
+      "ground": { "role": "neutral", "displayName": "Logo Black", "canonical": "rgb(29 29 29)", "tonalRamp": ["#0B0B0B", "#1D1D1D", "#262626", "#2A2A2A", "#3A3A3A", "#5C5C5A", "#A3A39E", "#F4F4F1"] },
+      "panel": { "role": "neutral", "displayName": "Carbon Panel", "canonical": "rgb(38 38 38)", "tonalRamp": ["#0B0B0B", "#1D1D1D", "#262626", "#2A2A2A", "#3A3A3A", "#5C5C5A", "#A3A39E", "#F4F4F1"] },
+      "night-raised": { "role": "neutral", "displayName": "Raised Carbon", "canonical": "#2A2A2A", "tonalRamp": ["#0B0B0B", "#1D1D1D", "#262626", "#2A2A2A", "#3A3A3A", "#5C5C5A", "#A3A39E", "#F4F4F1"] },
+      "ink": { "role": "neutral", "displayName": "Bone Ink", "canonical": "rgb(244 244 241)", "tonalRamp": ["#1D1D1C", "#3A3A38", "#5C5C59", "#7F7F7B", "#A3A39E", "#C6C6C2", "#E2E2DE", "#F4F4F1"] },
+      "muted": { "role": "neutral", "displayName": "Ash Muted", "canonical": "rgb(163 163 158)", "tonalRamp": ["#1D1D1C", "#3A3A38", "#5C5C59", "#7F7F7B", "#A3A39E", "#C6C6C2", "#E2E2DE", "#F4F4F1"] },
+      "line": { "role": "neutral", "displayName": "Hairline (dark band)", "canonical": "rgb(255 255 255)", "tonalRamp": ["#262626", "#333333", "#474747", "#5E5E5E", "#7A7A7A", "#A3A3A3", "#D1D1D1", "#FFFFFF"] },
+      "ground-light": { "role": "neutral", "displayName": "Bone Ground", "canonical": "rgb(246 246 243)", "tonalRamp": ["#1F1F1D", "#3B3B38", "#585854", "#7A7A75", "#A0A09A", "#C9C9C4", "#E6E6E2", "#F6F6F3"] },
+      "panel-light": { "role": "neutral", "displayName": "White Panel", "canonical": "rgb(255 255 255)", "tonalRamp": ["#1F1F1F", "#3B3B3B", "#585858", "#7A7A7A", "#A0A0A0", "#C9C9C9", "#E6E6E6", "#FFFFFF"] },
+      "ink-light": { "role": "neutral", "displayName": "Graphite Ink", "canonical": "rgb(17 17 17)", "tonalRamp": ["#111111", "#2B2B2B", "#454545", "#5F5F5F", "#7F7F7F", "#A3A3A3", "#CCCCCC", "#F2F2F2"] },
+      "muted-light": { "role": "neutral", "displayName": "Stone Muted", "canonical": "rgb(88 88 84)", "tonalRamp": ["#1F1F1D", "#3B3B38", "#585854", "#7A7A75", "#A0A09A", "#C9C9C4", "#E6E6E2", "#F6F6F3"] },
+      "line-light": { "role": "neutral", "displayName": "Hairline (light band)", "canonical": "rgb(17 17 17)", "tonalRamp": ["#111111", "#2B2B2B", "#454545", "#5F5F5F", "#7F7F7F", "#A3A3A3", "#CCCCCC", "#F2F2F2"] }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "The single h1 per page, in the hero and page heroes. Weight 300, max 11-16ch."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Section h2s (SectionHeading) and the closing panel title."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Card, service, member and plan names; 1.25-2.25rem, weight 500."
-      },
-      "lead": {
-        "displayName": "Lead",
-        "purpose": "Muted sentence under every display or headline, 46-60ch."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Descriptions, FAQ answers and legal text at max 62-68ch; 15-16px."
-      },
-      "label": {
-        "displayName": "Mono Label",
-        "purpose": "Uppercase Geist Mono at 0.08em: reserved, no current use. Navigation is Host Grotesk 14px medium in sentence case."
-      },
-      "data": {
-        "displayName": "Mono Data",
-        "purpose": "Tabular Geist Mono for stats, step numbers, years, clause numbers and counters."
-      }
+      "display": { "displayName": "Display", "purpose": "The one h1 per page: home hero and page heroes." },
+      "title": { "displayName": "Title", "purpose": "Section h2s via the section heading, and the closing manifesto." },
+      "card-title": { "displayName": "Card title", "purpose": "Card, step, plan, member and project names." },
+      "lead": { "displayName": "Lead", "purpose": "Muted sentence under a display or title." },
+      "body": { "displayName": "Body", "purpose": "Descriptions, FAQ answers, legal text at 62-68ch." },
+      "control": { "displayName": "Control", "purpose": "Buttons, nav links, arrow links." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "FLUXO WEB beside the symbol, nav and footer only." },
+      "data": { "displayName": "Data", "purpose": "Geist Mono tabular: step numbers, years, clause numbers only." }
     },
-    "shadows": [
-      {
-        "name": "float",
-        "value": "0 24px 60px -20px rgba(0,0,0,0.7)",
-        "purpose": "The hero project carousel floating over the canvas. Nothing on the theme ground casts a shadow."
-      }
-    ],
+    "shadows": [],
     "motion": [
-      {
-        "name": "out-expo",
-        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Default easing for arrows, rotations, image zoom, menu and accordion entry."
-      },
-      {
-        "name": "fx-rise",
-        "value": "fx-rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both; from opacity 0.4, translateY(14px), blur(4px)",
-        "purpose": "Hero and page-hero entry; content is already visible and only rises into focus. Staggered 0/120/240/360ms."
-      },
-      {
-        "name": "fx-fill",
-        "value": "fx-fill 4800ms linear forwards; scaleX(0) to scaleX(1)",
-        "purpose": "Carousel progress segment, synced to the 4.8s slide interval."
-      },
-      {
-        "name": "duration-color",
-        "value": "300ms",
-        "purpose": "Color and border state changes."
-      },
-      {
-        "name": "duration-move",
-        "value": "500ms",
-        "purpose": "Arrow translate and terminal rotate on hover."
-      },
-      {
-        "name": "duration-image",
-        "value": "700ms",
-        "purpose": "Screenshot zoom (scale 1.03) and carousel crossfade."
-      },
-      {
-        "name": "weave",
-        "value": "spokes 0-1100ms, rings 600-2700ms, extensions 1900-2800ms, nodes from 2200ms, pulses every 420ms after 2600ms (max 9)",
-        "purpose": "Ñandutí canvas draw-in and live pulses; static under prefers-reduced-motion, paused offscreen."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "animation and transition durations 0.01ms",
-        "purpose": "Global prefers-reduced-motion guard; smooth scroll disabled."
-      }
+      { "name": "out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing: arrows, hero rise, logo reveal, connector draw, card appear." },
+      { "name": "hero-rise", "value": "fx-rise 1.1s out-expo; from opacity 0.4, translateY(14px), blur(4px)", "purpose": "Entrance of hero and page-hero copy, staggered 120ms." },
+      { "name": "logo-reveal", "value": "fx-reveal 1.6s out-expo 0.1s; scaleY 0 to 1 from top", "purpose": "White layer behind the logo cut-out, revealing the lines." },
+      { "name": "logo-scan", "value": "fx-scan 3.6s cubic-bezier(0.45,0,0.55,1) 2s infinite", "purpose": "Green band sweeping through the logo lines; hidden under reduced motion." },
+      { "name": "connector-draw", "value": "fx-draw 0.9s out-expo, staggered 150ms from 1.3s", "purpose": "Hero connectors drawing toward the area cards." },
+      { "name": "node-pulse", "value": "SMIL animateMotion 3.6s, staggered 0.9s from 2.4s", "purpose": "Green pulse along each connector lighting its terminal; omitted under reduced motion." },
+      { "name": "control-color", "value": "200ms colors", "purpose": "Button fill and border changes." }
     ],
     "breakpoints": [
-      {
-        "name": "sm",
-        "value": "640px"
-      },
-      {
-        "name": "md",
-        "value": "768px"
-      },
-      {
-        "name": "lg",
-        "value": "1024px"
-      }
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
     ]
   },
   "components": [
     {
-      "name": "Primary Button (WhatsApp)",
+      "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The main action: a green pill ending in a black circuit terminal holding an arrow that rotates on hover.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span>Escríbenos por WhatsApp</span><span class=\"ds-btn-primary-terminal\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></span></a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 16px; height: 56px; padding: 0 8px 0 24px; border-radius: 9999px; background: #27D46B; color: #0B0B0B; font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 300ms; } .ds-btn-primary-terminal { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 9999px; background: #0B0B0B; color: #27D46B; transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #3BE07D; } .ds-btn-primary:hover .ds-btn-primary-terminal { transform: rotate(45deg); } .ds-btn-primary:focus-visible { outline: 2px solid #27D46B; outline-offset: 3px; }"
+      "description": "Green action with a trailing arrow; the WhatsApp CTA on every page.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Conversemos sobre tu negocio<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 24px; border-radius: 10px; background: rgb(39 212 107); color: #0B0B0B; font-family: 'Host Grotesk', system-ui, sans-serif; font-size: 16px; font-weight: 500; text-decoration: none; transition: background-color 200ms; } .ds-btn-primary svg { transition: transform 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #3BE07D; } .ds-btn-primary:hover svg { transform: translateX(2px); } .ds-btn-primary:focus-visible { outline: 2px solid rgb(39 212 107); outline-offset: 3px; }"
     },
     {
       "name": "Outline Button",
       "kind": "button",
       "refersTo": "button-outline",
-      "description": "Secondary pill on cards; fills solid green on hover.",
-      "html": "<a class=\"ds-btn-outline\" href=\"#\">Contratar Básico <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
-      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 24px; border-radius: 9999px; border: 1px solid rgb(var(--line, 17 17 17) / 0.2); background: transparent; color: rgb(var(--ink, 17 17 17)); font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 300ms, border-color 300ms, color 300ms; } .ds-btn-outline:hover { background: #27D46B; border-color: #27D46B; color: #0B0B0B; } .ds-btn-outline:focus-visible { outline: 2px solid #27D46B; outline-offset: 3px; }"
+      "description": "Secondary action beside a primary; border and text turn green on hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Quiero resolver un problema<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 20px; border-radius: 10px; border: 1px solid rgb(255 255 255 / 0.35); background: #1D1D1D; color: #F4F4F1; font-family: 'Host Grotesk', system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: color 200ms, border-color 200ms; } .ds-btn-outline svg { transition: transform 300ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-outline:hover { border-color: rgb(39 212 107); color: rgb(39 212 107); } .ds-btn-outline:hover svg { transform: translateX(2px); } .ds-btn-outline:focus-visible { outline: 2px solid rgb(39 212 107); outline-offset: 3px; }"
     },
     {
-      "name": "Arrow Link",
+      "name": "Dark Button",
       "kind": "button",
-      "refersTo": "button-outline",
-      "description": "Tertiary text link with an arrow that advances on hover.",
-      "html": "<a class=\"ds-arrow-link\" href=\"#\">Ver proyectos <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
-      "css": ".ds-arrow-link { display: inline-flex; align-items: center; gap: 8px; color: rgb(var(--ink, 17 17 17)); font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; text-underline-offset: 6px; text-decoration-thickness: 1px; } .ds-arrow-link svg { transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-arrow-link:hover { text-decoration: underline; } .ds-arrow-link:hover svg { transform: translateX(4px); } .ds-arrow-link:focus-visible { outline: 2px solid #27D46B; outline-offset: 3px; border-radius: 6px; }"
+      "refersTo": "button-dark",
+      "description": "Ink-on-green button used on green fields.",
+      "html": "<div class=\"ds-green-field\"><a class=\"ds-btn-dark\" href=\"#\">Pedir propuesta<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-green-field { background: rgb(39 212 107); padding: 24px; border-radius: 16px; } .ds-btn-dark { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 20px; border-radius: 10px; background: #0B0B0B; color: rgb(39 212 107); font-family: 'Host Grotesk', system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 200ms; } .ds-btn-dark:hover { background: #262626; } .ds-btn-dark:focus-visible { outline: 2px solid #0B0B0B; outline-offset: 3px; }"
     },
     {
-      "name": "Navigation Pill",
+      "name": "Navigation Bar",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Floating translucent pill bar over the Night hero with sentence-case links in client language and a green \"Hablemos\" pill.",
-      "html": "<div class=\"ds-nav-stage\"><nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\">Soluciones</a><a class=\"ds-nav-link\" href=\"#\">Casos</a><a class=\"ds-nav-link\" href=\"#\">Productos</a><a class=\"ds-nav-link\" href=\"#\">Nosotros</a><span class=\"ds-nav-divider\"></span><a class=\"ds-nav-cta\" href=\"#\">Hablemos</a></nav></div>",
-      "css": ".ds-nav-stage { background: #1D1D1D; padding: 24px; border-radius: 28px; } .ds-nav { display: inline-flex; align-items: center; gap: 4px; height: 48px; padding: 0 6px 0 8px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); } .ds-nav-link { padding: 8px 14px; border-radius: 9999px; font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: #A3A39E; text-decoration: none; transition: color 150ms, background-color 150ms; } .ds-nav-link:hover { color: #F4F4F1; } .ds-nav-link-active { background: rgba(255,255,255,0.1); color: #F4F4F1; } .ds-nav-link:focus-visible, .ds-nav-cta:focus-visible { outline: 2px solid #27D46B; outline-offset: 3px; } .ds-nav-divider { width: 1px; height: 20px; margin: 0 4px; background: rgba(255,255,255,0.1); } .ds-nav-cta { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; margin-left: 4px; border-radius: 9999px; background: #27D46B; color: #0B0B0B; font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; text-decoration: none; transition: background-color 150ms; } .ds-nav-cta:hover { background: #3BE07D; }"
+      "description": "Full-width 72px bar: symbol + uppercase wordmark, three links, green Hablemos.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\"><span class=\"ds-nav-mark\"></span>Fluxo Web</span><span class=\"ds-nav-right\"><a href=\"#\" class=\"ds-nav-link\" aria-current=\"page\">Soluciones</a><a href=\"#\" class=\"ds-nav-link\">Proyectos</a><a href=\"#\" class=\"ds-nav-link\">Nosotros</a><a href=\"#\" class=\"ds-nav-cta\">Hablemos<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 72px; padding: 0 40px; background: rgb(29 29 29 / 0.95); border-bottom: 1px solid rgb(255 255 255 / 0.1); color: #F4F4F1; font-family: 'Host Grotesk', system-ui, sans-serif; backdrop-filter: blur(12px); } .ds-nav-brand { display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.28em; } .ds-nav-mark { width: 40px; height: 40px; border-radius: 9999px; border: 1.5px solid #F4F4F1; } .ds-nav-right { display: flex; align-items: center; gap: 32px; } .ds-nav-link { font-size: 15px; color: #A3A39E; text-decoration: none; transition: color 200ms; } .ds-nav-link:hover, .ds-nav-link[aria-current] { color: #F4F4F1; } .ds-nav-cta { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 10px; background: rgb(39 212 107); color: #0B0B0B; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 200ms; } .ds-nav-cta:hover { background: #3BE07D; }"
     },
     {
-      "name": "Closing Panel (Night frame)",
+      "name": "Project Card",
       "kind": "card",
-      "refersTo": "panel-night",
-      "description": "The framed dark panel that opens and closes pages; here as the single closing panel with one action.",
-      "html": "<section class=\"ds-panel-night\"><h2 class=\"ds-panel-night-title\">Empecemos por tu negocio.</h2><p class=\"ds-panel-night-lead\">Cuéntanos qué pasa en tu empresa, con tus palabras. Te ayudamos a encontrar qué vale la pena resolver primero.</p><a class=\"ds-panel-night-btn\" href=\"#\">Pedir un diagnóstico</a></section>",
-      "css": ".ds-panel-night { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 96px 32px; border-radius: 28px; overflow: hidden; background: radial-gradient(closest-side, rgba(29,29,29,0.92) 30%, rgba(29,29,29,0.35)), #1D1D1D; color: #F4F4F1; } .ds-panel-night-title { max-width: 16ch; margin: 0; font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: clamp(2rem, 4.2vw, 3.75rem); font-weight: 400; line-height: 1.02; letter-spacing: -0.035em; } .ds-panel-night-lead { max-width: 48ch; margin: 24px 0 0; font-size: clamp(1.0625rem, 1.3vw, 1.25rem); line-height: 1.55; color: #A3A39E; } .ds-panel-night-btn { margin-top: 40px; display: inline-flex; align-items: center; height: 56px; padding: 0 24px; border-radius: 9999px; background: #27D46B; color: #0B0B0B; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 300ms; } .ds-panel-night-btn:hover { background: #3BE07D; } .ds-panel-night-btn:focus-visible { outline: 2px solid #27D46B; outline-offset: 3px; }"
+      "refersTo": "project-card",
+      "description": "Featured live project: 12px-radius screenshot well, name, kind of business, relationship label.",
+      "html": "<a class=\"ds-project\" href=\"#\"><span class=\"ds-project-shot\"></span><span class=\"ds-project-body\"><span><span class=\"ds-project-name\">Zap Pulse</span><span class=\"ds-project-kind\">Asistente de ventas para WhatsApp</span><span class=\"ds-project-rel\">Producto propio</span></span><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></span></a>",
+      "css": ".ds-project { display: flex; flex-direction: column; width: 360px; padding: 12px; border-radius: 16px; border: 1px solid rgb(255 255 255 / 0.1); background: rgb(38 38 38); color: #F4F4F1; font-family: 'Host Grotesk', system-ui, sans-serif; text-decoration: none; transition: border-color 200ms; } .ds-project:hover { border-color: rgb(39 212 107 / 0.6); } .ds-project-shot { display: block; aspect-ratio: 16 / 10; border-radius: 12px; background: #2A2A2A; } .ds-project-body { display: flex; justify-content: space-between; gap: 16px; padding: 20px 8px 8px; } .ds-project-body svg { color: #A3A39E; transition: color 200ms; } .ds-project:hover .ds-project-body svg { color: rgb(39 212 107); } .ds-project-name { display: block; font-size: 20px; font-weight: 600; letter-spacing: -0.025em; } .ds-project-kind { display: block; margin-top: 4px; font-size: 15px; color: #A3A39E; } .ds-project-rel { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: rgb(39 212 107); }"
     },
     {
-      "name": "Featured Plan (Green field)",
-      "kind": "card",
-      "refersTo": "panel-green",
-      "description": "Emphasis by a solid green field, never a colored border. No published price: the plan states \"Inversión según tu operación\" and leads to a proposal.",
-      "html": "<article class=\"ds-plan-green\"><div class=\"ds-plan-head\"><h3 class=\"ds-plan-name\">Para crecer</h3><span class=\"ds-plan-tag\">Recomendado</span></div><p class=\"ds-plan-desc\">Sistemas con varios usuarios que tu empresa usa todos los días.</p><p class=\"ds-plan-invest\">Inversión según tu operación</p><a class=\"ds-plan-btn\" href=\"#\">Pedir propuesta</a></article>",
-      "css": ".ds-plan-green { display: flex; flex-direction: column; padding: 36px; border-radius: 28px; background: #27D46B; color: #0B0B0B; font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; } .ds-plan-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; } .ds-plan-name { margin: 0; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.025em; } .ds-plan-tag { padding: 4px 12px; border-radius: 9999px; border: 1px solid rgba(11,11,11,0.3); font-size: 13px; font-weight: 500; } .ds-plan-desc { margin: 8px 0 0; min-height: 3em; font-size: 15px; line-height: 1.5; color: rgba(11,11,11,0.7); } .ds-plan-invest { margin: 40px 0 0; padding-top: 24px; border-top: 1px solid rgba(11,11,11,0.2); font-size: 15px; font-weight: 500; } .ds-plan-btn { margin-top: 40px; display: inline-flex; align-items: center; justify-content: center; height: 48px; border-radius: 9999px; background: #0B0B0B; color: #27D46B; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color 150ms; } .ds-plan-btn:hover { background: #1E1E1E; } .ds-plan-btn:focus-visible { outline: 2px solid #0B0B0B; outline-offset: 3px; }"
-    },
-    {
-      "name": "Panel Card",
+      "name": "Plan Card (light band)",
       "kind": "card",
       "refersTo": "card",
-      "description": "Default card on the theme ground: panel surface, hairline border, no shadow.",
-      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\">Términos y condiciones</h3><p class=\"ds-card-text\">Las reglas de uso de nuestros servicios y sistemas.</p></article>",
-      "css": ".ds-card { padding: 28px; border-radius: 28px; border: 1px solid rgb(var(--line, 17 17 17) / 0.15); background: rgb(var(--panel, 255 255 255)); color: rgb(var(--ink, 17 17 17)); font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; transition: border-color 300ms; } .ds-card:hover { border-color: rgb(var(--line, 17 17 17) / 0.3); } .ds-card-title { margin: 0; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.025em; } .ds-card-text { margin: 8px 0 0; font-size: 15px; line-height: 1.625; color: rgb(var(--muted, 88 88 84)); }"
+      "description": "Plan without a published price: description, hairline, investment line, checks, Pedir propuesta.",
+      "html": "<div class=\"ds-band-light\"><div class=\"ds-plan\"><h3 class=\"ds-plan-name\">Para crecer</h3><p class=\"ds-plan-desc\">Para un negocio con varias áreas trabajando a la vez.</p><p class=\"ds-plan-inv\">Inversión según tu operación</p><ul class=\"ds-plan-list\"><li><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M20 6 9 17l-5-5\"/></svg>Copias de seguridad diarias</li></ul></div></div>",
+      "css": ".ds-band-light { background: #F6F6F3; padding: 32px; } .ds-plan { width: 320px; padding: 36px; border-radius: 16px; border: 1px solid rgb(17 17 17 / 0.15); background: #FFFFFF; color: #111111; font-family: 'Host Grotesk', system-ui, sans-serif; } .ds-plan-name { margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -0.025em; } .ds-plan-desc { margin: 8px 0 0; font-size: 15px; color: #585854; } .ds-plan-inv { margin: 40px 0 0; padding-top: 24px; border-top: 1px solid rgb(17 17 17 / 0.15); font-size: 15px; font-weight: 500; } .ds-plan-list { margin: 24px 0 0; padding: 0; list-style: none; font-size: 15px; } .ds-plan-list li { display: flex; align-items: center; gap: 12px; } .ds-plan-list svg { color: #0E803E; }"
     },
     {
-      "name": "Threaded List with Terminals",
+      "name": "Benefit Item",
       "kind": "custom",
-      "refersTo": "card",
-      "description": "Items hung from one hairline thread with ring terminals that fill green on hover or when current.",
-      "html": "<ol class=\"ds-thread\"><li class=\"ds-thread-item\"><span class=\"ds-terminal ds-terminal-lit\"></span><div><h3 class=\"ds-thread-title\">Software a medida</h3><p class=\"ds-thread-text\">Sistemas de gestión sobre los procesos reales de tu empresa.</p></div></li><li class=\"ds-thread-item\"><span class=\"ds-terminal\"></span><div><h3 class=\"ds-thread-title\">Hosting en la nube</h3><p class=\"ds-thread-text\">Tus sistemas en nuestros servidores, con copias de seguridad.</p></div></li></ol>",
-      "css": ".ds-thread { position: relative; list-style: none; margin: 0; padding: 0; font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; color: rgb(var(--ink, 17 17 17)); } .ds-thread::before { content: ''; position: absolute; left: 5px; top: 40px; bottom: 40px; width: 1px; background: rgb(var(--line, 17 17 17) / 0.15); } .ds-thread-item { position: relative; display: grid; grid-template-columns: 12px 1fr; column-gap: 24px; padding: 32px 0; border-bottom: 1px solid rgb(var(--line, 17 17 17) / 0.1); cursor: pointer; } .ds-terminal { position: relative; margin-top: 12px; width: 12px; height: 12px; border-radius: 9999px; border: 1.5px solid rgb(var(--line, 17 17 17) / 0.4); background: rgb(var(--ground, 246 246 243)); transition: background-color 300ms, border-color 300ms; } .ds-terminal-lit, .ds-thread-item:hover .ds-terminal { border-color: #27D46B; background: #27D46B; } .ds-thread-title { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2.25rem); font-weight: 500; line-height: 1.25; letter-spacing: -0.025em; transition: color 300ms; } .ds-thread-item:hover .ds-thread-title { color: rgb(var(--green-ink, 14 128 62)); } .ds-thread-text { margin: 12px 0 0; max-width: 52ch; font-size: 16px; line-height: 1.625; color: rgb(var(--muted, 88 88 84)); }"
+      "refersTo": "icon-circle",
+      "description": "Centered benefit on a light band: 64px round icon, semibold title, muted line.",
+      "html": "<div class=\"ds-band-light\"><div class=\"ds-benefit\"><span class=\"ds-benefit-icon\"><svg viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 3v18h18\"/><path d=\"M18 17V9\"/><path d=\"M13 17V5\"/><path d=\"M8 17v-3\"/></svg></span><h3>Tener más control</h3><p>Tomá decisiones con información clara.</p></div></div>",
+      "css": ".ds-band-light { background: #F6F6F3; padding: 32px; } .ds-benefit { display: flex; flex-direction: column; align-items: center; text-align: center; color: #111111; font-family: 'Host Grotesk', system-ui, sans-serif; } .ds-benefit-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 9999px; border: 1px solid rgb(17 17 17 / 0.15); background: #FFFFFF; } .ds-benefit h3 { margin: 24px 0 0; font-size: 20px; font-weight: 600; letter-spacing: -0.025em; } .ds-benefit p { margin: 8px 0 0; max-width: 24ch; font-size: 15px; line-height: 1.625; color: #585854; }"
     },
     {
-      "name": "FAQ Row",
+      "name": "Hero Area Card",
       "kind": "custom",
-      "refersTo": "icon-button",
-      "description": "Hairline-separated question row; the round plus toggle rotates and fills green when open.",
-      "html": "<div class=\"ds-faq\"><button class=\"ds-faq-q\" type=\"button\"><span>¿Ofrecen soporte técnico?</span><span class=\"ds-faq-toggle\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M5 12h14\"/><path d=\"M12 5v14\"/></svg></span></button></div>",
-      "css": ".ds-faq { border-top: 1px solid rgb(var(--line, 17 17 17) / 0.15); border-bottom: 1px solid rgb(var(--line, 17 17 17) / 0.15); } .ds-faq-q { display: flex; width: 100%; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 24px 0; border: 0; background: none; text-align: left; cursor: pointer; color: rgb(var(--ink, 17 17 17)); font-family: 'Host Grotesk', ui-sans-serif, system-ui, sans-serif; font-size: 1.25rem; font-weight: 500; letter-spacing: -0.025em; } .ds-faq-toggle { display: grid; place-items: center; flex-shrink: 0; width: 32px; height: 32px; border-radius: 9999px; border: 1px solid rgb(var(--line, 17 17 17) / 0.2); color: rgb(var(--muted, 88 88 84)); transition: border-color 300ms, background-color 300ms, color 300ms; } .ds-faq-toggle svg { transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-faq-q:hover .ds-faq-toggle { border-color: rgb(var(--line, 17 17 17) / 0.4); } .ds-faq-q:active .ds-faq-toggle, .ds-faq-q[aria-expanded='true'] .ds-faq-toggle { border-color: #27D46B; background: #27D46B; color: #0B0B0B; } .ds-faq-q[aria-expanded='true'] .ds-faq-toggle svg { transform: rotate(45deg); } .ds-faq-q:focus-visible { outline: 2px solid #27D46B; outline-offset: 3px; border-radius: 6px; }"
+      "refersTo": "area-card",
+      "description": "Raised card at the end of a hero connector, with its terminal that lights green.",
+      "html": "<div class=\"ds-area-wrap\"><span class=\"ds-terminal ds-terminal-lit\"></span><span class=\"ds-area\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18h6\"/><path d=\"M10 22h4\"/><path d=\"M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14\"/></svg>Ideas</span></div>",
+      "css": ".ds-area-wrap { display: flex; align-items: center; gap: 12px; padding: 32px; background: #1D1D1D; } .ds-terminal { width: 10px; height: 10px; border-radius: 9999px; border: 1.6px solid rgb(244 244 241 / 0.7); background: #1D1D1D; } .ds-terminal-lit { background: rgb(39 212 107); } .ds-area { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 12px; border: 1px solid rgb(255 255 255 / 0.15); background: rgb(42 42 42 / 0.9); color: #F4F4F1; font-family: 'Host Grotesk', system-ui, sans-serif; font-size: 15px; } .ds-area svg { color: #A3A39E; }"
+    },
+    {
+      "name": "Process Step",
+      "kind": "custom",
+      "refersTo": "icon-circle",
+      "description": "Numbered step: 56px circle with a Geist Mono number, semibold title, muted line.",
+      "html": "<div class=\"ds-band-light\"><div class=\"ds-step\"><span class=\"ds-step-num\">01</span><h3>Te escuchamos</h3><p>Conocemos tu negocio, tus ideas y tus desafíos.</p></div></div>",
+      "css": ".ds-band-light { background: #F6F6F3; padding: 32px; } .ds-step { display: flex; flex-direction: column; align-items: center; text-align: center; color: #111111; font-family: 'Host Grotesk', system-ui, sans-serif; } .ds-step-num { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 9999px; background: #FFFFFF; border: 1px solid rgb(17 17 17 / 0.15); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 18px; font-weight: 500; font-variant-numeric: tabular-nums; } .ds-step h3 { margin: 20px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -0.025em; } .ds-step p { margin: 6px 0 0; max-width: 26ch; font-size: 15px; line-height: 1.625; color: #585854; }"
     }
   ],
   "narrative": {
-    "northStar": "Ñandutí de circuitos",
-    "overview": "Fluxo Web is drawn as a literal web: the Guaraní ñandutí lace woven from the circuit traces of the Fluxo logo. Every service, product and partner is a node on one network that the company runs end to end. The visual language is black, white and green, the brand colors the company owns, applied with discipline: near-black framed panels carry hairline white threads, and green appears only where something is solid, actionable or alive.\n\nThe page reads as a sequence of framed rooms on a quiet ground. A dark framed panel opens every page (the hero, with the woven canvas behind the text), open sections of type and threads follow on the theme ground, a single solid green field carries the manifesto (\"Tu empresa aprendió de cada cliente…\"), and a single dark framed panel closes each marketing page with one diagnosis action. Density is low; type is large, light and tightly tracked; proof (live projects, partners, dates) carries the persuasion instead of decoration.\n\nThe reader is a business owner who often does not know what they want, never a developer. Every page leads with the client's situation or problem, describes solutions by the outcome they produce, publishes no prices, and asks for one thing: a diagnostic conversation on WhatsApp (\"Pedir un diagnóstico\").\n\nIt rejects the indigo SaaS template (badge pill, blob gradient, three equal cards) and its neon-dark opposite: no glow, no gradient accents, no eyebrow labels.",
+    "northStar": "El circuito del negocio",
+    "overview": "The Fluxo logo is the system. The hero renders the original logo vector, a negative square with the brain/cloud and circuit lines cut out, painted the exact black of the band so the square disappears and only the lines remain. A white layer revealed top to bottom fills those lines, a green band sweeps through them, and four connectors leave the logo toward the areas of a business (Ideas, Ventas, Operación, Tecnología), carrying green pulses that light each area's terminal. Everything after the hero extends that circuit: round terminals, hairline threads, the ñandutí web behind the dark bands.\n\nThe page is one composition, not a themed one. Full-bleed bands alternate between the logo's black and a warm off-white, edge to edge, with no inset frames and no theme switch. Type is a confident semibold grotesk set large and tight; green is solid and rare, the color of the action, the lit node and one phrase in the hero headline. Density is moderate: centered four-across rows on the light bands, generous 80–112px band padding, cards with a 16px radius and a hairline border.\n\nThe identity is black, white and green. The supplied spec's cream palette was rejected by the team and does not appear anywhere in the build.",
     "keyCharacteristics": [
-      "Rounded framed panels (28px) inset 8–12px from the viewport edge, the border language of every page.",
-      "A dark `night` surface that stays dark in both themes, carrying the ñandutí canvas.",
-      "Hairline threads (1px, ink at 10–15% alpha) as dividers, timelines and connectors between round terminal nodes.",
-      "Green as solid committed fields, primary pills and live nodes; never as glow.",
-      "Light display type (300) with tight negative tracking; Geist Mono reserved for data."
+      "Full-bleed alternating bands: logo black (default) and off-white (light band), same token names in both.",
+      "The original logo vector animated as the hero's signature, never redrawn.",
+      "Semibold (600) display and section headings with tight negative tracking.",
+      "Rounded 10px controls with a trailing arrow; 16px cards; circles for icons, steps and terminals.",
+      "Flat: no box-shadows anywhere; depth comes from band contrast and hairlines."
     ],
     "rules": [
-      {
-        "name": "The Solid Green Rule",
-        "body": "Green is a fill, a node or a word of ink; it is never a glow, gradient, blur halo or colored shadow. If green needs to feel brighter, it becomes a bigger solid field.",
-        "section": "colors"
-      },
-      {
-        "name": "The Night Holds Rule",
-        "body": "Night panels stay dark in both themes. Theme switching changes the ground and the cards around them, never the framed panels that carry the web.",
-        "section": "colors"
-      },
-      {
-        "name": "The Light Display Rule",
-        "body": "Page h1s are weight 300; headlines are 400; nothing above 500 appears anywhere in the system.",
-        "section": "typography"
-      },
-      {
-        "name": "The Mono Is Data Rule",
-        "body": "Geist Mono sets only numbers, years, step numbers and clause numbers; never navigation or hostnames. It never sets sentences, headings or labels above headings.",
-        "section": "typography"
-      },
-      {
-        "name": "The No Eyebrow Rule",
-        "body": "Headings stand alone: a title and its lead, stacked. No kicker, eyebrow or small-caps label sits above a heading.",
-        "section": "typography"
-      },
-      {
-        "name": "The Flat Ground Rule",
-        "body": "Nothing on the theme ground casts a shadow. Cards separate by a hairline border or a solid fill.",
-        "section": "elevation"
-      }
+      { "name": "The Logo Black Rule", "body": "The dark band is the logo's own black. The hero logo is a cut-out square painted in that same value; change the band black and the square reappears as a box.", "section": "colors" },
+      { "name": "The Band Swap Rule", "body": "Light sections are a class on the band that redefines ground, panel, ink, muted, line and green-ink. Components keep the same role classes in both bands; there are no light/dark class pairs and no theme switcher.", "section": "colors" },
+      { "name": "The Solid Green Rule", "body": "Green is a fill, a node or a word of ink. The single exception is native to the world: the soft-edged scan band that travels inside the logo's line holes in the hero. Nowhere else is green a glow, halo, gradient or colored shadow.", "section": "colors" },
+      { "name": "The Semibold Heading Rule", "body": "Display and section headings are 600. Heading weight comes from the face, never from color or a label stacked above it.", "section": "typography" },
+      { "name": "The Mono Is Data Rule", "body": "Geist Mono sets only step numbers, years and clause numbers. Never sentences, headings, navigation or hostnames.", "section": "typography" },
+      { "name": "The No Eyebrow Rule", "body": "A heading stands alone with its lead below. No kicker, eyebrow or small label sits above it.", "section": "typography" },
+      { "name": "The Alternating Band Rule", "body": "Sections change by band, not by frame. A new section is a new full-bleed band; cards live inside bands, never as inset framed panels.", "section": "layout" },
+      { "name": "The Flat Band Rule", "body": "Nothing casts a shadow. A card separates from its band by a hairline border or a solid fill.", "section": "elevation" }
     ],
     "dos": [
-      "Do open every page with a Night framed panel (28px radius, 8–12px inset); marketing pages end with exactly one closing panel holding one WhatsApp action, while legal documents end on the document itself.",
-      "Do keep Night panels dark in both themes and verify every other surface in light and dark.",
-      "Do use Circuit Green as a solid field, a pill fill or a lit node, with Ink on Green on top.",
-      "Do set page h1s at weight 300 with -0.035em tracking, and pair every heading with a muted lead.",
-      "Do use Geist Mono with tabular figures for numbers, years, step numbers and clause numbers.",
-      "Do join related items with a hairline thread and round terminal nodes.",
-      "Do keep copy in neutral Latin American Spanish (tú: \"Escríbenos\", \"Cuéntanos\") and show only verifiable figures: founding year, number of partners, projects actually listed."
+      "Do keep the dark band at the logo's black and use the light band class for every light section.",
+      "Do render the logo from the original vector; animate it with layers behind and over it, never by redrawing its lines.",
+      "Do set display and section headings at 600 with negative tracking, each followed by a muted lead.",
+      "Do end every primary action with an arrow, on a 10px rounded green button with Ink on Green text.",
+      "Do use Geist Mono with tabular figures only for step numbers, years and clause numbers.",
+      "Do honor reduced motion in every animated piece: remove the scan and pulses, show the finished state.",
+      "Do verify every band at 1440 and 390 wide; with no theme switcher, the light and dark bands together are the whole check."
     ],
     "donts": [
-      "Don't use green as glow, gradient, blur halo or colored shadow.",
+      "Don't add a theme switcher, light/dark class pairs or raw Tailwind grays; colors come from the role tokens.",
+      "Don't use cream or beige grounds; the light band is Bone Ground.",
+      "Don't use green as glow, halo, colored shadow or gradient outside the logo's scan band.",
+      "Don't add box-shadows to cards, buttons or navigation.",
       "Don't put eyebrow or kicker labels above headings.",
-      "Don't set sentences or headings in Geist Mono.",
-      "Don't add shadows to cards on the ground; only the floating carousel casts one.",
-      "Don't use voseo (\"Contanos\", \"Tenés\") or invented stats, testimonials or client logos.",
-      "Don't use weights above 500 or square corners on interactive controls."
+      "Don't set sentences, headings, navigation or hostnames in Geist Mono.",
+      "Don't wrap sections in inset framed panels; sections are full-bleed bands.",
+      "Don't show prices, currencies or popularity claims on plan cards."
     ]
   }
 }

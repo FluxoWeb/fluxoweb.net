@@ -67,24 +67,24 @@ export default function Empresa({ members }) {
           lead="Desde 2019 construimos software que cambia la manera en que operan las empresas paraguayas. Empezamos reparando computadoras; hoy diseñamos sistemas que hacen crecer negocios."
         />
 
-        <section className="pt-24 sm:pt-32" aria-label="Visión y misión">
+        <section className="band-light py-20 sm:py-28" aria-label="Visión y misión">
           <Container className="grid gap-14 lg:grid-cols-2 lg:gap-8">
             <div>
-              <h2 className="text-[15px] font-medium text-muted">Visión</h2>
-              <p className="mt-5 max-w-[30ch] text-[clamp(1.5rem,2.4vw,2.125rem)] font-light leading-snug tracking-tight">
+              <h2 className="text-title font-semibold">Visión</h2>
+              <p className="mt-5 max-w-[40ch] text-lead text-muted">
                 Ser la primera elección de las empresas que buscan transformar digitalmente sus operaciones.
               </p>
             </div>
             <div>
-              <h2 className="text-[15px] font-medium text-muted">Misión</h2>
-              <p className="mt-5 max-w-[30ch] text-[clamp(1.5rem,2.4vw,2.125rem)] font-light leading-snug tracking-tight">
+              <h2 className="text-title font-semibold">Misión</h2>
+              <p className="mt-5 max-w-[40ch] text-lead text-muted">
                 Software y soluciones web que impulsan a nuestros clientes hacia su siguiente nivel.
               </p>
             </div>
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="historia-title">
+        <section className="py-20 sm:py-28" aria-labelledby="historia-title">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-32">
@@ -113,7 +113,7 @@ export default function Empresa({ members }) {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="valores-title">
+        <section className="band-light py-20 sm:py-28" aria-labelledby="valores-title">
           <Container>
             <SectionHeading title={<span id="valores-title">Lo que nos guía.</span>} />
             <dl className="mt-14 grid border-t border-line/15 sm:grid-cols-2 lg:grid-cols-3">
@@ -127,7 +127,7 @@ export default function Empresa({ members }) {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="socios-title">
+        <section className="py-20 sm:py-28" aria-labelledby="socios-title">
           <Container>
             <SectionHeading title={<span id="socios-title">Los socios detrás de Fluxo Web.</span>}>
               Todos participan en el desarrollo: desde la arquitectura del sistema hasta la interfaz final. Cada solución es el

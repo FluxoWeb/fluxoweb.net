@@ -58,7 +58,7 @@ const faqHosting = [
   },
   {
     question: "¿Puedo cambiar de plan?",
-    answer: "Sí, puedes subir de plan en cualquier momento. Los cambios se aplican sin necesidad de migrar.",
+    answer: "Sí, podés subir de plan en cualquier momento. Los cambios se aplican sin necesidad de migrar.",
   },
   {
     question: "¿Qué pasa si supero el límite de transferencia?",
@@ -80,7 +80,7 @@ export default function Hosting() {
       <main>
         <PageHero
           title="Tu sistema en la nube, en nuestros servidores."
-          lead="Infraestructura propia, con copias de seguridad y soporte técnico real. Tú te enfocas en tu negocio; nosotros, en el servidor."
+          lead="Infraestructura propia, con copias de seguridad y soporte técnico real. Vos te enfocás en tu negocio; nosotros, en el servidor."
         >
           <ul className="flex flex-wrap gap-x-7 gap-y-3 text-[15px] text-night-muted">
             {["SSL gratuito", "Copias de seguridad", "Migración incluida", "Sin permanencia"].map((f) => (
@@ -92,9 +92,9 @@ export default function Hosting() {
           </ul>
         </PageHero>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="planes-title">
+        <section className="band-light py-20 sm:py-28" aria-labelledby="planes-title">
           <Container>
-            <SectionHeading title={<span id="planes-title">Elige según tu operación.</span>}>
+            <SectionHeading title={<span id="planes-title">Elegí según tu operación.</span>}>
               Cada plan se ajusta a lo que tu empresa necesita. Te enviamos una propuesta con la inversión, sin contratos de permanencia.
             </SectionHeading>
 
@@ -104,7 +104,7 @@ export default function Hosting() {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="razones-title">
+        <section className="py-20 sm:py-28" aria-labelledby="razones-title">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-5">
               <SectionHeading title={<span id="razones-title">Infraestructura pensada para el trabajo real.</span>} />
@@ -120,9 +120,9 @@ export default function Hosting() {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="faq-title">
+        <section className="band-light py-20 sm:py-28" aria-labelledby="faq-title">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-            <h2 id="faq-title" className="text-title font-normal lg:col-span-4">
+            <h2 id="faq-title" className="text-title font-semibold lg:col-span-4">
               Preguntas sobre hosting
             </h2>
             <div className="lg:col-span-8">
@@ -132,7 +132,7 @@ export default function Hosting() {
         </section>
 
         <Closing
-          title="¿Necesitas un plan a medida?"
+          title="¿Necesitás un plan a medida?"
           text="Si tus necesidades no encajan en los planes estándar, diseñamos la infraestructura para tu empresa."
           label="Hablar con el equipo"
         />

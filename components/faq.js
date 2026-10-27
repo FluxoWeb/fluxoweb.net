@@ -73,7 +73,7 @@ const faqdata = [
   {
     question: "¿Cómo es el proceso de trabajo desde el primer contacto?",
     answer:
-      "Iniciamos con una reunión de levantamiento de requerimientos, seguido de una propuesta técnica y económica. Una vez aprobado, planificamos el desarrollo en fases, con entregas parciales y revisión continua contigo.",
+      "Iniciamos con una reunión de levantamiento de requerimientos, seguido de una propuesta técnica y económica. Una vez aprobado, planificamos el desarrollo en fases, con entregas parciales y revisión continua con vos.",
   },
   {
     question: "¿Qué tecnologías utilizan?",
@@ -83,7 +83,7 @@ const faqdata = [
   {
     question: "¿Entregan el código fuente del sistema?",
     answer:
-      "Sí, si se acuerda en el contrato, entregamos el código fuente documentado al finalizar el proyecto. También ofrecemos opciones de licenciamiento si prefieres que gestionemos el sistema por ti.",
+      "Sí, si se acuerda en el contrato, entregamos el código fuente documentado al finalizar el proyecto. También ofrecemos opciones de licenciamiento si preferís que gestionemos el sistema por vos.",
   },
 ];
 

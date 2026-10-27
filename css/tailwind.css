@@ -19,28 +19,31 @@
 @tailwind utilities;
 
 @layer base {
-  /* Tema claro */
+  /* Una sola composición (sin selector de tema): franjas negras por defecto, con el negro
+     exacto del fondo del logo (#1D1D1D), y franjas claras con `.band-light`.
+     Identidad Fluxo: negro, blanco y verde. */
   :root {
-    --ground: 246 246 243;
-    --panel: 255 255 255;
-    --ink: 17 17 17;
-    --muted: 88 88 84;
-    --line: 17 17 17;
-    --green: 39 212 107;
-    --green-ink: 14 128 62;
-    color-scheme: light;
-  }
-
-  /* Tema oscuro: identidad Fluxo (negro, blanco, verde) */
-  .dark {
-    --ground: 18 18 18;
-    --panel: 29 29 29;
+    --ground: 29 29 29;
+    --panel: 38 38 38;
     --ink: 244 244 241;
     --muted: 163 163 158;
     --line: 255 255 255;
     --green: 39 212 107;
     --green-ink: 39 212 107;
     color-scheme: dark;
+  }
+
+  /* Franja clara: redefine los mismos tokens, así todo lo que va adentro se adapta solo. */
+  .band-light {
+    --ground: 246 246 243;
+    --panel: 255 255 255;
+    --ink: 17 17 17;
+    --muted: 88 88 84;
+    --line: 17 17 17;
+    --green-ink: 14 128 62;
+    color-scheme: light;
+    background-color: rgb(var(--ground));
+    color: rgb(var(--ink));
   }
 
   html {
@@ -109,9 +112,9 @@
 }
 
 @layer components {
-  /* Panel enmarcado: el lenguaje de borde de toda la página */
+  /* Tarjeta: el radio de 16px del documento de diseño */
   .frame {
-    @apply relative overflow-hidden rounded-frame;
+    @apply relative overflow-hidden rounded-card;
   }
 
   /* Hilo: la línea fina del ñandutí, usada como divisor */
@@ -128,6 +131,34 @@
   .tracking-label {
     letter-spacing: 0.08em;
   }
+}
+
+/* Ilustración del hero: el logo se revela de arriba hacia abajo y los conectores se dibujan. */
+@keyframes fx-reveal {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes fx-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Franja verde que recorre las líneas del logo, de la nube a las raíces del circuito. */
+@keyframes fx-scan {
+  0% { transform: translateY(80px); opacity: 0; }
+  10% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(900px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-scan { display: none; }
+}
+
+@keyframes fx-appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes fx-fill {

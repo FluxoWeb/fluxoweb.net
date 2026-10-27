@@ -1,59 +1,39 @@
-import Nanduti from "./nanduti";
-import ProjectCarousel from "./projectCarousel";
-import { WhatsAppButton, ArrowLink } from "./ui";
-import { projects } from "../data/projects";
+import { MapPin } from "lucide-react";
+import Container from "./container";
+import BrandCircuit from "./brandCircuit";
+import { Button, WHATSAPP_URL } from "./ui";
 
-// Solo datos verificables: año de fundación, socios y sistemas que se pueden visitar.
-const stats = [
-  { value: "2019", label: "Desde" },
-  { value: "4", label: "Socios" },
-  { value: String(projects.length), label: "Sistemas funcionando" },
-];
-
+// Hero (capa Marca + Empresa): texto a la izquierda, símbolo animado a la derecha.
+// Las dos intenciones llevan al mismo WhatsApp.
 const Hero = () => {
   return (
-    <section className="p-2 sm:p-3">
-      <div className="frame isolate flex min-h-[calc(100svh-16px)] flex-col bg-night text-night-ink sm:min-h-[calc(100svh-24px)]">
-        <Nanduti />
-        {/* Velo para legibilidad del texto sobre el tejido */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(29,29,29,0.15)_0%,rgba(29,29,29,0.7)_55%,#1D1D1D_100%)] md:bg-[linear-gradient(90deg,#1D1D1D_0%,rgba(29,29,29,0.85)_36%,rgba(29,29,29,0)_66%)]"
-        />
-
-        <div className="relative z-10 flex flex-1 flex-col justify-end gap-10 px-5 pb-5 pt-32 sm:px-8 sm:pb-8 md:justify-between lg:px-12 lg:pb-10 lg:pt-28">
-          <div>
-            <h1 data-web-avoid className="fx-rise max-w-[11ch] text-display font-light">
-              Tu negocio <span className="text-green">sabe más</span> de lo que imaginas.
-            </h1>
-            <p data-web-avoid className="fx-rise mt-7 max-w-[46ch] text-lead text-night-muted [animation-delay:120ms]">
-              Transformamos el conocimiento, los problemas y las ideas de tu empresa en soluciones tecnológicas. No necesitas
-              saber qué sistema quieres: empezamos por entender tu negocio.
-            </p>
+    <section className="relative overflow-hidden bg-night text-night-ink">
+      <Container className="grid items-center gap-10 pb-16 pt-28 sm:pt-32 lg:min-h-[min(100svh,880px)] lg:grid-cols-12 lg:gap-8 lg:pb-20">
+        <div className="lg:col-span-6">
+          <h1 className="fx-rise max-w-[14ch] text-display font-semibold">
+            Vos conocés tu negocio. <span className="text-green">Juntos construimos</span> lo que sigue.
+          </h1>
+          <p className="fx-rise mt-6 max-w-[42ch] text-lead text-night-muted [animation-delay:120ms]">
+            Transformamos tus ideas y desafíos en soluciones tecnológicas.
+          </p>
+          <div className="fx-rise mt-9 flex flex-col gap-3 sm:flex-row [animation-delay:240ms]">
+            <Button href={WHATSAPP_URL} size="lg">
+              Tengo una idea
+            </Button>
+            <Button href={WHATSAPP_URL} variant="outline" size="lg">
+              Quiero resolver un problema
+            </Button>
           </div>
-
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div data-web-avoid className="fx-rise flex flex-col gap-8 [animation-delay:240ms]">
-              <dl className="flex gap-8 sm:gap-12">
-                {stats.map((s) => (
-                  <div key={s.label} className="flex flex-col-reverse gap-1">
-                    <dt className="text-[13px] text-night-muted">{s.label}</dt>
-                    <dd className="tabular font-mono text-3xl font-medium tracking-tight sm:text-4xl">{s.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
-                <WhatsAppButton />
-                <ArrowLink href="#empezar" className="text-night-ink">
-                  ¿Por dónde empezar?
-                </ArrowLink>
-              </div>
-            </div>
-
-            <ProjectCarousel data-web-avoid className="fx-rise hidden max-w-[320px] [animation-delay:360ms] md:block lg:absolute lg:bottom-10 lg:right-12" />
-          </div>
+          <p className="fx-rise mt-8 flex items-center gap-2 text-[14px] text-night-muted [animation-delay:320ms]">
+            <MapPin className="h-4 w-4" strokeWidth={1.8} />
+            Ciudad del Este · Paraguay
+          </p>
         </div>
-      </div>
+
+        <div className="lg:col-span-6">
+          <BrandCircuit className="mx-auto max-w-[620px]" />
+        </div>
+      </Container>
     </section>
   );
 };

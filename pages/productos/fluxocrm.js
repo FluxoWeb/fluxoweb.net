@@ -55,7 +55,7 @@ const features = [
 ];
 
 const reasons = [
-  { title: "Implementación rápida", text: "Configuramos tu CRM e importamos tus contactos por ti." },
+  { title: "Implementación rápida", text: "Configuramos tu CRM e importamos tus contactos por vos." },
   { title: "Datos seguros", text: "Cifrado y copias de seguridad automáticas diarias." },
   { title: "Soporte local", text: "Un equipo de soporte en tu zona horaria y en tu idioma." },
 ];
@@ -63,15 +63,15 @@ const reasons = [
 const faqCRM = [
   {
     question: "¿Puedo importar mis contactos existentes?",
-    answer: "Sí, puedes importar contactos desde Excel, CSV o migrar desde otro CRM. Nuestro equipo te asiste en todo el proceso.",
+    answer: "Sí, podés importar contactos desde Excel, CSV o migrar desde otro CRM. Nuestro equipo te asiste en todo el proceso.",
   },
   {
     question: "¿Hay período de prueba?",
-    answer: "Ofrecemos una demostración personalizada y 14 días de prueba gratuita para que evalúes FluxoCRM sin compromiso.",
+    answer: "Ofrecemos una demostración personalizada y 14 días de prueba gratuita para que pruebes FluxoCRM sin compromiso.",
   },
   {
     question: "¿Puedo cambiar de plan?",
-    answer: "Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplican de inmediato y el cobro se prorratea.",
+    answer: "Sí, podés cambiar de plan en cualquier momento. Los cambios se aplican de inmediato y el cobro se prorratea.",
   },
   {
     question: "¿FluxoCRM funciona en el celular?",
@@ -99,7 +99,7 @@ export default function FluxoCRM() {
           <WhatsAppButton label="Solicitar una demostración" />
         </PageHero>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="planes-title">
+        <section className="band-light py-20 sm:py-28" aria-labelledby="planes-title">
           <Container>
             <SectionHeading title={<span id="planes-title">Planes.</span>}>
               Todos los planes incluyen 14 días de prueba. Te enviamos una propuesta según la cantidad de usuarios y lo que necesite tu equipo.
@@ -110,9 +110,9 @@ export default function FluxoCRM() {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="funciones-title">
+        <section className="py-20 sm:py-28" aria-labelledby="funciones-title">
           <Container>
-            <SectionHeading title={<span id="funciones-title">Todo lo que necesitas para vender.</span>} />
+            <SectionHeading title={<span id="funciones-title">Todo lo que necesitás para vender.</span>} />
             <dl className="mt-14 grid border-t border-line/15 sm:grid-cols-2 lg:grid-cols-3">
               {features.map((f) => (
                 <div key={f.title} className="border-b border-line/15 py-8 sm:pr-10">
@@ -127,10 +127,10 @@ export default function FluxoCRM() {
           </Container>
         </section>
 
-        <section className="px-2 pt-24 sm:px-3 sm:pt-32" aria-labelledby="razones-title">
+        <section className="px-2 pb-20 sm:px-3 sm:pb-28" aria-labelledby="razones-title">
           <div className="frame bg-green text-[#0B0B0B]">
             <Container className="grid gap-12 py-16 sm:py-24 lg:grid-cols-12 lg:gap-8">
-              <h2 id="razones-title" className="text-title font-normal lg:col-span-5">
+              <h2 id="razones-title" className="text-title font-semibold lg:col-span-5">
                 ¿Por qué FluxoCRM?
               </h2>
               <ul className="lg:col-span-7">
@@ -145,9 +145,9 @@ export default function FluxoCRM() {
           </div>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="faq-title">
+        <section className="band-light py-20 sm:py-28" aria-labelledby="faq-title">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-            <h2 id="faq-title" className="text-title font-normal lg:col-span-4">
+            <h2 id="faq-title" className="text-title font-semibold lg:col-span-4">
               Preguntas frecuentes
             </h2>
             <div className="lg:col-span-8">
@@ -158,7 +158,7 @@ export default function FluxoCRM() {
 
         <Closing
           title="¿Listo para ordenar tus ventas?"
-          text="Agenda una demostración gratuita y descubre cómo FluxoCRM puede ayudarte a cerrar más ventas."
+          text="Agendá una demostración gratuita y descubrí cómo FluxoCRM puede ayudarte a cerrar más ventas."
           label="Solicitar una demostración"
         />
       </main>

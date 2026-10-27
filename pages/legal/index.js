@@ -77,10 +77,10 @@ export default function Legal() {
       <Navbar />
       <main>
         <PageHero web={false} title="Información legal." lead="Los documentos y políticas que regulan la relación entre Fluxo Web Group E.A.S. y sus clientes.">
-          <p className="text-[15px] text-night-muted">Si tienes alguna consulta, escríbenos a <ContactLinks tone="text-green" />.</p>
+          <p className="text-[15px] text-night-muted">Si tenés alguna consulta, escribinos a <ContactLinks tone="text-green" />.</p>
         </PageHero>
 
-        <section className="pt-20 sm:pt-24" aria-label="Documentos">
+        <section className="band-light py-20 sm:py-28" aria-label="Documentos">
           <Container>
             <ul className="grid gap-3 md:grid-cols-2">
               {documentos.map((d) => (
@@ -99,7 +99,7 @@ export default function Legal() {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="politicas-title">
+        <section className="py-20 sm:py-28" aria-labelledby="politicas-title">
           <Container>
             <SectionHeading title={<span id="politicas-title">Políticas en resumen.</span>} />
             <dl className="mt-14 border-t border-line/15">

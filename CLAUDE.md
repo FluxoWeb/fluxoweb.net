@@ -15,7 +15,9 @@ yarn sitemap    # Regenerate public/sitemap.xml without building
 
 Package manager is Yarn v1 (`yarn.lock`). If `yarn` is not installed globally, use `npx yarn@1.22.22 <cmd>`.
 
-No test suite configured. Verify UI changes visually (playwright-cli) at 1440 and 390 wide, in both dark and light theme.
+Don't run `yarn build` while `yarn dev` is running: both write `.next/`, and the dev server overwrites the production build.
+
+No test suite configured. Verify UI changes visually (playwright-cli) at 1440 and 390 wide.
 
 ## Environment
 
@@ -24,8 +26,9 @@ No environment variables are required.
 ## Product and design context
 
 - `PRODUCT.md` — product truth: audience, positioning, evidence on hand, and what must never be fabricated (testimonials, client logos, project counts, 24/7 or uptime claims).
-- `.impeccable/surfaces/` — per-page design briefs (direction contract for the home).
-- Design direction: **"Ñandutí de circuitos"** — the Guaraní spider-web lace woven from the logo's circuit traces. Identity is black + white + green; green is used as solid fields (sections, primary buttons, live nodes), never as glow.
+- `desing_2.md` — the team's design spec (structure, copy and section order of the landing). Its cream palette was **not** adopted: the identity stays black + white + green.
+- `DESIGN.md` + `.impeccable/design.json` — the design system as built. `.impeccable/surfaces/` — per-page design briefs.
+- `docs/Arquitetura_de_Imperio_Fluxo_Web.docx` — the commercial strategy ("Empresas que Piensan").
 
 ## Architecture
 
@@ -33,9 +36,9 @@ No environment variables are required.
 
 **Routing:** File-based under `pages/`:
 - `/` — landing page (home)
-- `/servicios`, `/hosting` — services and hosting plans
-- `/productos` — FluxoCRM, ERPNext and live systems; `/productos/fluxocrm` — FluxoCRM product page
-- `/empresa` — company page (vision, timeline, values, partners); `/empresa/[slug]` — per-partner portfolio (SSG)
+- `/servicios` (labelled "Soluciones"), `/hosting` — solutions and hosting plans
+- `/productos` — FluxoCRM, ERPNext and every live system; `/productos/fluxocrm` — FluxoCRM product page
+- `/empresa` (labelled "Nosotros") — vision, timeline, values, partners; `/empresa/[slug]` — per-partner portfolio (SSG)
 - `/presentacion` — printable A4 cover letter (own `@media print` styles, no Navbar/Footer)
 - `/legal`, `/terminos`, `/privacidad` — legal pages (rendered by `components/legalDocument.js`)
 
@@ -43,22 +46,23 @@ There are no API routes.
 
 **Data:**
 - `data/members/<slug>.js` — each partner (name, role, summary, photo, skills, projects, experience). `data/members/index.js` exports `memberSlugs`, `getMember(slug)`, `getAllMembers()`. Pages read members via `getStaticProps` and `pickMember` (from `components/members.js`) so full portfolios never ship to the client. Never hardcode member info in pages.
-- `data/projects.js` — live systems shown on home, hero carousel and `/productos`. Screenshots are static files in `public/img/proyectos/` (captured with playwright-cli at 1440×900).
+- `data/projects.js` — every live system, shown on the home (the 3 with `featured: true`) and on `/productos`. Relationship flags: `own` (producto propio), `partner` (socio tecnológico), `client` (cliente); labels come from `relationLabel()`. Screenshots are static files in `public/img/proyectos/` (captured with playwright-cli at 1440×900).
 
 **Live chat:** Chatwoot (`components/ChatwootWidget.js`), mounted once globally in `pages/_app.js`.
 
-**Styling:** Tailwind CSS v3 with color tokens as CSS variables (`css/tailwind.css`), so light and dark share the same classes — use `bg-ground`, `bg-panel`, `text-ink`, `text-muted`, `border-line/15`, `bg-green`, `text-green-ink`, never `dark:` pairs or raw Tailwind grays. `night-*` colors are surfaces that stay dark in both themes (heroes, closing panel, nav pills). `next-themes` with `attribute="class"`, `defaultTheme="dark"`. Tailwind purges classes it can't see literally: never build class names by interpolation.
+**Styling:** Tailwind CSS v3. **One composition, no theme switcher.** Color tokens are CSS variables in `css/tailwind.css`: `:root` holds the dark band (ground `#1D1D1D`, the exact black of the logo), and the `band-light` class redefines the same tokens for light bands. Pages alternate full-bleed dark and `band-light` sections. Always use the tokens (`bg-ground`, `bg-panel`, `text-ink`, `text-muted`, `border-line/15`, `bg-green`, `text-green-ink`) so content adapts to the band it sits in — never `dark:` pairs or raw Tailwind grays. `night-*` colors are always dark (hero, navbar, closing, footer). Tailwind purges classes it can't see literally: never build class names by interpolation.
 
-**Type:** Host Grotesk (display light 300, text 400–500) and Geist Mono, self-hosted in `public/fonts/`. Mono is only for data (numbers, years, prices, step and clause numbers) — never for navigation, hostnames or as a "technical" costume.
+**Shapes and type:** buttons have 10px corners (`rounded-control`) with an arrow at the end; cards 16px (`rounded-card`, also what `.frame` applies). Host Grotesk with semibold (600) headings; Geist Mono only for step numbers, years and clause numbers. Both self-hosted in `public/fonts/`.
 
 **Components (`components/`):**
-- `navbar.js` — floating pill nav inside the hero frame, client-language labels (Soluciones · Casos · Productos · Nosotros; Hosting lives in the footer); exports `navigation`
-- `hero.js` — home hero: framed panel, ñandutí canvas, "Tu negocio sabe más de lo que imaginas", verifiable stats, diagnosis CTA, project carousel
-- `nanduti.js` — the signature canvas (variants `hero`, `edge`, `quiet`); respects `prefers-reduced-motion`, pauses offscreen
-- `pageHero.js` — framed header for inner pages; `closing.js` — closing CTA panel for every page
-- `projectCarousel.js`, `members.js`, `pricing.js`, `faq.js` (accepts `items`), `legalDocument.js`
-- `ui.js` — `WhatsAppButton`, `ArrowLink`, `Terminal`, `SectionHeading`, `WHATSAPP_URL`
-- `container.js` — max-width wrapper aligned with the hero padding; `footer.js`; `DarkSwitch.js`
+- `navbar.js` — full-width bar: `BrandLogo` (symbol + "FLUXO WEB"), Soluciones · Proyectos · Nosotros, green "Hablemos"; exports `navigation` and `BrandLogo`
+- `hero.js` — home hero: "Vos conocés tu negocio…", the two intents (Tengo una idea / Quiero resolver un problema), `brandCircuit.js` on the right
+- `brandCircuit.js` — the animated logo: original paths from `brandPaths.js` (verbatim from `public/img/Brain.svg`, which is a negative), connectors to Ideas · Ventas · Operación · Tecnología, pulses; respects `prefers-reduced-motion`
+- `nanduti.js` — circuit-web canvas used as subtle texture (variants `edge`, `quiet`; `hero` is no longer used)
+- `pageHero.js` — dark header band for inner pages; `closing.js` — the manifesto band ("Tu negocio sabe más de lo que imaginás") ending every marketing page
+- `members.js`, `pricing.js`, `faq.js` (accepts `items` and `lead`), `legalDocument.js`
+- `ui.js` — `Button` (primary / outline / dark), `WhatsAppButton`, `ArrowLink`, `Terminal`, `SectionHeading`, `WHATSAPP_URL`
+- `container.js` — max-width wrapper; `footer.js`
 
 **Icons:** `lucide-react` only.
 
@@ -66,10 +70,10 @@ There are no API routes.
 
 ## Conventions
 
-- Site language is Spanish, **neutral Latin American tone** (tú: "Escríbenos", "Cuéntanos") — no voseo. Audience is PyMEs in Paraguay and the region.
-- Every page (except `/presentacion`) renders `<Navbar />` + `<main>` + `<Footer />`, starts with a framed dark panel (`Hero` or `PageHero`) and usually ends with `<Closing />`.
+- Site language is **Paraguayan Spanish with voseo** ("Vos conocés tu negocio", "Contanos", "Escribinos") — team decision, required by `desing_2.md`. `<Html lang="es-PY">`.
+- Every page (except `/presentacion`) renders `<Navbar />` + `<main>` + `<Footer />`, starts with a dark band (`Hero` or `PageHero`) and marketing pages end with `<Closing />`.
 - No eyebrow/kicker labels above headings; section headings use `SectionHeading`.
-- Only verifiable claims and numbers (see `PRODUCT.md` → Evidence on Hand).
-- Write for a business owner who does not know what they want, not for a developer: lead with the client's problem or situation, describe services by outcome, no jargon (vCPU, LLM, arquitectura) on first contact. The primary CTA is "Pedir un diagnóstico". See `PRODUCT.md` → Commercial focus.
+- Only verifiable claims and numbers (see `PRODUCT.md` → Evidence on Hand). "Empresas que Piensan" is an initiative in progress: never present events, members or programs as existing.
+- Write for a business owner, not for a developer: lead with the client's idea or problem, describe services by outcome, no jargon (vCPU, LLM, arquitectura) on first contact.
 - No published prices anywhere: plans in `components/pricing.js` show what each level includes and lead to "Pedir propuesta".
-- WhatsApp contact link: `https://wa.link/18ywdk` (`WHATSAPP_URL` in `components/ui.js`).
+- WhatsApp contact link: `https://wa.link/18ywdk` (`WHATSAPP_URL` in `components/ui.js`). Every CTA, including "Conocé la iniciativa", opens it.

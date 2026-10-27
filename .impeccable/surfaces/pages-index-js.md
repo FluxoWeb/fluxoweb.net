@@ -2,23 +2,23 @@
 version: 1
 slug: "pages-index-js"
 primary_target: "pages/index.js"
-related_targets: ["components/navbar.js","components/hero.js"]
+related_targets: ["components/hero.js","components/brandCircuit.js","components/navbar.js"]
 ---
 
 # Surface brief: Home (/)
 
-Mode: Persuade. Audience: PyME owners/managers in Paraguay and the region evaluating a software partner. Action: start a diagnostic conversation on WhatsApp. Audience shift (team decision): owners who do not know what they want; sell the diagnosis and the outcome, never compete on price or specs. Proof: live client projects, own products, the four partners, founding year. Constraints: no invented stats, testimonials or logos; neutral Latin American Spanish (no voseo).
+Mode: Persuade. Audience: owners of businesses in Ciudad del Este and the region who arrive with an idea or a problem, often without knowing what system they need. Action: start a WhatsApp conversation through one of two intents (Tengo una idea / Quiero resolver un problema). Proof: real screenshots of live projects, process, the company's own symbol. Constraints: voseo; black + white + green only (the spec's cream palette was rejected by the team); no prices, invented stats, testimonials or promises about the "Empresas que Piensan" initiative. Source spec: desing_2.md (structure and copy adopted).
 
 ## Direction contract
 
-THESIS: Fluxo Web as a literal web — a ñandutí (Guaraní: spider web) woven from the logo's circuit traces, where every service, product and partner is a node of one network run end to end. Refuses the indigo SaaS template (badge pill + blob gradient + three equal cards) and its neon-dark opposite.
+THESIS: The company's own symbol — the brain/cloud with circuit roots — is the thinking business; knowledge flows from it into four outcomes (Ideas, Ventas, Operación, Tecnología). Refuses the service-list landing and the developer-tool aesthetic.
 
-OWN-WORLD: near-black ground (#121212, logo #1D1D1D surfaces), white thread lines at hairline weight, green as solid committed fields (whole sections, primary buttons, live nodes) never as glow. Radial/concentric geometry, round nodes with ring strokes like the logo's terminals, rounded framed panels, Host Grotesk (display light 300) + Geist Mono for data and nav labels.
+OWN-WORLD: full-bleed bands alternating the logo's black (#1D1D1D) and an off-white (#F6F6F3); green (#27D46B) only as primary buttons, live pulses, lit terminals and the green word in the headline. Hairline white connectors with 45° bends, ring terminals, 10px-corner buttons with a trailing arrow, 16px cards, Host Grotesk semibold headings.
 
-STORY: Visitor reads that their business already knows more than they think → picks the door that matches their situation (problem / idea / no sé por dónde empezar) → recognises their own pain in the problems list → believes it through the manifesto, the process, live cases and the partners → asks for a diagnosis on WhatsApp.
+STORY: The visitor reads that they already know their business → picks an intent → sees what becomes possible (sell better, simplify, control, create) → sees real projects → believes the method (four steps) → is invited into the movement → writes on WhatsApp ("Conversemos sobre tu negocio").
 
-FIRST VIEWPORT: framed panel inset 12px, radius 28px. Pill nav floats inside top. Left: headline "Tu negocio sabe más de lo que imaginas." ~clamp(48px,7vw,104px), 3 lines, subline about turning knowledge, problems and ideas into solutions. Right/back: canvas ñandutí of circuit traces drawn thread by thread, nodes pulse green. Bottom row: verifiable stats (2019 · 4 socios · projects shown), green "Pedir un diagnóstico" WhatsApp CTA with circular arrow and a link to the three doors, floating card carousel of real projects "01/08".
+FIRST VIEWPORT: dark band. Left 6 columns: h1 "Vos conocés tu negocio. Juntos construimos lo que sigue." (~72px, semibold, "Juntos construimos" in green), lead, two buttons side by side (green "Tengo una idea", outline "Quiero resolver un problema"), "Ciudad del Este · Paraguay" with a pin. Right 6 columns: the original logo revealed top to bottom with a green band sweeping its lines, four connectors drawn to cards Ideas · Ventas · Operación · Tecnología, pulses lighting each card's terminal.
 
-FORM: ñandutí de circuitos — candidate 6 of 7 (PCB, server rack, CDE galleries, factura timbrada, terminal, ñandutí, Itaipú control room). Seed key 1e34a592 (degraded roll, no challengers). Signature interaction: weaving draw-in + pointer tension on threads; flow pulses travel along spokes to nodes.
+FORM: brief-pinned (desing_2.md mockup), translated to the black/white/green identity. Signature interaction: the logo's circuit "lighting up" (green band through the line holes) and pulses travelling to the four outcomes; reduced motion shows the finished drawing.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

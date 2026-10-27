@@ -2,6 +2,7 @@
 // `own: true` = producto propio de Fluxo. `partner: true` = desarrollado por Fluxo para un cliente,
 // que es dueño del producto; Fluxo sigue asociado como socio tecnológico. `client: true` = desarrollado
 // para un cliente, sin sociedad. (Confirmado por el equipo.)
+// `featured: true` = una de las 3 tarjetas de la home ("Ideas que se convierten en proyectos").
 // `image` es una captura estática en /public/img/proyectos (generada con playwright-cli).
 
 export const projects = [
@@ -12,15 +13,17 @@ export const projects = [
     description: "Autoconocimiento con IA generativa y biometría proyectiva.",
     url: "https://quiro-ai.com/",
     image: "/img/proyectos/quiro-ai.jpg",
+    featured: true,
     partner: true,
   },
   {
     slug: "millonai",
     name: "MillonAI",
     kind: "IA + WhatsApp",
-    description: "Finanzas personales desde WhatsApp: registra gastos con un texto, un audio o una foto.",
+    description: "Finanzas personales desde WhatsApp: registrás gastos con un texto, un audio o una foto.",
     url: "https://millonai.com.py/",
     image: "/img/proyectos/millonai.jpg",
+    featured: true,
     partner: true,
   },
   {
@@ -45,7 +48,7 @@ export const projects = [
     slug: "ogady",
     name: "Ogady",
     kind: "Directorio de locales",
-    description: "Encuentra restaurantes, bares, cafés y más negocios de Paraguay, por categoría y por ciudad.",
+    description: "Encontrá restaurantes, bares, cafés y más negocios de Paraguay, por categoría y por ciudad.",
     url: "https://ogady.app/",
     image: "/img/proyectos/ogady.jpg",
     own: true,
@@ -66,6 +69,7 @@ export const projects = [
     description: "Tienda en línea de sistemas de limpieza con filtro de agua.",
     url: "https://pro-aqua.com.py/",
     image: "/img/proyectos/pro-aqua.jpg",
+    featured: true,
     client: true,
   },
   {

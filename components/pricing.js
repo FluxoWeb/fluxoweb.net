@@ -39,10 +39,10 @@ export default function Pricing({ plans }) {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-10 inline-flex h-12 items-center justify-center gap-2 rounded-full text-[15px] font-medium transition-colors ${
+              className={`mt-10 inline-flex h-12 items-center justify-center gap-2 rounded-control text-[15px] font-medium transition-colors ${
                 on
-                  ? "bg-[#0B0B0B] text-green hover:bg-[#1E1E1E]"
-                  : "border border-line/20 hover:border-green hover:bg-green hover:text-[#0B0B0B]"
+                  ? "bg-[#0B0B0B] text-green hover:bg-[#262626]"
+                  : "border border-line/35 hover:border-green hover:text-green-ink"
               }`}
             >
               {plan.cta || "Pedir propuesta"}

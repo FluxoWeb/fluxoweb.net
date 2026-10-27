@@ -6,7 +6,6 @@ const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
 
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -33,12 +32,14 @@ module.exports = {
         mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
       },
       fontSize: {
-        display: ["clamp(2.75rem, min(6.6vw, 11svh), 6rem)", { lineHeight: "1", letterSpacing: "-0.035em" }],
-        title: ["clamp(2rem, 4.2vw, 3.75rem)", { lineHeight: "1.02", letterSpacing: "-0.035em" }],
+        // Escala del documento de diseño: H1 56–72px (36–42 en móvil), H2 36–48px (28–34 en móvil).
+        display: ["clamp(2.375rem, min(5.2vw, 9.5svh), 4.5rem)", { lineHeight: "1.04", letterSpacing: "-0.03em" }],
+        title: ["clamp(1.75rem, 3.3vw, 3rem)", { lineHeight: "1.1", letterSpacing: "-0.025em" }],
         lead: ["clamp(1.0625rem, 1.3vw, 1.25rem)", { lineHeight: "1.55" }],
       },
       borderRadius: {
-        frame: "28px",
+        card: "16px",
+        control: "10px",
       },
       transitionTimingFunction: {
         "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",

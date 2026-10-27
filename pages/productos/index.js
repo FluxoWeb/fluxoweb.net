@@ -42,10 +42,10 @@ export default function Productos() {
           lead="Soluciones de gestión probadas que implementamos, configuramos y mantenemos. Tu equipo empieza a trabajar sin esperar un desarrollo desde cero."
         />
 
-        <section className="pt-24 sm:pt-32" aria-label="Productos">
+        <section className="band-light py-20 sm:py-28" aria-label="Productos">
           <Container className="grid gap-3 lg:grid-cols-2">
             <article className="frame flex flex-col bg-night p-7 text-night-ink sm:p-10">
-              <h2 className="text-title font-normal">FluxoCRM</h2>
+              <h2 className="text-title font-semibold">FluxoCRM</h2>
               <p className="mt-3 text-[15px] text-green">Desarrollado por Fluxo Web</p>
               <p className="mt-5 max-w-[46ch] text-lead text-night-muted">
                 Centraliza contactos, oportunidades de venta y comunicaciones. Automatiza tu proceso comercial y cierra más ventas
@@ -63,7 +63,7 @@ export default function Productos() {
               </ul>
               <Link
                 href="/productos/fluxocrm"
-                className="group mt-10 inline-flex h-12 w-fit items-center gap-2 rounded-full bg-green px-6 text-[15px] font-medium text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
+                className="group mt-10 inline-flex h-12 w-fit items-center gap-2 rounded-control bg-green px-6 text-[15px] font-medium text-[#0B0B0B] transition-colors hover:bg-[#3BE07D]"
               >
                 Ver planes de FluxoCRM
                 <ArrowRight className="h-4 w-4 transition-transform duration-500 ease-out-expo group-hover:translate-x-1" />
@@ -71,7 +71,7 @@ export default function Productos() {
             </article>
 
             <article className="frame flex flex-col border border-line/15 bg-panel p-7 sm:p-10">
-              <h2 className="text-title font-normal">ERPNext</h2>
+              <h2 className="text-title font-semibold">ERPNext</h2>
               <p className="mt-3 text-[15px] text-muted">De Frappe Technologies, implementado por Fluxo Web</p>
               <p className="mt-5 max-w-[46ch] text-lead text-muted">
                 El ERP de código abierto de Frappe Technologies, implementado y adaptado por nuestro equipo: contabilidad,
@@ -89,7 +89,7 @@ export default function Productos() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 inline-flex h-12 w-fit items-center gap-2 rounded-full border border-line/20 px-6 text-[15px] font-medium transition-colors hover:border-green hover:bg-green hover:text-[#0B0B0B]"
+                className="mt-10 inline-flex h-12 w-fit items-center gap-2 rounded-control border border-line/35 px-6 text-[15px] font-medium transition-colors hover:border-green hover:text-green-ink"
               >
                 Solicitar una demostración
                 <ArrowUpRight className="h-4 w-4" />
@@ -98,7 +98,7 @@ export default function Productos() {
           </Container>
         </section>
 
-        <section className="pt-24 sm:pt-32" aria-labelledby="acompanamiento-title">
+        <section className="py-20 sm:py-28" aria-labelledby="acompanamiento-title">
           <Container className="grid gap-12 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-5">
               <SectionHeading title={<span id="acompanamiento-title">No solo entregamos software.</span>}>
@@ -116,10 +116,10 @@ export default function Productos() {
           </Container>
         </section>
 
-        <section id="demos" className="scroll-mt-24 pt-24 sm:pt-32" aria-labelledby="demos-title">
+        <section id="demos" className="band-light scroll-mt-20 py-20 sm:py-28" aria-labelledby="demos-title">
           <Container>
-            <SectionHeading title={<span id="demos-title">Pruébalos en vivo.</span>}>
-              Todos estos sistemas están en producción. Entra, recórrelos y decide con el producto real delante.
+            <SectionHeading title={<span id="demos-title">Probalos en vivo.</span>}>
+              Todos estos sistemas están en producción. Entrá, recorrelos y decidí con el producto real delante.
             </SectionHeading>
             <ul className="mt-14 border-t border-line/15">
               {projects.map((p) => (
@@ -137,7 +137,7 @@ export default function Productos() {
                       <span className="block text-xl font-medium tracking-tight transition-colors group-hover:text-green-ink">{p.name}</span>
                       <span className="mt-1 block text-[14px] text-muted">
                         {relationLabel(p) && (
-                          <span className={`font-medium ${p.own ? "text-green-ink" : p.partner ? "text-ink" : ""}`}>{relationLabel(p)} · </span>
+                          <span className={`font-medium ${p.own ? "text-green-ink" : ""}`}>{relationLabel(p)} · </span>
                         )}
                         {p.kind}
                       </span>

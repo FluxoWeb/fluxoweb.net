@@ -26,7 +26,7 @@ One provider end to end, run by its owners:
 
 ## Operating Context
 
-- Primary conversion: WhatsApp (`https://wa.link/18ywdk`). Chatwoot live chat is secondary and loads globally.
+- Primary conversion: WhatsApp (`https://wa.link/18ywdk`), entered through two intents — "Tengo una idea" and "Quiero resolver un problema" — that open the same chat. Chatwoot live chat is secondary and loads globally. No contact form or CRM integration exists yet (the old email endpoint was removed as insecure); the team declined prefilled WhatsApp messages for now.
 - `/presentacion` is a printable A4 cover letter sent to prospects.
 - Each partner has a portfolio page (`/empresa/[slug]`) used as personal proof of expertise.
 
@@ -34,14 +34,16 @@ One provider end to end, run by its owners:
 
 - Services: custom software, web development, mobile apps (iOS/Android), AI integrations (chatbots, automation, LLMs), cloud hosting plans.
 - Own products: FluxoCRM, Zap Pulse, Nova, VentaFlow, Masé, Esmalté, Ogady. Also implements ERPNext (Frappe Technologies).
-- Language: Spanish only, professional neutral Latin American tone (no voseo, no regionalisms). No English version planned.
+- Language: Paraguayan Spanish **with voseo** ("Vos conocés tu negocio", "Contanos"), confirmed by the team and required by `desing_2.md`. `lang="es-PY"`. No English version planned.
 - Contact is WhatsApp-first; there is no contact form or booking tool.
 
 ## Brand Commitments
 
 - Name: Fluxo Web (legal: Fluxo Web Group E.A.S.).
 - Logo: line-art brain/cloud with circuit traces (`public/img/Brain.svg`, `public/img/Brain.png`).
-- Brand colors stated by the user: **black, white and green** are Fluxo's identity.
+- Brand colors stated by the user: **black, white and green** are Fluxo's identity. The cream palette proposed in `desing_2.md` was explicitly rejected; everything else in that spec (structure, copy, sections) was adopted.
+- Promise (from `desing_2.md`): "Vos conocés tu negocio. Juntos construimos lo que sigue." Movement: "Empresas que Piensan" — "Tu negocio sabe más de lo que imaginás. Hacé que su inteligencia trabaje para vos."
+- "Empresas que Piensan" is an initiative not yet launched: its CTA ("Conocé la iniciativa") opens WhatsApp; never present meetings, member counts or programs as existing.
 
 ## Evidence on Hand
 
@@ -58,5 +60,5 @@ One provider end to end, run by its owners:
 3. Show the people: the partners are the differentiator, not a footnote.
 4. End to end: present build + host + support as one continuous offer.
 5. Problem before technology: every page leads with the client's situation; services are described by the outcome they produce.
-6. The diagnosis is the offer: the primary action everywhere is starting a diagnostic conversation, not requesting a quote.
+6. The conversation is the offer: every CTA starts a conversation about the client's business ("Conversemos sobre tu negocio", the two intents), never a quote request.
 7. No published prices: plans (hosting, FluxoCRM) show what each level includes and end in "Pedir propuesta"; the investment is defined after understanding the client's operation (team decision). Never reintroduce price figures or popularity claims such as "Más elegido".

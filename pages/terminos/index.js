@@ -90,7 +90,7 @@ export default function Terminos() {
       intro={
         <>
           Al contratar los servicios de Fluxo Web Group E.A.S., el Cliente acepta los presentes términos y condiciones en su
-          totalidad. Si tienes alguna consulta sobre este documento, contáctanos en <ContactLinks />.
+          totalidad. Si tenés alguna consulta sobre este documento, contactanos en <ContactLinks />.
         </>
       }
       sections={secciones}
