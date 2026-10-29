@@ -34,14 +34,19 @@ const milestones = [
     text: "Al detectar las necesidades de software de sus clientes, Oscar decide especializarse en desarrollo web y de software, y la empresa pasa a llamarse Fluxo Web.",
   },
   {
+    year: "2024",
+    title: "Un equipo se forma",
+    text: "Alberto David Servin Meira y Wildo Yamil Valenzuela Panderi empiezan a participar en Fluxo Web junto a Oscar, y juntos preparan la formalización de la empresa.",
+  },
+  {
     year: "2025",
-    title: "Nuevos socios",
-    text: "Se incorporan Alberto David Servin Meira (cofundador e ingeniero en Informática) y Wildo Yamil Valenzuela Panderi (cofundador y gerente administrativo), fortaleciendo el equipo directivo.",
+    title: "Nace la E.A.S.",
+    text: "Fluxo Web se constituye legalmente como Fluxo Web Group E.A.S. Sus fundadores son Oscar Gabriel Ramírez González, Wildo Yamil Valenzuela Panderi y Alberto David Servin Meira.",
   },
   {
     year: "2026",
-    title: "Socio principal",
-    text: "El ingeniero en Informática Armando Manuel Diarte Velázquez se incorpora como socio principal, conectando lógica de negocio, datos e interfaces en backend y frontend.",
+    title: "Un nuevo socio",
+    text: "El ingeniero en Informática Armando Manuel Diarte Velázquez se suma como socio, conectando lógica de negocio, datos e interfaces en backend y frontend.",
   },
   {
     year: "Hoy",

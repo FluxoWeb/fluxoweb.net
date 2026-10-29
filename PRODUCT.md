@@ -14,7 +14,7 @@ Owners and managers of small and medium businesses (PyMEs) in Paraguay and the w
 
 ## Product Purpose
 
-Marketing site for Fluxo Web Group E.A.S., a software company from Ciudad del Este, Paraguay (founded 2019). It presents services (custom software, web, mobile apps, applied AI, cloud hosting), own products (FluxoCRM, Zap Pulse, Nova, VentaFlow, Masé, Esmalté, Ogady), live systems and the founding team. Success = a qualified visitor starts a WhatsApp conversation.
+Marketing site for Fluxo Web Group E.A.S., a software company from Ciudad del Este, Paraguay (started in 2019 as Fluxo; legally constituted as E.A.S. in 2025). It presents services (custom software, web, mobile apps, applied AI, cloud hosting), own products (FluxoCRM, Zap Pulse, Nova, VentaFlow, Masé, Esmalté, Ogady), live systems and the founding team. Success = a qualified visitor starts a WhatsApp conversation.
 
 ## Positioning
 

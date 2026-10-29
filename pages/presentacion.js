@@ -415,7 +415,7 @@ export default function Presentacion() {
             <section>
               <div className="sec-ttl">Quiénes somos</div>
               <p className="intro-p">
-                <strong>Fluxo Web Group E.A.S.</strong> es una empresa paraguaya especializada en desarrollo de software empresarial, fundada en 2019 en Ciudad del Este. Comenzamos como servicio técnico de hardware y evolucionamos hacia el desarrollo de sistemas a medida, implementación de ERP, CRM y soluciones cloud.
+                <strong>Fluxo Web Group E.A.S.</strong> es una empresa paraguaya especializada en desarrollo de software empresarial, nacida en 2019 en Ciudad del Este y constituida legalmente como E.A.S. en 2025. Comenzamos como servicio técnico de hardware y evolucionamos hacia el desarrollo de sistemas a medida, implementación de ERP, CRM y soluciones cloud.
               </p>
               <p className="intro-p">
                 Hoy operamos con <strong>infraestructura de servidores propia</strong>, brindando desde sitios web institucionales hasta sistemas de gestión empresarial complejos. Nuestro equipo combina sólida experiencia técnica con un enfoque orientado a resultados reales.
@@ -461,7 +461,7 @@ export default function Presentacion() {
           {/* Footer */}
           <footer className="content-footer">
             <div className="ftr-l">
-              <strong>Fluxo Web Group E.A.S.</strong> — Ciudad del Este, Paraguay · 2019
+              <strong>Fluxo Web Group E.A.S.</strong> — Ciudad del Este, Paraguay · Desde 2019
             </div>
             <div className="ftr-r">
               <a href="https://fluxoweb.net">fluxoweb.net</a>

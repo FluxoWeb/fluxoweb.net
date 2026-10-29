@@ -12,7 +12,7 @@ const member = {
     github: "",
     linkedin: "",
   },
-  bio: "Autodidacta apasionado por la tecnología, Oscar comenzó su camino reparando computadoras desde el almacén de su casa en 2019. Con el tiempo identificó las necesidades de software de sus clientes y decidió especializarse en desarrollo web y software, fundando Fluxo Web Group E.A.S. Hoy lidera el equipo de desarrollo con visión estratégica y enfoque en resultados concretos.",
+  bio: "Autodidacta apasionado por la tecnología, Oscar comenzó su camino reparando computadoras desde el almacén de su casa en 2019. Con el tiempo identificó las necesidades de software de sus clientes y decidió especializarse en desarrollo web y software, y en 2025 formalizó, junto a Alberto y Wildo, la empresa como Fluxo Web Group E.A.S. Hoy lidera el equipo de desarrollo con visión estratégica y enfoque en resultados concretos.",
   skills: [
     {
       category: "Desarrollo Web",

@@ -2,17 +2,18 @@ const member = {
   slug: "alberto-servin",
   name: "Alberto David Servin Meira",
   initials: "AS",
+  photo: "/alberto.png",
   role: "Co-fundador & Ing. en Informática",
   summary: "Ingeniero en Informática con amplia experiencia en desarrollo de software y arquitectura de sistemas.",
   color: "green",
-  location: "Minga Guazú, Paraguay",
+  location: "Ciudad Del Este, Paraguay",
   contact: {
-    whatsapp: "",
-    email: "",
-    github: "",
-    linkedin: "",
+    whatsapp: "+595975575157",
+    email: "adservin50@gmail.com",
+    github: "https://github.com/Albertserv",
+    linkedin: "https://www.linkedin.com/in/albertserv/",
   },
-  bio: "Ingeniero en Informática con amplia experiencia en desarrollo de software y arquitectura de sistemas. Se unió a Fluxo Web en 2025 aportando solidez técnica y metodología profesional al equipo de desarrollo.",
+  bio: "Ingeniero en Informática con amplia experiencia en desarrollo de software y arquitectura de sistemas. Participa en Fluxo Web desde 2024 y en 2025 fue cofundador de la E.A.S., aportando solidez técnica y metodología profesional al equipo de desarrollo.",
   skills: [
     {
       category: "Desarrollo de Software",
@@ -38,9 +39,9 @@ const member = {
   ],
   education: [
     {
-      year: "2025",
+      year: "2023",
       title: "Ingeniería en Informática",
-      institution: "Universidad — Paraguay",
+      institution: "Universidad Privada del Este (UPE) — Ciudad del Este",
     },
   ],
 };
